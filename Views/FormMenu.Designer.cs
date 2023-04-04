@@ -29,14 +29,8 @@
         private void InitializeComponent()
         {
             this.btnClientList = new System.Windows.Forms.Button();
-            this.btnClientUpdate = new System.Windows.Forms.Button();
-            this.btnClientCreate = new System.Windows.Forms.Button();
             this.btnProductList = new System.Windows.Forms.Button();
-            this.btnProductUpdate = new System.Windows.Forms.Button();
-            this.btnProductCreate = new System.Windows.Forms.Button();
             this.btnInvoiceList = new System.Windows.Forms.Button();
-            this.btnInvoiceUpdate = new System.Windows.Forms.Button();
-            this.btnInvoiceCreate = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
@@ -53,26 +47,6 @@
             this.btnClientList.UseVisualStyleBackColor = true;
             this.btnClientList.Click += new System.EventHandler(this.btnClientList_Click);
             // 
-            // btnClientUpdate
-            // 
-            this.btnClientUpdate.Location = new System.Drawing.Point(94, 159);
-            this.btnClientUpdate.Name = "btnClientUpdate";
-            this.btnClientUpdate.Size = new System.Drawing.Size(110, 30);
-            this.btnClientUpdate.TabIndex = 1;
-            this.btnClientUpdate.Text = "Modifier un client";
-            this.btnClientUpdate.UseVisualStyleBackColor = true;
-            this.btnClientUpdate.Click += new System.EventHandler(this.btnClientUpdate_Click);
-            // 
-            // btnClientCreate
-            // 
-            this.btnClientCreate.Location = new System.Drawing.Point(94, 218);
-            this.btnClientCreate.Name = "btnClientCreate";
-            this.btnClientCreate.Size = new System.Drawing.Size(110, 30);
-            this.btnClientCreate.TabIndex = 2;
-            this.btnClientCreate.Text = "Ajouter un client";
-            this.btnClientCreate.UseVisualStyleBackColor = true;
-            this.btnClientCreate.Click += new System.EventHandler(this.btnClientCreate_Click);
-            // 
             // btnProductList
             // 
             this.btnProductList.Location = new System.Drawing.Point(94, 282);
@@ -83,26 +57,6 @@
             this.btnProductList.UseVisualStyleBackColor = true;
             this.btnProductList.Click += new System.EventHandler(this.btnProductList_Click);
             // 
-            // btnProductUpdate
-            // 
-            this.btnProductUpdate.Location = new System.Drawing.Point(94, 339);
-            this.btnProductUpdate.Name = "btnProductUpdate";
-            this.btnProductUpdate.Size = new System.Drawing.Size(110, 30);
-            this.btnProductUpdate.TabIndex = 4;
-            this.btnProductUpdate.Text = "Modifier un produit";
-            this.btnProductUpdate.UseVisualStyleBackColor = true;
-            this.btnProductUpdate.Click += new System.EventHandler(this.btnProductUpdate_Click);
-            // 
-            // btnProductCreate
-            // 
-            this.btnProductCreate.Location = new System.Drawing.Point(94, 407);
-            this.btnProductCreate.Name = "btnProductCreate";
-            this.btnProductCreate.Size = new System.Drawing.Size(110, 30);
-            this.btnProductCreate.TabIndex = 5;
-            this.btnProductCreate.Text = "Ajouter un produit";
-            this.btnProductCreate.UseVisualStyleBackColor = true;
-            this.btnProductCreate.Click += new System.EventHandler(this.btnProductCreate_Click);
-            // 
             // btnInvoiceList
             // 
             this.btnInvoiceList.Location = new System.Drawing.Point(799, 99);
@@ -112,26 +66,6 @@
             this.btnInvoiceList.Text = "Liste des factures";
             this.btnInvoiceList.UseVisualStyleBackColor = true;
             this.btnInvoiceList.Click += new System.EventHandler(this.btnInvoiceList_Click);
-            // 
-            // btnInvoiceUpdate
-            // 
-            this.btnInvoiceUpdate.Location = new System.Drawing.Point(799, 159);
-            this.btnInvoiceUpdate.Name = "btnInvoiceUpdate";
-            this.btnInvoiceUpdate.Size = new System.Drawing.Size(110, 30);
-            this.btnInvoiceUpdate.TabIndex = 7;
-            this.btnInvoiceUpdate.Text = "Modifier une facture";
-            this.btnInvoiceUpdate.UseVisualStyleBackColor = true;
-            this.btnInvoiceUpdate.Click += new System.EventHandler(this.btnInvoiceUpdate_Click);
-            // 
-            // btnInvoiceCreate
-            // 
-            this.btnInvoiceCreate.Location = new System.Drawing.Point(799, 218);
-            this.btnInvoiceCreate.Name = "btnInvoiceCreate";
-            this.btnInvoiceCreate.Size = new System.Drawing.Size(110, 30);
-            this.btnInvoiceCreate.TabIndex = 8;
-            this.btnInvoiceCreate.Text = "Ajouter une facture";
-            this.btnInvoiceCreate.UseVisualStyleBackColor = true;
-            this.btnInvoiceCreate.Click += new System.EventHandler(this.btnInvoiceCreate_Click);
             // 
             // button10
             // 
@@ -178,14 +112,8 @@
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
-            this.Controls.Add(this.btnInvoiceCreate);
-            this.Controls.Add(this.btnInvoiceUpdate);
             this.Controls.Add(this.btnInvoiceList);
-            this.Controls.Add(this.btnProductCreate);
-            this.Controls.Add(this.btnProductUpdate);
             this.Controls.Add(this.btnProductList);
-            this.Controls.Add(this.btnClientCreate);
-            this.Controls.Add(this.btnClientUpdate);
             this.Controls.Add(this.btnClientList);
             this.Name = "FormMenu";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -198,14 +126,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnClientList;
-        private System.Windows.Forms.Button btnClientUpdate;
-        private System.Windows.Forms.Button btnClientCreate;
         private System.Windows.Forms.Button btnProductList;
-        private System.Windows.Forms.Button btnProductUpdate;
-        private System.Windows.Forms.Button btnProductCreate;
         private System.Windows.Forms.Button btnInvoiceList;
-        private System.Windows.Forms.Button btnInvoiceUpdate;
-        private System.Windows.Forms.Button btnInvoiceCreate;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
