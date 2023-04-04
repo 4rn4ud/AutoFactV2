@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,8 +36,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.EF6.1.0.117.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.117.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Linq.1.0.117.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,96 +65,96 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormClientCreate.cs">
+    <Compile Include="Views\FormClientCreate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormClientCreate.Designer.cs">
+    <Compile Include="Views\FormClientCreate.Designer.cs">
       <DependentUpon>FormClientCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormClientUpdate.cs">
+    <Compile Include="Views\FormClientUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormClientUpdate.Designer.cs">
+    <Compile Include="Views\FormClientUpdate.Designer.cs">
       <DependentUpon>FormClientUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormInvoiceCreate.cs">
+    <Compile Include="Views\FormInvoiceCreate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInvoiceCreate.Designer.cs">
+    <Compile Include="Views\FormInvoiceCreate.Designer.cs">
       <DependentUpon>FormInvoiceCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormInvoiceList.cs">
+    <Compile Include="Views\FormInvoiceList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInvoiceList.Designer.cs">
+    <Compile Include="Views\FormInvoiceList.Designer.cs">
       <DependentUpon>FormInvoiceList.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormInvoiceUpdate.cs">
+    <Compile Include="Views\FormInvoiceUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInvoiceUpdate.Designer.cs">
+    <Compile Include="Views\FormInvoiceUpdate.Designer.cs">
       <DependentUpon>FormInvoiceUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMenu.cs">
+    <Compile Include="Views\FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMenu.Designer.cs">
+    <Compile Include="Views\FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormClientList.cs">
+    <Compile Include="Views\FormClientList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormClientList.Designer.cs">
+    <Compile Include="Views\FormClientList.Designer.cs">
       <DependentUpon>FormClientList.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProductCreate.cs">
+    <Compile Include="Views\FormProductCreate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProductCreate.Designer.cs">
+    <Compile Include="Views\FormProductCreate.Designer.cs">
       <DependentUpon>FormProductCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProductList.cs">
+    <Compile Include="Views\FormProductList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProductList.Designer.cs">
+    <Compile Include="Views\FormProductList.Designer.cs">
       <DependentUpon>FormProductList.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProductUpdate.cs">
+    <Compile Include="Views\FormProductUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProductUpdate.Designer.cs">
+    <Compile Include="Views\FormProductUpdate.Designer.cs">
       <DependentUpon>FormProductUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormClientCreate.resx">
+    <EmbeddedResource Include="Views\FormClientCreate.resx">
       <DependentUpon>FormClientCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormClientUpdate.resx">
+    <EmbeddedResource Include="Views\FormClientUpdate.resx">
       <DependentUpon>FormClientUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInvoiceCreate.resx">
+    <EmbeddedResource Include="Views\FormInvoiceCreate.resx">
       <DependentUpon>FormInvoiceCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInvoiceList.resx">
+    <EmbeddedResource Include="Views\FormInvoiceList.resx">
       <DependentUpon>FormInvoiceList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInvoiceUpdate.resx">
+    <EmbeddedResource Include="Views\FormInvoiceUpdate.resx">
       <DependentUpon>FormInvoiceUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMenu.resx">
+    <EmbeddedResource Include="Views\FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormClientList.resx">
+    <EmbeddedResource Include="Views\FormClientList.resx">
       <DependentUpon>FormClientList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProductCreate.resx">
+    <EmbeddedResource Include="Views\FormProductCreate.resx">
       <DependentUpon>FormProductCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProductList.resx">
+    <EmbeddedResource Include="Views\FormProductList.resx">
       <DependentUpon>FormProductList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProductUpdate.resx">
+    <EmbeddedResource Include="Views\FormProductUpdate.resx">
       <DependentUpon>FormProductUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -147,6 +166,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -160,5 +180,21 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\" />
+    <Folder Include="Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="Repository\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.117.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
 </Project>
