@@ -48,7 +48,7 @@
             // 
             // btnProductList
             // 
-            this.btnProductList.Location = new System.Drawing.Point(94, 282);
+            this.btnProductList.Location = new System.Drawing.Point(94, 171);
             this.btnProductList.Name = "btnProductList";
             this.btnProductList.Size = new System.Drawing.Size(110, 30);
             this.btnProductList.TabIndex = 3;
@@ -58,7 +58,7 @@
             // 
             // btnInvoiceList
             // 
-            this.btnInvoiceList.Location = new System.Drawing.Point(799, 99);
+            this.btnInvoiceList.Location = new System.Drawing.Point(94, 135);
             this.btnInvoiceList.Name = "btnInvoiceList";
             this.btnInvoiceList.Size = new System.Drawing.Size(110, 30);
             this.btnInvoiceList.TabIndex = 6;
@@ -68,7 +68,7 @@
             // 
             // btnProfil
             // 
-            this.btnProfil.Location = new System.Drawing.Point(799, 282);
+            this.btnProfil.Location = new System.Drawing.Point(316, 99);
             this.btnProfil.Name = "btnProfil";
             this.btnProfil.Size = new System.Drawing.Size(110, 30);
             this.btnProfil.TabIndex = 9;
@@ -78,7 +78,7 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(799, 407);
+            this.button12.Location = new System.Drawing.Point(316, 135);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(110, 30);
             this.button12.TabIndex = 11;
@@ -87,7 +87,7 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(440, 470);
+            this.button13.Location = new System.Drawing.Point(316, 171);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(110, 30);
             this.button13.TabIndex = 12;
@@ -108,7 +108,7 @@
             this.Name = "FormMenu";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AutoFact";
+            this.Text = "cd";
             this.ResumeLayout(false);
 
         }
