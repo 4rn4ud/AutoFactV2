@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoFact2.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,6 +34,12 @@ namespace AutoFact2
         {
             FormInvoiceList InvoiceList = new FormInvoiceList();
             InvoiceList.Show();
+        }
+
+        private void btnProfil_Click(object sender, EventArgs e)
+        {
+            FormProfil Profil = new FormProfil();
+            Profil.Show();
         }
     }
 }
