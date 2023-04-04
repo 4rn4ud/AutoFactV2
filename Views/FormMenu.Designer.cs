@@ -31,8 +31,7 @@
             this.btnClientList = new System.Windows.Forms.Button();
             this.btnProductList = new System.Windows.Forms.Button();
             this.btnInvoiceList = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.btnProfil = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -67,23 +66,14 @@
             this.btnInvoiceList.UseVisualStyleBackColor = true;
             this.btnInvoiceList.Click += new System.EventHandler(this.btnInvoiceList_Click);
             // 
-            // button10
+            // btnProfil
             // 
-            this.button10.Location = new System.Drawing.Point(799, 282);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(110, 30);
-            this.button10.TabIndex = 9;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(799, 339);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(110, 30);
-            this.button11.TabIndex = 10;
-            this.button11.Text = "button11";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnProfil.Location = new System.Drawing.Point(799, 282);
+            this.btnProfil.Name = "btnProfil";
+            this.btnProfil.Size = new System.Drawing.Size(110, 30);
+            this.btnProfil.TabIndex = 9;
+            this.btnProfil.Text = "Profil";
+            this.btnProfil.UseVisualStyleBackColor = true;
             // 
             // button12
             // 
@@ -110,8 +100,7 @@
             this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
+            this.Controls.Add(this.btnProfil);
             this.Controls.Add(this.btnInvoiceList);
             this.Controls.Add(this.btnProductList);
             this.Controls.Add(this.btnClientList);
@@ -128,8 +117,7 @@
         private System.Windows.Forms.Button btnClientList;
         private System.Windows.Forms.Button btnProductList;
         private System.Windows.Forms.Button btnInvoiceList;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnProfil;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
     }
