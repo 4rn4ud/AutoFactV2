@@ -39,7 +39,7 @@ namespace AutoFact2.Views
             return libel;
         }
 
-        public List<Product> GetListeProduct()
+        public List<Product> GetListProduct()
         {
             return listProduct;
         }
