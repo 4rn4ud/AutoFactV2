@@ -15,10 +15,10 @@ namespace AutoFact2.Views
 
         public Product(int id, string libel, double unitPrice, int idCategory)
         {
-            _id = id;
-            _libel = libel;
-            _unitPrice = unitPrice;
-            _idCategory = idCategory;
+            this._id = id;
+            this._libel = libel;
+            this._unitPrice = unitPrice;
+            this._idCategory = idCategory;
         }
 
         public int GetId()
@@ -28,7 +28,7 @@ namespace AutoFact2.Views
 
         public void SetId(int value)
         {
-            _id = value;
+            this._id = value;
         }
 
         public string GetLibel()
@@ -38,7 +38,7 @@ namespace AutoFact2.Views
 
         public void SetLibel(string value)
         {
-            _libel = value;
+            this._libel = value;
         }
 
         public double GetUnitPrice()
@@ -48,7 +48,7 @@ namespace AutoFact2.Views
 
         public void SetUnitPrice(double value)
         {
-            _unitPrice = value;
+            this._unitPrice = value;
         }
 
         public int GetIdCategory()
@@ -58,7 +58,7 @@ namespace AutoFact2.Views
 
         public void SetIdCategory(int value)
         {
-            _idCategory = value;
+            this._idCategory = value;
         }
     }
 }

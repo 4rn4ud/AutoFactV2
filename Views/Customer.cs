@@ -17,6 +17,7 @@ namespace AutoFact2.Views
         private string _city;
         private string _mail;
         private string _tel;
+        private List<Quote> _listQuote;
 
         public Customer(int id, string name, string lastName, string companyName, string address, string postalCode, string city, string mail, string tel)
         {
@@ -29,6 +30,7 @@ namespace AutoFact2.Views
             this._city = city;
             this._mail = mail;
             this._tel = tel;
+            this._listQuote = new List<Quote>();
         }
 
         public int GetId()
@@ -38,7 +40,7 @@ namespace AutoFact2.Views
 
         public void SetId(int value)
         {
-            _id = value;
+            this._id = value;
         }
 
         public string GetName()
@@ -48,7 +50,7 @@ namespace AutoFact2.Views
 
         public void SetName(string value)
         {
-            _name = value;
+            this._name = value;
         }
 
         public string GetLastName()
@@ -58,7 +60,7 @@ namespace AutoFact2.Views
 
         public void SetLastName(string value)
         {
-            _lastName = value;
+            this._lastName = value;
         }
 
         public string GetCompanyName()
@@ -68,7 +70,7 @@ namespace AutoFact2.Views
 
         public void SetCompanyName(string value)
         {
-            _companyName = value;
+            this._companyName = value;
         }
 
         public string GetAddress()
@@ -78,7 +80,7 @@ namespace AutoFact2.Views
 
         public void SetAddress(string value)
         {
-            _address = value;
+            this._address = value;
         }
 
         public string GetPostalCode()
@@ -88,7 +90,7 @@ namespace AutoFact2.Views
 
         public void SetPostalCode(string value)
         {
-            _postalCode = value;
+            this._postalCode = value;
         }
 
         public string GetCity()
@@ -98,7 +100,7 @@ namespace AutoFact2.Views
 
         public void SetCity(string value)
         {
-            _city = value;
+            this._city = value;
         }
 
         public string GetMail()
@@ -108,7 +110,7 @@ namespace AutoFact2.Views
 
         public void SetMail(string value)
         {
-            _mail = value;
+            this._mail = value;
         }
 
         public string GetTel()
@@ -118,7 +120,17 @@ namespace AutoFact2.Views
 
         public void SetTel(string value)
         {
-            _tel = value;
+            this._tel = value;
+        }
+
+        public List<Quote> GetListQuote()
+        {
+            return _listQuote;
+        }
+
+        public void SetQuote(Quote quote)
+        {
+            this._listQuote.Add(quote);
         }
     }
 }

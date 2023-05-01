@@ -16,7 +16,7 @@ namespace AutoFact2.Views
         {
             this._id = id;
             this._libel = libel;
-            this._listProduct = new List<Product>() ;
+            this._listProduct = new List<Product>();
         }
 
         public void SetId(int id)
@@ -46,7 +46,7 @@ namespace AutoFact2.Views
 
         public void SetProduct(Product product)
         {
-            _listProduct.Add(product);
+            this._listProduct.Add(product);
         }
     }
 }
