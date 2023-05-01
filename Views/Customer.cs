@@ -8,117 +8,117 @@ namespace AutoFact2.Views
 {
     class Customer
     {
-        private int id;
-        private string name;
-        private string lastName;
-        private string companyName;
-        private string address;
-        private string postalCode;
-        private string city;
-        private string mail;
-        private string tel;
+        private int _id;
+        private string _name;
+        private string _lastName;
+        private string _companyName;
+        private string _address;
+        private string _postalCode;
+        private string _city;
+        private string _mail;
+        private string _tel;
 
         public Customer(int id, string name, string lastName, string companyName, string address, string postalCode, string city, string mail, string tel)
         {
-            this.id = id;
-            this.name = name;
-            this.lastName = lastName;
-            this.companyName = companyName;
-            this.address = address;
-            this.postalCode = postalCode;
-            this.city = city;
-            this.mail = mail;
-            this.tel = tel;
+            this._id = id;
+            this._name = name;
+            this._lastName = lastName;
+            this._companyName = companyName;
+            this._address = address;
+            this._postalCode = postalCode;
+            this._city = city;
+            this._mail = mail;
+            this._tel = tel;
         }
 
         public int GetId()
         {
-            return id;
+            return _id;
         }
 
         public void SetId(int value)
         {
-            id = value;
+            _id = value;
         }
 
         public string GetName()
         {
-            return name;
+            return _name;
         }
 
         public void SetName(string value)
         {
-            name = value;
+            _name = value;
         }
 
         public string GetLastName()
         {
-            return lastName;
+            return _lastName;
         }
 
         public void SetLastName(string value)
         {
-            lastName = value;
+            _lastName = value;
         }
 
         public string GetCompanyName()
         {
-            return companyName;
+            return _companyName;
         }
 
         public void SetCompanyName(string value)
         {
-            companyName = value;
+            _companyName = value;
         }
 
         public string GetAddress()
         {
-            return address;
+            return _address;
         }
 
         public void SetAddress(string value)
         {
-            address = value;
+            _address = value;
         }
 
         public string GetPostalCode()
         {
-            return postalCode;
+            return _postalCode;
         }
 
         public void SetPostalCode(string value)
         {
-            postalCode = value;
+            _postalCode = value;
         }
 
         public string GetCity()
         {
-            return city;
+            return _city;
         }
 
         public void SetCity(string value)
         {
-            city = value;
+            _city = value;
         }
 
         public string GetMail()
         {
-            return mail;
+            return _mail;
         }
 
         public void SetMail(string value)
         {
-            mail = value;
+            _mail = value;
         }
 
         public string GetTel()
         {
-            return tel;
+            return _tel;
         }
 
         public void SetTel(string value)
         {
-            tel = value;
+            _tel = value;
         }
     }
 }
