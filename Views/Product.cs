@@ -13,6 +13,14 @@ namespace AutoFact2.Views
         private double _unitPrice;
         private int _idCategory;
 
+        public Product(int id, string libel, double unitPrice, int idCategory)
+        {
+            _id = id;
+            _libel = libel;
+            _unitPrice = unitPrice;
+            _idCategory = idCategory;
+        }
+
         public int GetId()
         {
             return _id;
@@ -51,14 +59,6 @@ namespace AutoFact2.Views
         public void SetIdCategory(int value)
         {
             _idCategory = value;
-        }
-
-        public Product(int id, string libel, double unitPrice, int idCategory)
-        {
-            _id = id;
-            _libel = libel;
-            _unitPrice = unitPrice;
-            _idCategory = idCategory;
         }
     }
 }

@@ -10,13 +10,13 @@ namespace AutoFact2.Views
     {
         private int id;
         private string libel;
-        private List<Product> listeProduct;
+        private List<Product> listProduct;
 
         public Category(int id, string libel)
         {
             this.id = id;
             this.libel = libel;
-            this.listeProduct = new List<Product>() ;
+            this.listProduct = new List<Product>() ;
         }
 
         public void SetId(int id)
@@ -41,13 +41,12 @@ namespace AutoFact2.Views
 
         public List<Product> GetListeProduct()
         {
-            return listeProduct;
+            return listProduct;
         }
 
         public void SetProduct(Product product)
         {
-            listeProduct.Add(product);
+            listProduct.Add(product);
         }
     }
-
 }
