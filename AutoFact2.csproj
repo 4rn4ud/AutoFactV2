@@ -66,6 +66,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\MenuController.cs" />
+    <Compile Include="Views\Category.cs" />
+    <Compile Include="Views\Customer.cs" />
     <Compile Include="Views\FormInvoiceList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +100,7 @@
     <Compile Include="Views\FormProfil.Designer.cs">
       <DependentUpon>FormProfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Product.cs" />
     <EmbeddedResource Include="Views\FormInvoiceList.resx">
       <DependentUpon>FormInvoiceList.cs</DependentUpon>
     </EmbeddedResource>
