@@ -101,6 +101,8 @@
       <DependentUpon>FormProfil.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Product.cs" />
+    <Compile Include="Views\Quote.cs" />
+    <Compile Include="Views\Type.cs" />
     <EmbeddedResource Include="Views\FormInvoiceList.resx">
       <DependentUpon>FormInvoiceList.cs</DependentUpon>
     </EmbeddedResource>
