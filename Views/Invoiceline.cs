@@ -12,6 +12,8 @@ namespace AutoFact2.Views
         private int _idProduct;
         private int _quantity;
         private float _promotion;
+        private List<Quote> _listQuote;
+        private List<Product> _listProduct;
 
         public Invoiceline(int idQuote, int idProduct, int quantity, float promotion)
         {
@@ -19,6 +21,8 @@ namespace AutoFact2.Views
             this._idProduct = idProduct;
             this._quantity = quantity;
             this._promotion = promotion;
+            this._listQuote = new List<Quote>();
+            this._listProduct = new List<Product>();
         }
 
         public int GetIdQuote()
