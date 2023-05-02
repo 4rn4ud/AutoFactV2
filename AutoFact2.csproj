@@ -68,6 +68,12 @@
     <Compile Include="Controller\MenuController.cs" />
     <Compile Include="Views\Category.cs" />
     <Compile Include="Views\Customer.cs" />
+    <Compile Include="Views\FormClientCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormClientCreate.Designer.cs">
+      <DependentUpon>FormClientCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormInvoiceList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     <Compile Include="Views\Quote.cs" />
     <Compile Include="Views\Status.cs" />
     <Compile Include="Views\Type.cs" />
+    <EmbeddedResource Include="Views\FormClientCreate.resx">
+      <DependentUpon>FormClientCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FormInvoiceList.resx">
       <DependentUpon>FormInvoiceList.cs</DependentUpon>
     </EmbeddedResource>
