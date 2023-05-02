@@ -33,9 +33,9 @@
             this.ColLibel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColIdCateg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnBack = new System.Windows.Forms.Button();
             this.ColBtnUpdate = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColBtnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.BtnBack = new System.Windows.Forms.Button();
             this.BtnCreate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -78,15 +78,6 @@
             this.ColIdCateg.Name = "ColIdCateg";
             this.ColIdCateg.ReadOnly = true;
             // 
-            // BtnBack
-            // 
-            this.BtnBack.Location = new System.Drawing.Point(28, 31);
-            this.BtnBack.Name = "BtnBack";
-            this.BtnBack.Size = new System.Drawing.Size(75, 23);
-            this.BtnBack.TabIndex = 1;
-            this.BtnBack.Text = "Retour";
-            this.BtnBack.UseVisualStyleBackColor = true;
-            // 
             // ColBtnUpdate
             // 
             this.ColBtnUpdate.HeaderText = "Update";
@@ -97,6 +88,16 @@
             this.ColBtnDelete.HeaderText = "Delete";
             this.ColBtnDelete.Name = "ColBtnDelete";
             // 
+            // BtnBack
+            // 
+            this.BtnBack.Location = new System.Drawing.Point(28, 31);
+            this.BtnBack.Name = "BtnBack";
+            this.BtnBack.Size = new System.Drawing.Size(75, 23);
+            this.BtnBack.TabIndex = 1;
+            this.BtnBack.Text = "Retour";
+            this.BtnBack.UseVisualStyleBackColor = true;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
+            // 
             // BtnCreate
             // 
             this.BtnCreate.Location = new System.Drawing.Point(28, 332);
@@ -105,6 +106,7 @@
             this.BtnCreate.TabIndex = 2;
             this.BtnCreate.Text = "Create";
             this.BtnCreate.UseVisualStyleBackColor = true;
+            this.BtnCreate.Click += new System.EventHandler(this.BtnCreate_Click);
             // 
             // FormProductList
             // 

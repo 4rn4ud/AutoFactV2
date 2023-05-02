@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoFact2.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,5 +19,16 @@ namespace AutoFact2
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e){}
+
+        private void BtnCreateClient_Click(object sender, EventArgs e)
+        {
+            FormClientCreate ClientCreate = new FormClientCreate();
+            ClientCreate.Show();
+        }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
