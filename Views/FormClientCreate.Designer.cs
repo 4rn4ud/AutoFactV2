@@ -31,18 +31,18 @@
             this.BtnBack = new System.Windows.Forms.Button();
             this.BtnCreate = new System.Windows.Forms.Button();
             this.TxtName = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.TxtSurname = new System.Windows.Forms.TextBox();
+            this.TxtCompanyname = new System.Windows.Forms.TextBox();
+            this.TxtAdresse = new System.Windows.Forms.TextBox();
+            this.TxtPostalCode = new System.Windows.Forms.TextBox();
+            this.TxtCity = new System.Windows.Forms.TextBox();
+            this.TxtMail = new System.Windows.Forms.TextBox();
+            this.TxtTel = new System.Windows.Forms.TextBox();
+            this.LabelMail = new System.Windows.Forms.Label();
+            this.LabelTel = new System.Windows.Forms.Label();
+            this.LabelCity = new System.Windows.Forms.Label();
+            this.LabelPostalcode = new System.Windows.Forms.Label();
+            this.LabelAdresse = new System.Windows.Forms.Label();
             this.LabelName = new System.Windows.Forms.Label();
             this.LabelSurname = new System.Windows.Forms.Label();
             this.LabelCompagny = new System.Windows.Forms.Label();
@@ -74,99 +74,99 @@
             this.TxtName.Size = new System.Drawing.Size(100, 20);
             this.TxtName.TabIndex = 2;
             // 
-            // textBox2
+            // TxtSurname
             // 
-            this.textBox2.Location = new System.Drawing.Point(149, 206);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.TxtSurname.Location = new System.Drawing.Point(149, 206);
+            this.TxtSurname.Name = "TxtSurname";
+            this.TxtSurname.Size = new System.Drawing.Size(100, 20);
+            this.TxtSurname.TabIndex = 3;
             // 
-            // textBox3
+            // TxtCompanyname
             // 
-            this.textBox3.Location = new System.Drawing.Point(149, 267);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 4;
+            this.TxtCompanyname.Location = new System.Drawing.Point(149, 267);
+            this.TxtCompanyname.Name = "TxtCompanyname";
+            this.TxtCompanyname.Size = new System.Drawing.Size(100, 20);
+            this.TxtCompanyname.TabIndex = 4;
             // 
-            // textBox4
+            // TxtAdresse
             // 
-            this.textBox4.Location = new System.Drawing.Point(409, 144);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 5;
+            this.TxtAdresse.Location = new System.Drawing.Point(409, 144);
+            this.TxtAdresse.Name = "TxtAdresse";
+            this.TxtAdresse.Size = new System.Drawing.Size(100, 20);
+            this.TxtAdresse.TabIndex = 5;
             // 
-            // textBox5
+            // TxtPostalCode
             // 
-            this.textBox5.Location = new System.Drawing.Point(409, 206);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 6;
+            this.TxtPostalCode.Location = new System.Drawing.Point(409, 206);
+            this.TxtPostalCode.Name = "TxtPostalCode";
+            this.TxtPostalCode.Size = new System.Drawing.Size(100, 20);
+            this.TxtPostalCode.TabIndex = 6;
             // 
-            // textBox6
+            // TxtCity
             // 
-            this.textBox6.Location = new System.Drawing.Point(409, 268);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 7;
+            this.TxtCity.Location = new System.Drawing.Point(409, 268);
+            this.TxtCity.Name = "TxtCity";
+            this.TxtCity.Size = new System.Drawing.Size(100, 20);
+            this.TxtCity.TabIndex = 7;
             // 
-            // textBox7
+            // TxtMail
             // 
-            this.textBox7.Location = new System.Drawing.Point(667, 144);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 8;
+            this.TxtMail.Location = new System.Drawing.Point(667, 144);
+            this.TxtMail.Name = "TxtMail";
+            this.TxtMail.Size = new System.Drawing.Size(100, 20);
+            this.TxtMail.TabIndex = 8;
             // 
-            // textBox8
+            // TxtTel
             // 
-            this.textBox8.Location = new System.Drawing.Point(667, 206);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 9;
+            this.TxtTel.Location = new System.Drawing.Point(667, 206);
+            this.TxtTel.Name = "TxtTel";
+            this.TxtTel.Size = new System.Drawing.Size(100, 20);
+            this.TxtTel.TabIndex = 9;
             // 
-            // label1
+            // LabelMail
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(579, 144);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "label1";
+            this.LabelMail.AutoSize = true;
+            this.LabelMail.Location = new System.Drawing.Point(579, 144);
+            this.LabelMail.Name = "LabelMail";
+            this.LabelMail.Size = new System.Drawing.Size(26, 13);
+            this.LabelMail.TabIndex = 11;
+            this.LabelMail.Text = "Mail";
             // 
-            // label2
+            // LabelTel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(579, 206);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "label2";
+            this.LabelTel.AutoSize = true;
+            this.LabelTel.Location = new System.Drawing.Point(579, 206);
+            this.LabelTel.Name = "LabelTel";
+            this.LabelTel.Size = new System.Drawing.Size(22, 13);
+            this.LabelTel.TabIndex = 12;
+            this.LabelTel.Text = "Tel";
             // 
-            // label4
+            // LabelCity
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(314, 268);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "label4";
+            this.LabelCity.AutoSize = true;
+            this.LabelCity.Location = new System.Drawing.Point(314, 268);
+            this.LabelCity.Name = "LabelCity";
+            this.LabelCity.Size = new System.Drawing.Size(26, 13);
+            this.LabelCity.TabIndex = 14;
+            this.LabelCity.Text = "Ville";
             // 
-            // label5
+            // LabelPostalcode
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(314, 212);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "label5";
+            this.LabelPostalcode.AutoSize = true;
+            this.LabelPostalcode.Location = new System.Drawing.Point(314, 212);
+            this.LabelPostalcode.Name = "LabelPostalcode";
+            this.LabelPostalcode.Size = new System.Drawing.Size(63, 13);
+            this.LabelPostalcode.TabIndex = 15;
+            this.LabelPostalcode.Text = "Code postal";
             // 
-            // label6
+            // LabelAdresse
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(314, 150);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "label6";
+            this.LabelAdresse.AutoSize = true;
+            this.LabelAdresse.Location = new System.Drawing.Point(314, 150);
+            this.LabelAdresse.Name = "LabelAdresse";
+            this.LabelAdresse.Size = new System.Drawing.Size(45, 13);
+            this.LabelAdresse.TabIndex = 16;
+            this.LabelAdresse.Text = "Adresse";
             // 
             // LabelName
             // 
@@ -191,9 +191,9 @@
             this.LabelCompagny.AutoSize = true;
             this.LabelCompagny.Location = new System.Drawing.Point(52, 267);
             this.LabelCompagny.Name = "LabelCompagny";
-            this.LabelCompagny.Size = new System.Drawing.Size(35, 13);
+            this.LabelCompagny.Size = new System.Drawing.Size(84, 13);
             this.LabelCompagny.TabIndex = 19;
-            this.LabelCompagny.Text = "label9";
+            this.LabelCompagny.Text = "Nom compagnie";
             // 
             // FormClientCreate
             // 
@@ -203,18 +203,18 @@
             this.Controls.Add(this.LabelCompagny);
             this.Controls.Add(this.LabelSurname);
             this.Controls.Add(this.LabelName);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.LabelAdresse);
+            this.Controls.Add(this.LabelPostalcode);
+            this.Controls.Add(this.LabelCity);
+            this.Controls.Add(this.LabelTel);
+            this.Controls.Add(this.LabelMail);
+            this.Controls.Add(this.TxtTel);
+            this.Controls.Add(this.TxtMail);
+            this.Controls.Add(this.TxtCity);
+            this.Controls.Add(this.TxtPostalCode);
+            this.Controls.Add(this.TxtAdresse);
+            this.Controls.Add(this.TxtCompanyname);
+            this.Controls.Add(this.TxtSurname);
             this.Controls.Add(this.TxtName);
             this.Controls.Add(this.BtnCreate);
             this.Controls.Add(this.BtnBack);
@@ -232,18 +232,18 @@
         private System.Windows.Forms.Button BtnBack;
         private System.Windows.Forms.Button BtnCreate;
         private System.Windows.Forms.TextBox TxtName;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox TxtSurname;
+        private System.Windows.Forms.TextBox TxtCompanyname;
+        private System.Windows.Forms.TextBox TxtAdresse;
+        private System.Windows.Forms.TextBox TxtPostalCode;
+        private System.Windows.Forms.TextBox TxtCity;
+        private System.Windows.Forms.TextBox TxtMail;
+        private System.Windows.Forms.TextBox TxtTel;
+        private System.Windows.Forms.Label LabelMail;
+        private System.Windows.Forms.Label LabelTel;
+        private System.Windows.Forms.Label LabelCity;
+        private System.Windows.Forms.Label LabelPostalcode;
+        private System.Windows.Forms.Label LabelAdresse;
         private System.Windows.Forms.Label LabelName;
         private System.Windows.Forms.Label LabelSurname;
         private System.Windows.Forms.Label LabelCompagny;
