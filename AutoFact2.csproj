@@ -100,6 +100,8 @@
     <Compile Include="Views\FormProfil.Designer.cs">
       <DependentUpon>FormProfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Moral.cs" />
+    <Compile Include="Views\Physical.cs" />
     <Compile Include="Views\Product.cs" />
     <Compile Include="Views\Quote.cs" />
     <Compile Include="Views\Type.cs" />
