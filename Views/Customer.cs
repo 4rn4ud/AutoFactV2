@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutoFact2.Views
 {
-    class Customer
+    abstract class Customer
     {
         private int _id;
         private string _address;
