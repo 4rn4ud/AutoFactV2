@@ -1,4 +1,9 @@
-﻿using System.Data.SQLite;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SQLite;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace AutoFact2.Controller
 {
@@ -8,7 +13,7 @@ namespace AutoFact2.Controller
 
         public MenuController()
         {
-
+            
         }
     }
 }

@@ -104,7 +104,6 @@
     <Compile Include="Views\Physical.cs" />
     <Compile Include="Views\Product.cs" />
     <Compile Include="Views\Quote.cs" />
-    <Compile Include="Views\Status.cs" />
     <Compile Include="Views\Type.cs" />
     <EmbeddedResource Include="Views\FormInvoiceList.resx">
       <DependentUpon>FormInvoiceList.cs</DependentUpon>

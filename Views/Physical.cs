@@ -1,6 +1,12 @@
-﻿namespace AutoFact2.Views
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AutoFact2.Views
 {
-    class Physical : Customer
+    class Physical:Customer
     {
         private string _name;
         private string _lastname;
