@@ -10,10 +10,10 @@ namespace AutoFact2.Views
     {
         private int _id;
         private string _libel;
-        private double _unitPrice;
+        private float _unitPrice;
         private int _idCategory;
 
-        public Product(int id, string libel, double unitPrice, int idCategory)
+        public Product(int id, string libel, float unitPrice, int idCategory)
         {
             this._id = id;
             this._libel = libel;
@@ -41,12 +41,12 @@ namespace AutoFact2.Views
             this._libel = value;
         }
 
-        public double GetUnitPrice()
+        public float GetUnitPrice()
         {
             return _unitPrice;
         }
 
-        public void SetUnitPrice(double value)
+        public void SetUnitPrice(float value)
         {
             this._unitPrice = value;
         }
