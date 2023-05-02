@@ -40,6 +40,8 @@
             this.ColTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColBtnUpdate = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColBtnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.BtnCreateClient = new System.Windows.Forms.Button();
+            this.BtnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvClient)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,11 +135,31 @@
             this.ColBtnDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ColBtnDelete.Text = "Delete";
             // 
+            // BtnCreateClient
+            // 
+            this.BtnCreateClient.Location = new System.Drawing.Point(12, 316);
+            this.BtnCreateClient.Name = "BtnCreateClient";
+            this.BtnCreateClient.Size = new System.Drawing.Size(75, 23);
+            this.BtnCreateClient.TabIndex = 1;
+            this.BtnCreateClient.Text = "Create";
+            this.BtnCreateClient.UseVisualStyleBackColor = true;
+            // 
+            // BtnBack
+            // 
+            this.BtnBack.Location = new System.Drawing.Point(12, 13);
+            this.BtnBack.Name = "BtnBack";
+            this.BtnBack.Size = new System.Drawing.Size(75, 23);
+            this.BtnBack.TabIndex = 2;
+            this.BtnBack.Text = "retour";
+            this.BtnBack.UseVisualStyleBackColor = true;
+            // 
             // FormClientList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 561);
+            this.Controls.Add(this.BtnBack);
+            this.Controls.Add(this.BtnCreateClient);
             this.Controls.Add(this.DgvClient);
             this.Name = "FormClientList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -162,5 +184,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTel;
         private System.Windows.Forms.DataGridViewButtonColumn ColBtnUpdate;
         private System.Windows.Forms.DataGridViewButtonColumn ColBtnDelete;
+        private System.Windows.Forms.Button BtnCreateClient;
+        private System.Windows.Forms.Button BtnBack;
     }
 }
