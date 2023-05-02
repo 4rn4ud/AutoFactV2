@@ -16,5 +16,11 @@ namespace AutoFact2.Views
         {
             InitializeComponent();
         }
+
+        private void FormProfil_Load(object sender, EventArgs e)
+        {
+
+            txtEmail.Text = GetMail();
+        }
     }
 }

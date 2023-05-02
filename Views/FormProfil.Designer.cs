@@ -186,6 +186,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AutoFact";
+            this.Load += new System.EventHandler(this.FormProfil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
