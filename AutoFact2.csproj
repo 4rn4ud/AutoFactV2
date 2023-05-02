@@ -92,6 +92,12 @@
     <Compile Include="Views\FormClientList.Designer.cs">
       <DependentUpon>FormClientList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormProductCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormProductCreate.Designer.cs">
+      <DependentUpon>FormProductCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormProductList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormClientList.resx">
       <DependentUpon>FormClientList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormProductCreate.resx">
+      <DependentUpon>FormProductCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormProductList.resx">
       <DependentUpon>FormProductList.cs</DependentUpon>
