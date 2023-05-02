@@ -16,5 +16,10 @@ namespace AutoFact2.Views
         {
             InitializeComponent();
         }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

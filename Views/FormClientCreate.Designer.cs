@@ -56,6 +56,7 @@
             this.BtnBack.TabIndex = 0;
             this.BtnBack.Text = "Retour";
             this.BtnBack.UseVisualStyleBackColor = true;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // BtnCreate
             // 
