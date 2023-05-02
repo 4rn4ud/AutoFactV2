@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AutoFact2.Views
+﻿namespace AutoFact2.Views
 {
-    class Moral:Customer
+    class Moral : Customer
     {
         private string _companyName;
 
