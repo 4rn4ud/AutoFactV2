@@ -10,15 +10,17 @@ namespace AutoFact2.Views
     {
         private int _idQuote;
         private int _idType;
-        private string _libel;
         private DateTime _date;
+        private List<Quote> _listQuote;
+        private List<Type> _listType;
 
-        public Status(int idQuote, int idType, string libel, DateTime date)
+        public Status(int idQuote, int idType, DateTime date)
         {
             this._idQuote = idQuote;
             this._idType = idType;
-            this._libel = libel;
             this._date = date;
+            this._listQuote = new List<Quote>();
+            this._listType = new List<Type>();
         }
 
         public int GetIdQuote()
@@ -39,16 +41,6 @@ namespace AutoFact2.Views
         public void SetIdType(int value)
         {
             this._idType = value;
-        }
-
-        public string GetLibel()
-        {
-            return _libel;
-        }
-
-        public void SetLibel(string value)
-        {
-            this._libel = value;
         }
 
         public DateTime GetDate()
