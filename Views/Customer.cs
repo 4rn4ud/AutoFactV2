@@ -9,9 +9,6 @@ namespace AutoFact2.Views
     class Customer
     {
         private int _id;
-        private string _name;
-        private string _lastName;
-        private string _companyName;
         private string _address;
         private string _postalCode;
         private string _city;
@@ -19,12 +16,9 @@ namespace AutoFact2.Views
         private string _tel;
         private List<Quote> _listQuote;
 
-        public Customer(int id, string name, string lastName, string companyName, string address, string postalCode, string city, string mail, string tel)
+        public Customer(int id, string address, string postalCode, string city, string mail, string tel)
         {
             this._id = id;
-            this._name = name;
-            this._lastName = lastName;
-            this._companyName = companyName;
             this._address = address;
             this._postalCode = postalCode;
             this._city = city;
@@ -41,36 +35,6 @@ namespace AutoFact2.Views
         public void SetId(int value)
         {
             this._id = value;
-        }
-
-        public string GetName()
-        {
-            return _name;
-        }
-
-        public void SetName(string value)
-        {
-            this._name = value;
-        }
-
-        public string GetLastName()
-        {
-            return _lastName;
-        }
-
-        public void SetLastName(string value)
-        {
-            this._lastName = value;
-        }
-
-        public string GetCompanyName()
-        {
-            return _companyName;
-        }
-
-        public void SetCompanyName(string value)
-        {
-            this._companyName = value;
         }
 
         public string GetAddress()
