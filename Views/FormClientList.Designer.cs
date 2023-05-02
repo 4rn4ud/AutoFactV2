@@ -141,7 +141,7 @@
             this.BtnCreateClient.Name = "BtnCreateClient";
             this.BtnCreateClient.Size = new System.Drawing.Size(75, 23);
             this.BtnCreateClient.TabIndex = 1;
-            this.BtnCreateClient.Text = "Create";
+            this.BtnCreateClient.Text = "Créer";
             this.BtnCreateClient.UseVisualStyleBackColor = true;
             this.BtnCreateClient.Click += new System.EventHandler(this.BtnCreateClient_Click);
             // 
