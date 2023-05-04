@@ -1,33 +1,33 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="SportLudique" />
+  <img src="./.github/app.gif" alt="AutoFact" />
 
   &#xa0;
 
-  <!-- <a href="https://sportludique.netlify.app">Demo</a> -->
+  <!-- <a href="https://AutoFact.netlify.app">Demo</a> -->
 </div>
 
-<h1 align="center">SportLudique</h1>
+<h1 align="center">AutoFact</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/4rn4ud/SportLudique?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/4rn4ud/AutoFact?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/4rn4ud/SportLudique?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/4rn4ud/AutoFact?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/4rn4ud/SportLudique?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/4rn4ud/AutoFact?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/4rn4ud/SportLudique?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/4rn4ud/AutoFact?color=56BEB8">
 
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/4rn4ud/SportLudique?color=56BEB8" /> -->
+  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/4rn4ud/AutoFact?color=56BEB8" /> -->
 
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/4rn4ud/SportLudique?color=56BEB8" /> -->
+  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/4rn4ud/AutoFact?color=56BEB8" /> -->
 
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/4rn4ud/SportLudique?color=56BEB8" /> -->
+  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/4rn4ud/AutoFact?color=56BEB8" /> -->
 </p>
 
 <!-- Status -->
 
 <h4 align="center"> 
-	🚧  SportLudique 🚀 En cours de développement...  🚧
+	🚧  AutoFact 🚀 En cours de développement...  🚧
 </h4> 
 
 <hr>
@@ -45,7 +45,7 @@
 
 ## :dart: À propos ##
 
-SportLudique est un site e-commerce dans le domaine du sport. Ce projet a été réalisé à l'aide de Symfony, un Framework PHP.
+AutoFact est un site e-commerce dans le domaine du sport. Ce projet a été réalisé à l'aide de Symfony, un Framework PHP.
 
 ## :sparkles: Caractéristiques ##
 
@@ -69,10 +69,10 @@ Veuillez à bien modifier le fichier php.ini ce trouvant dans C:\php8 et de déc
 
 ```bash
 # Cloner le projet
-$ git clone https://github.com/4rn4ud/SportLudique
+$ git clone https://github.com/4rn4ud/AutoFact
 
 # Accéder
-$ cd SportLudique
+$ cd AutoFact
 
 # Install dependencies
 $ composer install
@@ -87,14 +87,14 @@ $ symfony server:start
 
 Cloner le projet
 ```bash
-$ git clone https://github.com/4rn4ud/SportLudique
+$ git clone https://github.com/4rn4ud/AutoFact
 ```
 
 ### Installation des dépendances ###
 
 Accéder au dossier
 ```bash
-$ cd SportLudique
+$ cd AutoFact
 ```
 
 Installation de Composer
