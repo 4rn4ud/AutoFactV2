@@ -116,7 +116,7 @@
     <Compile Include="Views\Moral.cs" />
     <Compile Include="Views\Physical.cs" />
     <Compile Include="Views\Product.cs" />
-    <Compile Include="Views\Profil.cs" />
+    <Compile Include="Models\Profil.cs" />
     <Compile Include="Views\Quote.cs" />
     <Compile Include="Views\Status.cs" />
     <Compile Include="Views\Type.cs" />
@@ -166,7 +166,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Repository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
