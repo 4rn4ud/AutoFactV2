@@ -45,11 +45,11 @@
 
 ## :dart: À propos ##
 
-AutoFact est un site e-commerce dans le domaine du sport. Ce projet a été réalisé à l'aide de Symfony, un Framework PHP.
+AutoFact est une application de gestion de factures développée en C#. Cette application est censée aider les auto-entrepreneurs à mieux gérer leurs déclarations à l'URSSAF.
 
 ## :sparkles: Caractéristiques ##
 
-:heavy_check_mark: Authentification avec rôles;\
+:heavy_check_mark: Gestion des factures, des produits et des clients;\
 :heavy_check_mark: Feature 2;\
 :heavy_check_mark: Feature 3;
 
@@ -57,8 +57,7 @@ AutoFact est un site e-commerce dans le domaine du sport. Ce projet a été réa
 
 The following tools were used in this project:
 
-- [Symfony](https://symfony.com/)
-- [Bootstrap](https://getbootstrap.com/)
+- [Visual Studio](https://visualstudio.microsoft.com/fr/)
 
 ## :white_check_mark: Prérequis ##
 
@@ -69,7 +68,7 @@ Veuillez à bien modifier le fichier php.ini ce trouvant dans C:\php8 et de déc
 
 ```bash
 # Cloner le projet
-$ git clone https://github.com/4rn4ud/AutoFact
+$ git clone https://github.com/4rn4ud/AutoFactV2
 
 # Accéder
 $ cd AutoFact
