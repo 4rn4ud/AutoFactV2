@@ -84,7 +84,7 @@ Cloner le projet
 $ git clone https://github.com/4rn4ud/AutoFactV2
 ```
 
-### Installation des dépendances ###
+### Lancement de la solution ###
 
 Accéder au dossier
 ```bash
