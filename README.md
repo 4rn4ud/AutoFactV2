@@ -61,8 +61,7 @@ The following tools were used in this project:
 
 ## :white_check_mark: Prérequis ##
 
-Avant de commencer :checkered_flag:, vous avez besoin d'avoir [Git](https://git-scm.com/downloads), [PHP](https://www.php.net/downloads) et d'un serveur [MySQL](https://dev.mysql.com/downloads/) d'installés.\
-Veuillez à bien modifier le fichier php.ini ce trouvant dans C:\php8 et de décommenter la ligne contenant ```#extension=pdo_mysql``` si cela n'est pas déjà fait.
+Avant de commencer :checkered_flag:, vous avez besoin d'avoir [Git](https://git-scm.com/downloads), [Visual Studio 2022](https://visualstudio.microsoft.com/fr/) et [DB Browser for SQLite](https://sqlitebrowser.org/dl/) d'installés.
 
 ## :checkered_flag: Commencer ##
 
@@ -71,40 +70,30 @@ Veuillez à bien modifier le fichier php.ini ce trouvant dans C:\php8 et de déc
 $ git clone https://github.com/4rn4ud/AutoFactV2
 
 # Accéder
-$ cd AutoFact
-
-# Install dependencies
-$ composer install
+$ cd AutoFactV2
 
 # Lancer le projet
-$ symfony server:start
+$ start AutoFact2.sln
 
-# The server will initialize in the <http://localhost:8000>
 ```
 
 ### Récupérer le projet ###
 
 Cloner le projet
 ```bash
-$ git clone https://github.com/4rn4ud/AutoFact
+$ git clone https://github.com/4rn4ud/AutoFactV2
 ```
 
 ### Installation des dépendances ###
 
 Accéder au dossier
 ```bash
-$ cd AutoFact
+$ cd AutoFactV2
 ```
 
-Installation de Composer
+Lancer la solution
 ```bash
-$ composer install
-```
-
-Installation de Doctrine
-```bash
-$ composer require symfony/orm-pack
-$ composer require --dev symfony/maker-bundle
+$ start AutoFact2.sln
 ```
 
 ## :memo: Auteurs ##
