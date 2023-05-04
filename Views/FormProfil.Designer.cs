@@ -109,6 +109,7 @@
             // 
             // txtRaisonSocial
             // 
+            this.txtRaisonSocial.Enabled = false;
             this.txtRaisonSocial.Location = new System.Drawing.Point(539, 125);
             this.txtRaisonSocial.Name = "txtRaisonSocial";
             this.txtRaisonSocial.ReadOnly = true;
@@ -117,6 +118,7 @@
             // 
             // txtSiren
             // 
+            this.txtSiren.Enabled = false;
             this.txtSiren.Location = new System.Drawing.Point(539, 165);
             this.txtSiren.Name = "txtSiren";
             this.txtSiren.ReadOnly = true;
@@ -125,6 +127,7 @@
             // 
             // txtAdresse
             // 
+            this.txtAdresse.Enabled = false;
             this.txtAdresse.Location = new System.Drawing.Point(539, 200);
             this.txtAdresse.Name = "txtAdresse";
             this.txtAdresse.ReadOnly = true;
@@ -133,6 +136,7 @@
             // 
             // txtCP
             // 
+            this.txtCP.Enabled = false;
             this.txtCP.Location = new System.Drawing.Point(539, 232);
             this.txtCP.Name = "txtCP";
             this.txtCP.ReadOnly = true;
@@ -141,6 +145,7 @@
             // 
             // txtVille
             // 
+            this.txtVille.Enabled = false;
             this.txtVille.Location = new System.Drawing.Point(539, 261);
             this.txtVille.Name = "txtVille";
             this.txtVille.ReadOnly = true;
@@ -149,6 +154,7 @@
             // 
             // txtTel
             // 
+            this.txtTel.Enabled = false;
             this.txtTel.Location = new System.Drawing.Point(539, 293);
             this.txtTel.Name = "txtTel";
             this.txtTel.ReadOnly = true;
@@ -157,6 +163,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Enabled = false;
             this.txtEmail.Location = new System.Drawing.Point(539, 332);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
