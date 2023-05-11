@@ -112,6 +112,12 @@
     <Compile Include="Views\FormProfil.Designer.cs">
       <DependentUpon>FormProfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormProfilUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormProfilUpdate.Designer.cs">
+      <DependentUpon>FormProfilUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Invoiceline.cs" />
     <Compile Include="Views\Moral.cs" />
     <Compile Include="Views\Physical.cs" />
@@ -149,6 +155,9 @@
     </Compile>
     <EmbeddedResource Include="Views\FormProfil.resx">
       <DependentUpon>FormProfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormProfilUpdate.resx">
+      <DependentUpon>FormProfilUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
