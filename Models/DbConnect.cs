@@ -42,6 +42,3 @@ namespace AutoFact2.Models
 
     }
 }
-
-
-
