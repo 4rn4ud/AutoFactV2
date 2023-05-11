@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.ColIdType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnBack = new System.Windows.Forms.Button();
             this.ColIdInvoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColIdCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CIdProduit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPromo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.ColIdType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +56,33 @@
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dataGridView1.Size = new System.Drawing.Size(723, 150);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // ColIdInvoice
+            // 
+            this.ColIdInvoice.HeaderText = "Id";
+            this.ColIdInvoice.Name = "ColIdInvoice";
+            this.ColIdInvoice.ReadOnly = true;
+            // 
+            // ColIdCustomer
+            // 
+            this.ColIdCustomer.HeaderText = "IdCustomer";
+            this.ColIdCustomer.Name = "ColIdCustomer";
+            this.ColIdCustomer.ReadOnly = true;
+            // 
+            // CIdProduit
+            // 
+            this.CIdProduit.HeaderText = "IdProduit";
+            this.CIdProduit.Name = "CIdProduit";
+            // 
+            // ColQuantity
+            // 
+            this.ColQuantity.HeaderText = "Quantiter";
+            this.ColQuantity.Name = "ColQuantity";
+            // 
+            // ColPromo
+            // 
+            this.ColPromo.HeaderText = "Promotion";
+            this.ColPromo.Name = "ColPromo";
             // 
             // dataGridView3
             // 
@@ -89,33 +116,7 @@
             this.BtnBack.TabIndex = 3;
             this.BtnBack.Text = "Retour";
             this.BtnBack.UseVisualStyleBackColor = true;
-            // 
-            // ColIdInvoice
-            // 
-            this.ColIdInvoice.HeaderText = "Id";
-            this.ColIdInvoice.Name = "ColIdInvoice";
-            this.ColIdInvoice.ReadOnly = true;
-            // 
-            // ColIdCustomer
-            // 
-            this.ColIdCustomer.HeaderText = "IdCustomer";
-            this.ColIdCustomer.Name = "ColIdCustomer";
-            this.ColIdCustomer.ReadOnly = true;
-            // 
-            // CIdProduit
-            // 
-            this.CIdProduit.HeaderText = "IdProduit";
-            this.CIdProduit.Name = "CIdProduit";
-            // 
-            // ColQuantity
-            // 
-            this.ColQuantity.HeaderText = "Quantiter";
-            this.ColQuantity.Name = "ColQuantity";
-            // 
-            // ColPromo
-            // 
-            this.ColPromo.HeaderText = "Promotion";
-            this.ColPromo.Name = "ColPromo";
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // FormInvoiceList
             // 

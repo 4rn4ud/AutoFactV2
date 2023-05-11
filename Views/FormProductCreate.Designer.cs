@@ -96,6 +96,7 @@
             this.BtnBack.TabIndex = 7;
             this.BtnBack.Text = "Retour";
             this.BtnBack.UseVisualStyleBackColor = true;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // ComboType
             // 
