@@ -26,7 +26,13 @@ namespace AutoFact2.Views
          {
             foreach(Profil unProfil in profilController.findAll())
             {
+                txtRaisonSocial.Text = unProfil.GetSocialReason();
                 txtSiren.Text = unProfil.GetSiren().ToString();
+                txtAdresse.Text = unProfil.GetAdress();
+                txtCP.Text = unProfil.GetPostalCode().ToString();
+                txtVille.Text = unProfil.GetCity();
+                txtTel.Text = unProfil.GetTel();
+                txtEmail.Text = unProfil.GetMail();
                 MessageBox.Show("tst");
             }
 

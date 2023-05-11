@@ -38,14 +38,14 @@ namespace AutoFact2.Repository
             {
                 while (reader.Read())
                 {
-                    id = reader.GetInt32(0);
+                    id = Convert.ToInt32(reader["id"]);
                     raisonSocial = reader.GetString(1);
-                    siren = reader.GetInt32(2);
+                    siren = Convert.ToInt32(reader["siren"]);
                     adresse = reader.GetString(3);
-                    cp = reader.GetInt32(4);
-                    ville = reader.GetString(5);
-                    tel = reader.GetString(6);
-                    mail = reader.GetString(7);
+                    cp = Convert.ToInt32(reader["postalCode"]);
+                    ville = Convert.ToString(reader["city"]);
+                    tel = Convert.ToString(reader["tel"]);
+                    mail = Convert.ToString(reader["mail"]);
 
                     lesProfils.Add(new Profil(id, raisonSocial, siren, adresse, cp, ville, tel, mail));
                 }
