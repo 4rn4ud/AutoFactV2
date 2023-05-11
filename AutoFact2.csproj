@@ -65,9 +65,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\MenuController.cs" />
-    <Compile Include="Views\Category.cs" />
-    <Compile Include="Views\Customer.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Models\DbConnect.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Views\FormClientCreate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,14 +119,14 @@
     <Compile Include="Views\FormProfilUpdate.Designer.cs">
       <DependentUpon>FormProfilUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Invoiceline.cs" />
-    <Compile Include="Views\Moral.cs" />
-    <Compile Include="Views\Physical.cs" />
-    <Compile Include="Views\Product.cs" />
+    <Compile Include="Models\Invoiceline.cs" />
+    <Compile Include="Models\Moral.cs" />
+    <Compile Include="Models\Physical.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Profil.cs" />
-    <Compile Include="Views\Quote.cs" />
-    <Compile Include="Views\Status.cs" />
-    <Compile Include="Views\Type.cs" />
+    <Compile Include="Models\Quote.cs" />
+    <Compile Include="Models\Status.cs" />
+    <Compile Include="Models\Type.cs" />
     <EmbeddedResource Include="Views\FormClientCreate.resx">
       <DependentUpon>FormClientCreate.cs</DependentUpon>
     </EmbeddedResource>
