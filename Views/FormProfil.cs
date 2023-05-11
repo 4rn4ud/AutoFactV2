@@ -45,5 +45,10 @@ namespace AutoFact2.Views
             connection.Close();
 
         }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

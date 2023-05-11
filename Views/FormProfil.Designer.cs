@@ -42,6 +42,7 @@
             this.txtVille = new System.Windows.Forms.TextBox();
             this.txtTel = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.BtnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -184,11 +185,22 @@
             this.txtEmail.Size = new System.Drawing.Size(140, 20);
             this.txtEmail.TabIndex = 13;
             // 
+            // BtnBack
+            // 
+            this.BtnBack.Location = new System.Drawing.Point(28, 31);
+            this.BtnBack.Name = "BtnBack";
+            this.BtnBack.Size = new System.Drawing.Size(75, 23);
+            this.BtnBack.TabIndex = 14;
+            this.BtnBack.Text = "Retour";
+            this.BtnBack.UseVisualStyleBackColor = true;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
+            // 
             // FormProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtTel);
             this.Controls.Add(this.txtVille);
@@ -229,5 +241,6 @@
         private System.Windows.Forms.TextBox txtVille;
         private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Button BtnBack;
     }
 }
