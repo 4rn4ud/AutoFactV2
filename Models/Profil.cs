@@ -9,6 +9,7 @@ namespace AutoFact2.Views
 {
     public class Profil
     {
+        private int _id;
         private string _socialReason;
         private int _siren;
         private string _adress;
@@ -17,8 +18,9 @@ namespace AutoFact2.Views
         private string _tel;
         private string _mail;
 
-        public Profil(string socialReason, int siren, string adress, int postalCode, string city, string tel, string mail)
+        public Profil(int id, string socialReason, int siren, string adress, int postalCode, string city, string tel, string mail)
         {
+            this._id = id;
             this._socialReason = socialReason;
             this._siren = siren;
             this._adress = adress;
@@ -26,6 +28,16 @@ namespace AutoFact2.Views
             this._city = city;
             this._tel = tel;
             this._mail = mail;
+        }
+
+        public int GetId()
+        {
+            return _id;
+        }
+
+        public void SetId(int value)
+        {
+            this._id = value;
         }
 
         public string GetSocialReason()

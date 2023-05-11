@@ -16,6 +16,7 @@ namespace AutoFact2.Repository
         }   
         public List<Profil> findAll()
         {
+            int id;
             string raisonSocial;
             int siren;
             string adresse;
@@ -37,6 +38,7 @@ namespace AutoFact2.Repository
             {
                 while (reader.Read())
                 {
+                    id = reader.GetInt32(0);
                     raisonSocial = reader.GetString(1);
                     siren = reader.GetInt32(2);
                     adresse = reader.GetString(3);
@@ -45,7 +47,7 @@ namespace AutoFact2.Repository
                     tel = reader.GetString(6);
                     mail = reader.GetString(7);
 
-                    lesProfils.Add(new Profil(raisonSocial, siren, adresse, cp, ville, tel, mail));
+                    lesProfils.Add(new Profil(id, raisonSocial, siren, adresse, cp, ville, tel, mail));
                 }
 
             }
