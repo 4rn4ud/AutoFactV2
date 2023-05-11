@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AutoFact2.Views
 {
-    class Profil
+    public class Profil
     {
         private string _socialReason;
         private int _siren;
