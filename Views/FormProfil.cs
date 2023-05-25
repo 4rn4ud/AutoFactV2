@@ -33,6 +33,7 @@ namespace AutoFact2.Views
                 txtVille.Text = unProfil.GetCity();
                 txtTel.Text = unProfil.GetTel();
                 txtEmail.Text = unProfil.GetMail();
+
                 MessageBox.Show("tst");
             }
 
