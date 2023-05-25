@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutoFact2.Views
 {
-    class Quote
+    public class Quote
     {
         private int _id;
 
