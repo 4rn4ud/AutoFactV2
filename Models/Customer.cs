@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace AutoFact2.Views
 {
-    abstract class Customer
+    public abstract class Customer
     {
         private int _id;
-        private string _address;
-        private string _postalCode;
+        private string _adress;
+        private int _postalCode;
         private string _city;
         private string _mail;
         private string _tel;
         private List<Quote> _listQuote;
 
-        public Customer(int id, string address, string postalCode, string city, string mail, string tel)
+        public Customer(int id, string adress, int postalCode, string city, string mail, string tel)
         {
             this._id = id;
-            this._address = address;
+            this._adress = adress;
             this._postalCode = postalCode;
             this._city = city;
             this._mail = mail;
@@ -37,22 +37,22 @@ namespace AutoFact2.Views
             this._id = value;
         }
 
-        public string GetAddress()
+        public string GetAdress()
         {
-            return _address;
+            return _adress;
         }
 
-        public void SetAddress(string value)
+        public void SetAdress(string value)
         {
-            this._address = value;
+            this._adress = value;
         }
 
-        public string GetPostalCode()
+        public int GetPostalCode()
         {
             return _postalCode;
         }
 
-        public void SetPostalCode(string value)
+        public void SetPostalCode(int value)
         {
             this._postalCode = value;
         }
@@ -95,6 +95,21 @@ namespace AutoFact2.Views
         public void SetQuote(Quote quote)
         {
             this._listQuote.Add(quote);
+        }
+
+        public virtual string GetName()
+        {
+            return string.Empty;
+        }
+
+        public virtual string GetLastname()
+        {
+            return string.Empty;
+        }
+
+        public virtual string GetCompanyName()
+        {
+            return string.Empty;
         }
     }
 }
