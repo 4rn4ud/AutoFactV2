@@ -24,6 +24,7 @@ namespace AutoFact2.Repository
             string ville;
             string tel;
             string mail;
+
             List<Profil> lesProfils = new List<Profil>();
             string connectionString = "Data Source=../../AutoFact2BDD.db";
             SQLiteConnection connection = new SQLiteConnection(connectionString);
@@ -39,9 +40,9 @@ namespace AutoFact2.Repository
                 while (reader.Read())
                 {
                     id = Convert.ToInt32(reader["id"]);
-                    raisonSocial = reader.GetString(1);
+                    raisonSocial = Convert.ToString(reader["socialReason"]);
                     siren = Convert.ToInt32(reader["siren"]);
-                    adresse = reader.GetString(3);
+                    adresse = Convert.ToString(reader["adress"]);
                     cp = Convert.ToInt32(reader["postalCode"]);
                     ville = Convert.ToString(reader["city"]);
                     tel = Convert.ToString(reader["tel"]);
@@ -49,7 +50,6 @@ namespace AutoFact2.Repository
 
                     lesProfils.Add(new Profil(id, raisonSocial, siren, adresse, cp, ville, tel, mail));
                 }
-
             }
             reader.Close();
             connection.Close();
