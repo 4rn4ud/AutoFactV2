@@ -47,7 +47,7 @@ namespace AutoFact2
                 string dgvCity = unClient.GetCity();
                 string dgvMail = unClient.GetMail();
                 string dgvTel = unClient.GetTel();
-                this.DgvClient.Rows.Add(dgvId, dgvName, dgvLastName, dgvCompanyName, dgvAdress, dgvPostalCode, dgvCity, dgvMail, dgvTel);
+                this.DgvClient.Rows.Add(dgvId, dgvName, dgvLastName, dgvCompanyName, dgvAdress, dgvPostalCode, dgvCity, dgvMail, dgvTel, "Modifier", "Supprimer");
             }
         }
     }

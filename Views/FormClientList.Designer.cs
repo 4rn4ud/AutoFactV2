@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.DgvClient = new System.Windows.Forms.DataGridView();
+            this.BtnCreateClient = new System.Windows.Forms.Button();
+            this.BtnBack = new System.Windows.Forms.Button();
             this.ColId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,8 +42,6 @@
             this.ColTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColBtnUpdate = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColBtnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.BtnCreateClient = new System.Windows.Forms.Button();
-            this.BtnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvClient)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +67,26 @@
             this.DgvClient.Size = new System.Drawing.Size(1150, 150);
             this.DgvClient.TabIndex = 0;
             this.DgvClient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // BtnCreateClient
+            // 
+            this.BtnCreateClient.Location = new System.Drawing.Point(12, 316);
+            this.BtnCreateClient.Name = "BtnCreateClient";
+            this.BtnCreateClient.Size = new System.Drawing.Size(75, 23);
+            this.BtnCreateClient.TabIndex = 1;
+            this.BtnCreateClient.Text = "Créer";
+            this.BtnCreateClient.UseVisualStyleBackColor = true;
+            this.BtnCreateClient.Click += new System.EventHandler(this.BtnCreateClient_Click);
+            // 
+            // BtnBack
+            // 
+            this.BtnBack.Location = new System.Drawing.Point(12, 13);
+            this.BtnBack.Name = "BtnBack";
+            this.BtnBack.Size = new System.Drawing.Size(75, 23);
+            this.BtnBack.TabIndex = 2;
+            this.BtnBack.Text = "retour";
+            this.BtnBack.UseVisualStyleBackColor = true;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // ColId
             // 
@@ -98,7 +118,7 @@
             // 
             // ColPostalCode
             // 
-            this.ColPostalCode.HeaderText = "Code Postal";
+            this.ColPostalCode.HeaderText = "Code postal";
             this.ColPostalCode.Name = "ColPostalCode";
             this.ColPostalCode.ReadOnly = true;
             // 
@@ -116,7 +136,7 @@
             // 
             // ColTel
             // 
-            this.ColTel.HeaderText = "Telephone";
+            this.ColTel.HeaderText = "Téléphone";
             this.ColTel.Name = "ColTel";
             this.ColTel.ReadOnly = true;
             // 
@@ -134,26 +154,6 @@
             this.ColBtnDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColBtnDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ColBtnDelete.Text = "Delete";
-            // 
-            // BtnCreateClient
-            // 
-            this.BtnCreateClient.Location = new System.Drawing.Point(12, 316);
-            this.BtnCreateClient.Name = "BtnCreateClient";
-            this.BtnCreateClient.Size = new System.Drawing.Size(75, 23);
-            this.BtnCreateClient.TabIndex = 1;
-            this.BtnCreateClient.Text = "Créer";
-            this.BtnCreateClient.UseVisualStyleBackColor = true;
-            this.BtnCreateClient.Click += new System.EventHandler(this.BtnCreateClient_Click);
-            // 
-            // BtnBack
-            // 
-            this.BtnBack.Location = new System.Drawing.Point(12, 13);
-            this.BtnBack.Name = "BtnBack";
-            this.BtnBack.Size = new System.Drawing.Size(75, 23);
-            this.BtnBack.TabIndex = 2;
-            this.BtnBack.Text = "retour";
-            this.BtnBack.UseVisualStyleBackColor = true;
-            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // FormClientList
             // 
@@ -176,6 +176,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DgvClient;
+        private System.Windows.Forms.Button BtnCreateClient;
+        private System.Windows.Forms.Button BtnBack;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColSurname;
@@ -187,7 +189,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTel;
         private System.Windows.Forms.DataGridViewButtonColumn ColBtnUpdate;
         private System.Windows.Forms.DataGridViewButtonColumn ColBtnDelete;
-        private System.Windows.Forms.Button BtnCreateClient;
-        private System.Windows.Forms.Button BtnBack;
     }
 }
