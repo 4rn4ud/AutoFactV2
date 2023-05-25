@@ -79,6 +79,12 @@
     <Compile Include="Views\FormClientCreate.Designer.cs">
       <DependentUpon>FormClientCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormClientUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormClientUpdate.Designer.cs">
+      <DependentUpon>FormClientUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormInvoiceList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     <Compile Include="Models\Type.cs" />
     <EmbeddedResource Include="Views\FormClientCreate.resx">
       <DependentUpon>FormClientCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormClientUpdate.resx">
+      <DependentUpon>FormClientUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormInvoiceList.resx">
       <DependentUpon>FormInvoiceList.cs</DependentUpon>
