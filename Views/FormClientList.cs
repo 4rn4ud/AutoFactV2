@@ -21,7 +21,14 @@ namespace AutoFact2
             customerController = new CustomerController();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e){}
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.DgvClient.Columns[e.ColumnIndex].Name == "ColBtnUpdate")
+            {
+                FormClientUpdate ClientUpdate = new FormClientUpdate();
+                ClientUpdate.Show();
+            } //e.RowIndex
+        }
 
         private void BtnCreateClient_Click(object sender, EventArgs e)
         {
