@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AutoFact2
+namespace AutoFact2.Views
 {
-    public partial class FormInvoiceList : Form
+    public partial class FormProfilUpdate : Form
     {
-        public FormInvoiceList()
+        public FormProfilUpdate()
         {
             InitializeComponent();
         }
 
-        private void BtnBack_Click(object sender, EventArgs e)
+        private void FormProfilUpdate_Load(object sender, EventArgs e)
         {
-            this.Close();
+
         }
     }
 }

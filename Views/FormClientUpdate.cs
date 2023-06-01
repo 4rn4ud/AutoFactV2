@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AutoFact2
+namespace AutoFact2.Views
 {
-    public partial class FormInvoiceList : Form
+    public partial class FormClientUpdate : Form
     {
-        public FormInvoiceList()
+        public FormClientUpdate()
         {
             InitializeComponent();
         }
@@ -20,6 +20,11 @@ namespace AutoFact2
         private void BtnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FormClientUpdate_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

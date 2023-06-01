@@ -65,7 +65,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\MenuController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\ProfilController.cs" />
+    <Compile Include="Models\DbConnect.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Repository\CustomerRepository.cs" />
+    <Compile Include="Repository\ProfilRepository.cs" />
+    <Compile Include="Views\FormClientCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormClientCreate.Designer.cs">
+      <DependentUpon>FormClientCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormClientUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormClientUpdate.Designer.cs">
+      <DependentUpon>FormClientUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormInvoiceList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +103,12 @@
     <Compile Include="Views\FormClientList.Designer.cs">
       <DependentUpon>FormClientList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormProductCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormProductCreate.Designer.cs">
+      <DependentUpon>FormProductCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormProductList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +123,26 @@
     <Compile Include="Views\FormProfil.Designer.cs">
       <DependentUpon>FormProfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormProfilUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormProfilUpdate.Designer.cs">
+      <DependentUpon>FormProfilUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Invoiceline.cs" />
+    <Compile Include="Models\Moral.cs" />
+    <Compile Include="Models\Physical.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Profil.cs" />
+    <Compile Include="Models\Quote.cs" />
+    <Compile Include="Models\Status.cs" />
+    <Compile Include="Models\Type.cs" />
+    <EmbeddedResource Include="Views\FormClientCreate.resx">
+      <DependentUpon>FormClientCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormClientUpdate.resx">
+      <DependentUpon>FormClientUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FormInvoiceList.resx">
       <DependentUpon>FormInvoiceList.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormClientList.resx">
       <DependentUpon>FormClientList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormProductCreate.resx">
+      <DependentUpon>FormProductCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormProductList.resx">
       <DependentUpon>FormProductList.cs</DependentUpon>
@@ -121,6 +169,9 @@
     </Compile>
     <EmbeddedResource Include="Views\FormProfil.resx">
       <DependentUpon>FormProfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormProfilUpdate.resx">
+      <DependentUpon>FormProfilUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -138,8 +189,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Models\" />
-    <Folder Include="Repository\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,5 +1,4 @@
-﻿using AutoFact2.Views;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AutoFact2
+namespace AutoFact2.Views
 {
-    public partial class FormProductList : Form
+    public partial class FormClientCreate : Form
     {
-        public FormProductList()
+        public FormClientCreate()
         {
             InitializeComponent();
-        }
-
-        private void BtnCreate_Click(object sender, EventArgs e)
-        {
-            FormProductCreate ProductCreate = new FormProductCreate();
-            ProductCreate.Show();
         }
 
         private void BtnBack_Click(object sender, EventArgs e)
