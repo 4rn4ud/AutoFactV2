@@ -32,7 +32,7 @@ namespace AutoFact2
                 int id = Convert.ToInt32(DgvClient.Rows[e.RowIndex].Cells["ColId"].Value);
                 FormClientUpdate ClientUpdate = new FormClientUpdate(id);
                 ClientUpdate.ShowDialog();
-                MessageBox.Show("sortis boite.");
+                //MessageBox.Show("sortis boite.");
                 DgvClient.Refresh();
 
                 LeRefresh();

@@ -41,6 +41,7 @@ namespace AutoFact2.Views
             MessageBox.Show("Le client a bien été ajouté à la base de données.");
 
             ResetTextBoxes();
+            this.Close();
         }
         private void ResetTextBoxes()
         {

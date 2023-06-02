@@ -68,6 +68,7 @@ namespace AutoFact2.Views
             customerController.update(id, name, lastName, companyName, address, postalCode, city, mail, tel);
             //int id, string name, string lastName, string companyName, string address, int postalCode, string city, string mail, string tel
             MessageBox.Show("Le client a bien été Modifier dans la base de données.");
+            this.Close();
         }
     }
 }
