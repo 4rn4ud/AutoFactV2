@@ -38,10 +38,11 @@ namespace AutoFact2.Views
 
             customerController.create(name, lastName, companyName, address, postalCode, city, mail, tel);
 
-            MessageBox.Show("Le client a bien été ajouté à la base de données.");
+            //MessageBox.Show("Le client a bien été ajouté à la base de données.");
 
             ResetTextBoxes();
             this.Close();
+            
         }
         private void ResetTextBoxes()
         {

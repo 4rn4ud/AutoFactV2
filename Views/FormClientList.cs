@@ -34,10 +34,7 @@ namespace AutoFact2
                 ClientUpdate.ShowDialog();
                 //MessageBox.Show("sortis boite.");
                 DgvClient.Refresh();
-
                 LeRefresh();
-
-
 
 
             } //e.RowIndex
@@ -66,6 +63,19 @@ namespace AutoFact2
             FormClientCreate ClientCreate = new FormClientCreate();
             ClientCreate.ShowDialog();
             LeRefresh();
+            DialogResult result = MessageBox.Show("Voulez vous crée un nouveaux client ?", "Confirmation de l'enregistrement", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            bool leresult = false;
+            // Vérifier si l'utilisateur a cliqué sur le bouton Oui
+            if (result == DialogResult.Yes)
+            {
+                leresult = true;
+                
+                while (leresult == true)
+                {
+                    leresult = LeCreate();
+                }
+            }
+
         }
 
         private void BtnBack_Click(object sender, EventArgs e)
@@ -75,21 +85,10 @@ namespace AutoFact2
 
         private void FormClientList_Load(object sender, EventArgs e)
         {
-            foreach (var unClient in customerController.findAll())
-            {
-                string dgvId = unClient.GetId().ToString();
-                string dgvName = unClient.GetName();
-                string dgvLastName = unClient.GetLastname();
-                string dgvCompanyName = unClient.GetCompanyName();
-                string dgvAdress = unClient.GetAdress();
-                string dgvPostalCode = unClient.GetPostalCode().ToString();
-                string dgvCity = unClient.GetCity();
-                string dgvMail = unClient.GetMail();
-                string dgvTel = unClient.GetTel();
-                this.DgvClient.Rows.Add(dgvId, dgvName, dgvLastName, dgvCompanyName, dgvAdress, dgvPostalCode, dgvCity, dgvMail, dgvTel, "Modifier", "Supprimer");
-            }
+            LeRefresh();
         }
 
+        //Fonction de rafraichissement du datagriedview.
         public void LeRefresh()
         {
             this.DgvClient.Rows.Clear();
@@ -106,6 +105,20 @@ namespace AutoFact2
                 string dgvTel = unClient.GetTel();
                 this.DgvClient.Rows.Add(dgvId, dgvName, dgvLastName, dgvCompanyName, dgvAdress, dgvPostalCode, dgvCity, dgvMail, dgvTel, "Modifier", "Supprimer");
             }
+        }
+
+        public bool LeCreate()
+        {
+            FormClientCreate ClientCreate = new FormClientCreate();
+            ClientCreate.ShowDialog();
+            LeRefresh();
+            DialogResult result = MessageBox.Show("Voulez vous crée un nouveaux client ?", "Confirmation de l'enregistrement", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
+            if (result == DialogResult.Yes)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
