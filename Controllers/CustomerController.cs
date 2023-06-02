@@ -26,5 +26,10 @@ namespace AutoFact2.Controllers
         {
             customerRepository.create(name, lastName, companyName, address, postalCode, city, mail, tel);
         }
+
+        public void delete(int id)
+        {
+            customerRepository.delete(id);
+        }
     }
 }

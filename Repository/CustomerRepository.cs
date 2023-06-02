@@ -101,5 +101,29 @@ namespace AutoFact2.Repository
             }
             connection.Close();
         }
+
+        public void delete(int id)
+        {
+            string connectionString = "Data Source=../../AutoFact2BDD.db";
+            SQLiteConnection connection = new SQLiteConnection(connectionString);
+
+            string deleteSql = "";
+
+                deleteSql = "DELETE FROM Customer WHERE id = @id; " +
+                            "VALUES (@id)";
+            
+
+            connection.Open();
+
+            using (SQLiteCommand command = new SQLiteCommand(deleteSql, connection))
+            {
+                command.Parameters.AddWithValue("@id", id);
+
+                command.ExecuteNonQuery();
+            }
+            connection.Close();
+
+
+        }
     }
 }
