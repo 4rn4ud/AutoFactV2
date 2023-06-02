@@ -20,5 +20,27 @@ namespace AutoFact2.Controllers
         {
             return customerRepository.findAll();
         }
+<<<<<<< Updated upstream
+=======
+        public void create(string name, string lastName, string companyName, string address, int postalCode, string city, string mail, string tel)
+        {
+            customerRepository.create(name, lastName, companyName, address, postalCode, city, mail, tel);
+        }
+
+        public void delete(int id)
+        {
+            customerRepository.delete(id);
+        }
+
+        public void update(int id, string name, string lastName, string companyName, string address, int postalCode, string city, string mail, string tel)
+        {
+            customerRepository.update(id, name, lastName, companyName, address, postalCode, city, mail, tel);
+        }
+
+        public void RecupId(int id)
+        {
+            FormClientUpdate.RecupId(id);
+        }
+>>>>>>> Stashed changes
     }
 }

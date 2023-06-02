@@ -25,7 +25,9 @@ namespace AutoFact2
         {
             if (this.DgvClient.Columns[e.ColumnIndex].Name == "ColBtnUpdate")
             {
+                int id = Convert.ToInt32(DgvClient.Rows[e.RowIndex].Cells["ColId"].Value);
                 FormClientUpdate ClientUpdate = new FormClientUpdate();
+                customerController.RecupId(id);
                 ClientUpdate.Show();
             } //e.RowIndex
         }
