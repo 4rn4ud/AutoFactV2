@@ -67,11 +67,13 @@
   <ItemGroup>
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProfilController.cs" />
     <Compile Include="Models\DbConnect.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
+    <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\ProfilRepository.cs" />
     <Compile Include="Views\FormClientCreate.cs">
       <SubType>Form</SubType>

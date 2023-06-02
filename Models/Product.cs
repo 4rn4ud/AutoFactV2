@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutoFact2.Views
 {
-    class Product
+    public class Product
     {
         private int _id;
         private string _libel;
