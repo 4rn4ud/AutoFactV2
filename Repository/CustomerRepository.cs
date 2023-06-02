@@ -64,7 +64,6 @@ namespace AutoFact2.Repository
             connection.Close();
 
             return lesClients;
-
         }
     }
 }
