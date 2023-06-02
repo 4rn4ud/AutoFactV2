@@ -65,5 +65,41 @@ namespace AutoFact2.Repository
 
             return lesClients;
         }
+
+        public void create(string name, string lastName, string companyName, string address, int postalCode, string city, string mail, string tel)
+        {
+            string connectionString = "Data Source=../../AutoFact2BDD.db";
+            SQLiteConnection connection = new SQLiteConnection(connectionString);
+
+            string insertSql = "";
+
+            if (name == "" && lastName == "")
+            {
+                insertSql = "INSERT INTO Customer (name, lastName, companyName, adress, postalCode, city, mail, tel) " +
+                            "VALUES (NULL, NULL, @CompanyName, @Address, @PostalCode, @City, @Mail, @Tel)";
+            }
+            else if (companyName == "")
+            {
+                insertSql = "INSERT INTO Customer (name, lastName, companyName, adress, postalCode, city, mail, tel) " +
+                            "VALUES (@Name, @LastName, NULL, @Address, @PostalCode, @City, @Mail, @Tel)";
+            }
+
+            connection.Open();
+
+            using (SQLiteCommand command = new SQLiteCommand(insertSql, connection))
+            {
+                command.Parameters.AddWithValue("@Name", name);
+                command.Parameters.AddWithValue("@LastName", lastName);
+                command.Parameters.AddWithValue("@CompanyName", companyName);
+                command.Parameters.AddWithValue("@Address", address);
+                command.Parameters.AddWithValue("@PostalCode", postalCode);
+                command.Parameters.AddWithValue("@City", city);
+                command.Parameters.AddWithValue("@Mail", mail);
+                command.Parameters.AddWithValue("@Tel", tel);
+
+                command.ExecuteNonQuery();
+            }
+            connection.Close();
+        }
     }
 }
