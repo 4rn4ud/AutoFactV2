@@ -44,6 +44,7 @@ namespace AutoFact2
                     customerController.delete(id);
 
                 }
+
             } 
         }
 
