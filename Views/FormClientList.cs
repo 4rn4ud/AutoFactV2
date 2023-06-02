@@ -28,6 +28,23 @@ namespace AutoFact2
                 FormClientUpdate ClientUpdate = new FormClientUpdate();
                 ClientUpdate.Show();
             } //e.RowIndex
+
+            if (this.DgvClient.Columns[e.ColumnIndex].Name == "ColBtnDelete")
+            {
+
+                // Récupérez la valeur de l'ID de la ligne correspondante
+                int id = Convert.ToInt32(DgvClient.Rows[e.RowIndex].Cells["ColId"].Value);
+
+                DialogResult result = MessageBox.Show("Êtes-vous sûr de vouloir supprimer cet enregistrement ?", "Confirmation de suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                // Vérifier si l'utilisateur a cliqué sur le bouton Oui
+                if (result == DialogResult.Yes)
+                {
+                    // Appeler la fonction de suppression avec l'ID récupéré
+                    customerController.delete(id);
+
+                }
+            } 
         }
 
         private void BtnCreateClient_Click(object sender, EventArgs e)
