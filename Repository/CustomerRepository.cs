@@ -65,8 +65,11 @@ namespace AutoFact2.Repository
 
             return lesClients;
         }
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> 31b1959b8dbbe2842f651191acdd16bfe9cbcaf1
 
         public void create(string name, string lastName, string companyName, string address, int postalCode, string city, string mail, string tel)
         {
@@ -111,10 +114,16 @@ namespace AutoFact2.Repository
 
             string deleteSql = "";
 
+<<<<<<< HEAD
                 deleteSql = "DELETE FROM Customer WHERE id = @id; " +
                             "VALUES (@id)";
             
 
+=======
+            deleteSql = "DELETE FROM Customer WHERE id = @id; " +
+                        "VALUES (@id)";
+            
+>>>>>>> 31b1959b8dbbe2842f651191acdd16bfe9cbcaf1
             connection.Open();
 
             using (SQLiteCommand command = new SQLiteCommand(deleteSql, connection))
@@ -124,6 +133,7 @@ namespace AutoFact2.Repository
                 command.ExecuteNonQuery();
             }
             connection.Close();
+<<<<<<< HEAD
 
 
         }
@@ -168,5 +178,8 @@ namespace AutoFact2.Repository
         }
 
 >>>>>>> Stashed changes
+=======
+        }
+>>>>>>> 31b1959b8dbbe2842f651191acdd16bfe9cbcaf1
     }
 }
