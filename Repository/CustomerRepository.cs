@@ -109,10 +109,9 @@ namespace AutoFact2.Repository
 
             string deleteSql = "";
 
-                deleteSql = "DELETE FROM Customer WHERE id = @id; " +
-                            "VALUES (@id)";
+            deleteSql = "DELETE FROM Customer WHERE id = @id; " +
+                        "VALUES (@id)";
             
-
             connection.Open();
 
             using (SQLiteCommand command = new SQLiteCommand(deleteSql, connection))
@@ -122,8 +121,6 @@ namespace AutoFact2.Repository
                 command.ExecuteNonQuery();
             }
             connection.Close();
-
-
         }
     }
 }
