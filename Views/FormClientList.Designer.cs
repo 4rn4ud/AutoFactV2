@@ -60,19 +60,21 @@
             this.ColTel,
             this.ColBtnUpdate,
             this.ColBtnDelete});
-            this.DgvClient.Location = new System.Drawing.Point(12, 137);
+            this.DgvClient.Location = new System.Drawing.Point(16, 133);
+            this.DgvClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DgvClient.Name = "DgvClient";
             this.DgvClient.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DgvClient.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.DgvClient.Size = new System.Drawing.Size(1150, 150);
+            this.DgvClient.RowHeadersWidth = 51;
+            this.DgvClient.Size = new System.Drawing.Size(1516, 289);
             this.DgvClient.TabIndex = 0;
             this.DgvClient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // BtnCreateClient
             // 
-            this.BtnCreateClient.Location = new System.Drawing.Point(12, 316);
+            this.BtnCreateClient.Location = new System.Drawing.Point(16, 526);
+            this.BtnCreateClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnCreateClient.Name = "BtnCreateClient";
-            this.BtnCreateClient.Size = new System.Drawing.Size(75, 23);
+            this.BtnCreateClient.Size = new System.Drawing.Size(100, 28);
             this.BtnCreateClient.TabIndex = 1;
             this.BtnCreateClient.Text = "Créer";
             this.BtnCreateClient.UseVisualStyleBackColor = true;
@@ -80,9 +82,10 @@
             // 
             // BtnBack
             // 
-            this.BtnBack.Location = new System.Drawing.Point(12, 13);
+            this.BtnBack.Location = new System.Drawing.Point(16, 16);
+            this.BtnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnBack.Name = "BtnBack";
-            this.BtnBack.Size = new System.Drawing.Size(75, 23);
+            this.BtnBack.Size = new System.Drawing.Size(100, 28);
             this.BtnBack.TabIndex = 2;
             this.BtnBack.Text = "retour";
             this.BtnBack.UseVisualStyleBackColor = true;
@@ -91,78 +94,101 @@
             // ColId
             // 
             this.ColId.HeaderText = "Id";
+            this.ColId.MinimumWidth = 6;
             this.ColId.Name = "ColId";
+            this.ColId.Width = 25;
             // 
             // ColName
             // 
             this.ColName.HeaderText = "Prénom";
+            this.ColName.MinimumWidth = 6;
             this.ColName.Name = "ColName";
+            this.ColName.Width = 125;
             // 
             // ColSurname
             // 
             this.ColSurname.HeaderText = "Nom";
+            this.ColSurname.MinimumWidth = 6;
             this.ColSurname.Name = "ColSurname";
             this.ColSurname.ReadOnly = true;
+            this.ColSurname.Width = 125;
             // 
             // ColCompany
             // 
             this.ColCompany.HeaderText = "Nom compagnie";
+            this.ColCompany.MinimumWidth = 6;
             this.ColCompany.Name = "ColCompany";
             this.ColCompany.ReadOnly = true;
+            this.ColCompany.Width = 125;
             // 
             // ColAdresse
             // 
             this.ColAdresse.HeaderText = "Adresse";
+            this.ColAdresse.MinimumWidth = 6;
             this.ColAdresse.Name = "ColAdresse";
             this.ColAdresse.ReadOnly = true;
+            this.ColAdresse.Width = 125;
             // 
             // ColPostalCode
             // 
             this.ColPostalCode.HeaderText = "Code postal";
+            this.ColPostalCode.MinimumWidth = 6;
             this.ColPostalCode.Name = "ColPostalCode";
             this.ColPostalCode.ReadOnly = true;
+            this.ColPostalCode.Width = 50;
             // 
             // ColCity
             // 
             this.ColCity.HeaderText = "Ville";
+            this.ColCity.MinimumWidth = 6;
             this.ColCity.Name = "ColCity";
             this.ColCity.ReadOnly = true;
+            this.ColCity.Width = 125;
             // 
             // ColMail
             // 
             this.ColMail.HeaderText = "Mail";
+            this.ColMail.MinimumWidth = 6;
             this.ColMail.Name = "ColMail";
             this.ColMail.ReadOnly = true;
+            this.ColMail.Width = 125;
             // 
             // ColTel
             // 
             this.ColTel.HeaderText = "Téléphone";
+            this.ColTel.MinimumWidth = 6;
             this.ColTel.Name = "ColTel";
             this.ColTel.ReadOnly = true;
+            this.ColTel.Width = 75;
             // 
             // ColBtnUpdate
             // 
             this.ColBtnUpdate.HeaderText = "Update";
+            this.ColBtnUpdate.MinimumWidth = 6;
             this.ColBtnUpdate.Name = "ColBtnUpdate";
             this.ColBtnUpdate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColBtnUpdate.Text = "Update";
+            this.ColBtnUpdate.Width = 75;
             // 
             // ColBtnDelete
             // 
             this.ColBtnDelete.HeaderText = "Delete";
+            this.ColBtnDelete.MinimumWidth = 6;
             this.ColBtnDelete.Name = "ColBtnDelete";
             this.ColBtnDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColBtnDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ColBtnDelete.Text = "Delete";
+            this.ColBtnDelete.Width = 75;
             // 
             // FormClientList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 561);
+            this.ClientSize = new System.Drawing.Size(1582, 753);
             this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.BtnCreateClient);
             this.Controls.Add(this.DgvClient);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormClientList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

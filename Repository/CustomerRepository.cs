@@ -125,5 +125,46 @@ namespace AutoFact2.Repository
 
 
         }
+
+        public void update(int id, string name, string lastName, string companyName, string address, int postalCode, string city, string mail, string tel)
+        {
+            string connectionString = "Data Source=../../AutoFact2BDD.db";
+            SQLiteConnection connection = new SQLiteConnection(connectionString);
+
+            string updateSql = "";
+
+            if (name == "" && lastName == "")
+            {
+                updateSql = "UPDATE Customer " +
+                 "SET name = NULL, lastName = NULL, companyName = @CompanyName, adress = @Address, postalCode = @PostalCode, city = @City, mail = @Mail, tel = @Tel " +
+                 "WHERE id = @Id";
+
+            }
+            else if (companyName == "")
+            {
+                updateSql = "UPDATE Customer " +
+                 "SET name = @Name, lastName = @LastName, companyName = NULL, adress = @Address, postalCode = @PostalCode, city = @City, mail = @Mail, tel = @Tel " +
+                 "WHERE id = @Id";
+
+            }
+
+            connection.Open();
+
+            using (SQLiteCommand command = new SQLiteCommand(updateSql, connection))
+            {
+                command.Parameters.AddWithValue("@Id", id);
+                command.Parameters.AddWithValue("@Name", name);
+                command.Parameters.AddWithValue("@LastName", lastName);
+                command.Parameters.AddWithValue("@CompanyName", companyName);
+                command.Parameters.AddWithValue("@Address", address);
+                command.Parameters.AddWithValue("@PostalCode", postalCode);
+                command.Parameters.AddWithValue("@City", city);
+                command.Parameters.AddWithValue("@Mail", mail);
+                command.Parameters.AddWithValue("@Tel", tel);
+
+                command.ExecuteNonQuery();
+            }
+            connection.Close();
+        }
     }
 }

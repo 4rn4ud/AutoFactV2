@@ -22,6 +22,7 @@ namespace AutoFact2
         {
             FormClientList ClientList = new FormClientList();
             ClientList.Show();
+
         }
 
         private void btnProductList_Click(object sender, EventArgs e)

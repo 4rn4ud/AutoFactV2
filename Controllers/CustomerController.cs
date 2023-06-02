@@ -31,5 +31,12 @@ namespace AutoFact2.Controllers
         {
             customerRepository.delete(id);
         }
+
+        public void update(int id, string name, string lastName, string companyName, string address, int postalCode, string city, string mail, string tel)
+        {
+            customerRepository.update(id, name, lastName, companyName, address, postalCode, city, mail, tel);
+        }
+
+
     }
 }
