@@ -65,11 +65,6 @@ namespace AutoFact2.Repository
 
             return lesClients;
         }
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> 31b1959b8dbbe2842f651191acdd16bfe9cbcaf1
 
         public void create(string name, string lastName, string companyName, string address, int postalCode, string city, string mail, string tel)
         {
@@ -114,16 +109,10 @@ namespace AutoFact2.Repository
 
             string deleteSql = "";
 
-<<<<<<< HEAD
                 deleteSql = "DELETE FROM Customer WHERE id = @id; " +
                             "VALUES (@id)";
             
 
-=======
-            deleteSql = "DELETE FROM Customer WHERE id = @id; " +
-                        "VALUES (@id)";
-            
->>>>>>> 31b1959b8dbbe2842f651191acdd16bfe9cbcaf1
             connection.Open();
 
             using (SQLiteCommand command = new SQLiteCommand(deleteSql, connection))
@@ -133,53 +122,8 @@ namespace AutoFact2.Repository
                 command.ExecuteNonQuery();
             }
             connection.Close();
-<<<<<<< HEAD
 
 
         }
-
-        public void update(int id, string name, string lastName, string companyName, string address, int postalCode, string city, string mail, string tel)
-        {
-            string connectionString = "Data Source=../../AutoFact2BDD.db";
-            SQLiteConnection connection = new SQLiteConnection(connectionString);
-
-            string insertSql = "";
-
-            if (name == "" && lastName == "")
-            {
-                insertSql = "UPDATE Customer " +
-                 "SET name = NULL, lastName = NULL, companyName = @CompanyName, adress = @Address, postalCode = @PostalCode, city = @City, mail = @Mail, tel = @Tel " +
-                 "WHERE id = @Id";
-            }
-            else if (companyName == "")
-            {
-                insertSql = "UPDATE Customer " +
-                 "SET name = @Name, lastName = @LastName, companyName = NULL , adress = @Address, postalCode = @PostalCode, city = @City, mail = @Mail, tel = @Tel " +
-                 "WHERE id = @Id";
-            }
-
-            connection.Open();
-
-            using (SQLiteCommand command = new SQLiteCommand(insertSql, connection))
-            {
-                command.Parameters.AddWithValue("@id", id);
-                command.Parameters.AddWithValue("@Name", name);
-                command.Parameters.AddWithValue("@LastName", lastName);
-                command.Parameters.AddWithValue("@CompanyName", companyName);
-                command.Parameters.AddWithValue("@Address", address);
-                command.Parameters.AddWithValue("@PostalCode", postalCode);
-                command.Parameters.AddWithValue("@City", city);
-                command.Parameters.AddWithValue("@Mail", mail);
-                command.Parameters.AddWithValue("@Tel", tel);
-
-                command.ExecuteNonQuery();
-            }
-            connection.Close();
-        }
-
->>>>>>> Stashed changes
-=======
-        }
->>>>>>> 31b1959b8dbbe2842f651191acdd16bfe9cbcaf1
     }
 }
