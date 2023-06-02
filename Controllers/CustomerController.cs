@@ -3,8 +3,10 @@ using AutoFact2.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace AutoFact2.Controllers
 {
@@ -19,6 +21,10 @@ namespace AutoFact2.Controllers
         public List<Customer> findAll()
         {
             return customerRepository.findAll();
+        }
+        public void create(string name, string lastName, string companyName, string address, int postalCode, string city, string mail, string tel)
+        {
+            customerRepository.create(name, lastName, companyName, address, postalCode, city, mail, tel);
         }
     }
 }
