@@ -66,11 +66,13 @@
             this.BtnCreate.TabIndex = 1;
             this.BtnCreate.Text = "Enregistrer";
             this.BtnCreate.UseVisualStyleBackColor = true;
+            this.BtnCreate.Click += new System.EventHandler(this.BtnCreate_Click);
             // 
             // TxtName
             // 
             this.TxtName.Location = new System.Drawing.Point(149, 144);
             this.TxtName.Name = "TxtName";
+            this.TxtName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtName.Size = new System.Drawing.Size(100, 20);
             this.TxtName.TabIndex = 2;
             // 
@@ -78,6 +80,7 @@
             // 
             this.TxtSurname.Location = new System.Drawing.Point(149, 206);
             this.TxtSurname.Name = "TxtSurname";
+            this.TxtSurname.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtSurname.Size = new System.Drawing.Size(100, 20);
             this.TxtSurname.TabIndex = 3;
             // 
@@ -85,6 +88,7 @@
             // 
             this.TxtCompanyname.Location = new System.Drawing.Point(149, 267);
             this.TxtCompanyname.Name = "TxtCompanyname";
+            this.TxtCompanyname.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtCompanyname.Size = new System.Drawing.Size(100, 20);
             this.TxtCompanyname.TabIndex = 4;
             // 
@@ -92,6 +96,7 @@
             // 
             this.TxtAdresse.Location = new System.Drawing.Point(409, 144);
             this.TxtAdresse.Name = "TxtAdresse";
+            this.TxtAdresse.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtAdresse.Size = new System.Drawing.Size(100, 20);
             this.TxtAdresse.TabIndex = 5;
             // 
@@ -99,6 +104,7 @@
             // 
             this.TxtPostalCode.Location = new System.Drawing.Point(409, 206);
             this.TxtPostalCode.Name = "TxtPostalCode";
+            this.TxtPostalCode.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtPostalCode.Size = new System.Drawing.Size(100, 20);
             this.TxtPostalCode.TabIndex = 6;
             // 
@@ -106,6 +112,7 @@
             // 
             this.TxtCity.Location = new System.Drawing.Point(409, 268);
             this.TxtCity.Name = "TxtCity";
+            this.TxtCity.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtCity.Size = new System.Drawing.Size(100, 20);
             this.TxtCity.TabIndex = 7;
             // 
@@ -113,6 +120,7 @@
             // 
             this.TxtMail.Location = new System.Drawing.Point(667, 144);
             this.TxtMail.Name = "TxtMail";
+            this.TxtMail.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtMail.Size = new System.Drawing.Size(100, 20);
             this.TxtMail.TabIndex = 8;
             // 
@@ -120,6 +128,7 @@
             // 
             this.TxtTel.Location = new System.Drawing.Point(667, 206);
             this.TxtTel.Name = "TxtTel";
+            this.TxtTel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtTel.Size = new System.Drawing.Size(100, 20);
             this.TxtTel.TabIndex = 9;
             // 
