@@ -25,17 +25,9 @@ namespace AutoFact2.Views
             {
                 if (unProduit.GetId() == id)
                 {
-                    TxtId.Text = unProduit.GetId().ToString();
-                    TxtName.Text = unProduit.GetName();
-                    TxtName.Text = unProduit.GetName();
-                    TxtSurname.Text = unProduit.GetLastname();
-                    TxtCompanyname.Text = unProduit.GetCompanyName();
-                    TxtAdresse.Text = unProduit.GetAdress();
-                    TxtPostalCode.Text = unProduit.GetPostalCode().ToString();
-                    TxtCity.Text = unProduit.GetCity();
-                    TxtMail.Text = unProduit.GetMail();
-                    TxtTel.Text = unProduit.GetTel();
-
+                    TxtLabel.Text = unProduit.GetId().ToString();
+                    TxtUnitPrice.Text = unProduit.GetUnitPrice().ToString();
+                    ComboType.Text = unProduit.GetType().ToString();
                 }
             }
         }

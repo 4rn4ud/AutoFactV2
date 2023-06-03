@@ -90,7 +90,7 @@
             this.LabelLibelle.Name = "LabelLibelle";
             this.LabelLibelle.Size = new System.Drawing.Size(37, 13);
             this.LabelLibelle.TabIndex = 11;
-            this.LabelLibelle.Text = "Libelle";
+            this.LabelLibelle.Text = "Libellé";
             // 
             // TxtUnitPrice
             // 
