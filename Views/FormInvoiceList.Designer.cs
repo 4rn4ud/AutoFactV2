@@ -31,14 +31,9 @@
             this.DgvInvoice = new System.Windows.Forms.DataGridView();
             this.BtnBack = new System.Windows.Forms.Button();
             this.BtnCreateInvoice = new System.Windows.Forms.Button();
-            this.refresh = new System.Windows.Forms.Button();
             this.ColIdInvoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColIdCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CIdProduit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPromo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Colidtype = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Coldate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColBtnPDF = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColBtnDetail = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvInvoice)).BeginInit();
@@ -51,24 +46,20 @@
             this.ColIdInvoice,
             this.ColIdCustomer,
             this.CIdProduit,
-            this.ColQuantity,
-            this.ColPromo,
-            this.Colidtype,
-            this.Coldate,
             this.ColBtnPDF,
             this.ColBtnDetail});
-            this.DgvInvoice.Location = new System.Drawing.Point(-13, 128);
+            this.DgvInvoice.Location = new System.Drawing.Point(201, 176);
             this.DgvInvoice.Margin = new System.Windows.Forms.Padding(4);
             this.DgvInvoice.Name = "DgvInvoice";
             this.DgvInvoice.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DgvInvoice.RowHeadersWidth = 51;
-            this.DgvInvoice.Size = new System.Drawing.Size(1312, 185);
+            this.DgvInvoice.Size = new System.Drawing.Size(714, 185);
             this.DgvInvoice.TabIndex = 0;
             this.DgvInvoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // BtnBack
             // 
-            this.BtnBack.Location = new System.Drawing.Point(647, 510);
+            this.BtnBack.Location = new System.Drawing.Point(619, 466);
             this.BtnBack.Margin = new System.Windows.Forms.Padding(4);
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Size = new System.Drawing.Size(104, 28);
@@ -79,23 +70,13 @@
             // 
             // BtnCreateInvoice
             // 
-            this.BtnCreateInvoice.Location = new System.Drawing.Point(465, 510);
+            this.BtnCreateInvoice.Location = new System.Drawing.Point(378, 466);
             this.BtnCreateInvoice.Name = "BtnCreateInvoice";
             this.BtnCreateInvoice.Size = new System.Drawing.Size(114, 28);
             this.BtnCreateInvoice.TabIndex = 4;
             this.BtnCreateInvoice.Text = "Créer";
             this.BtnCreateInvoice.UseVisualStyleBackColor = true;
             this.BtnCreateInvoice.Click += new System.EventHandler(this.BtnCreateInvoice_Click);
-            // 
-            // refresh
-            // 
-            this.refresh.Location = new System.Drawing.Point(234, 510);
-            this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(94, 23);
-            this.refresh.TabIndex = 5;
-            this.refresh.Text = "BtnRefresh";
-            this.refresh.UseVisualStyleBackColor = true;
-            this.refresh.Click += new System.EventHandler(this.refresh_Click);
             // 
             // ColIdInvoice
             // 
@@ -120,34 +101,6 @@
             this.CIdProduit.Name = "CIdProduit";
             this.CIdProduit.Width = 125;
             // 
-            // ColQuantity
-            // 
-            this.ColQuantity.HeaderText = "Quantiter";
-            this.ColQuantity.MinimumWidth = 6;
-            this.ColQuantity.Name = "ColQuantity";
-            this.ColQuantity.Width = 125;
-            // 
-            // ColPromo
-            // 
-            this.ColPromo.HeaderText = "Promotion";
-            this.ColPromo.MinimumWidth = 6;
-            this.ColPromo.Name = "ColPromo";
-            this.ColPromo.Width = 125;
-            // 
-            // Colidtype
-            // 
-            this.Colidtype.HeaderText = "IdType";
-            this.Colidtype.MinimumWidth = 6;
-            this.Colidtype.Name = "Colidtype";
-            this.Colidtype.Width = 125;
-            // 
-            // Coldate
-            // 
-            this.Coldate.HeaderText = "Date";
-            this.Coldate.MinimumWidth = 6;
-            this.Coldate.Name = "Coldate";
-            this.Coldate.Width = 125;
-            // 
             // ColBtnPDF
             // 
             this.ColBtnPDF.HeaderText = "Génerer PDF";
@@ -167,7 +120,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1312, 690);
-            this.Controls.Add(this.refresh);
             this.Controls.Add(this.BtnCreateInvoice);
             this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.DgvInvoice);
@@ -176,6 +128,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InvoiceList";
+            this.Load += new System.EventHandler(this.FormInvoiceList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvInvoice)).EndInit();
             this.ResumeLayout(false);
 
@@ -186,14 +139,9 @@
         private System.Windows.Forms.DataGridView DgvInvoice;
         private System.Windows.Forms.Button BtnBack;
         private System.Windows.Forms.Button BtnCreateInvoice;
-        private System.Windows.Forms.Button refresh;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColIdInvoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColIdCustomer;
         private System.Windows.Forms.DataGridViewTextBoxColumn CIdProduit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColPromo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Colidtype;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Coldate;
         private System.Windows.Forms.DataGridViewButtonColumn ColBtnPDF;
         private System.Windows.Forms.DataGridViewButtonColumn ColBtnDetail;
     }

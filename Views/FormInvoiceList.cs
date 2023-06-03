@@ -31,7 +31,6 @@ namespace AutoFact2
         }
         private void FormInvoiceList_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Ceci est un message d'information.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LeRefresh();
         }
 
@@ -81,7 +80,7 @@ namespace AutoFact2
         //Fonction de rafraichissement du datagriedview.
         public void LeRefresh()
         {
-            MessageBox.Show("test");
+            //MessageBox.Show("test");
             this.DgvInvoice.Rows.Clear();
             foreach (var uneFacture in InController.findAll())
             {
