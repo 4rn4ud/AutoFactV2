@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.DgvIncoice = new System.Windows.Forms.DataGridView();
-            this.BtnBack = new System.Windows.Forms.Button();
-            this.BtnCreateInvoice = new System.Windows.Forms.Button();
             this.ColIdInvoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColIdCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CIdProduit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +38,8 @@
             this.Coldate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColBtnPDF = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColBtnUpdate = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.BtnBack = new System.Windows.Forms.Button();
+            this.BtnCreateInvoice = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvIncoice)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,34 +57,13 @@
             this.ColBtnPDF,
             this.ColBtnUpdate});
             this.DgvIncoice.Location = new System.Drawing.Point(4, 100);
-            this.DgvIncoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DgvIncoice.Margin = new System.Windows.Forms.Padding(4);
             this.DgvIncoice.Name = "DgvIncoice";
             this.DgvIncoice.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DgvIncoice.RowHeadersWidth = 51;
             this.DgvIncoice.Size = new System.Drawing.Size(1227, 185);
             this.DgvIncoice.TabIndex = 0;
             this.DgvIncoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // BtnBack
-            // 
-            this.BtnBack.Location = new System.Drawing.Point(40, 32);
-            this.BtnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BtnBack.Name = "BtnBack";
-            this.BtnBack.Size = new System.Drawing.Size(100, 28);
-            this.BtnBack.TabIndex = 3;
-            this.BtnBack.Text = "Retour";
-            this.BtnBack.UseVisualStyleBackColor = true;
-            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
-            // 
-            // BtnCreateInvoice
-            // 
-            this.BtnCreateInvoice.Location = new System.Drawing.Point(530, 515);
-            this.BtnCreateInvoice.Name = "BtnCreateInvoice";
-            this.BtnCreateInvoice.Size = new System.Drawing.Size(75, 23);
-            this.BtnCreateInvoice.TabIndex = 4;
-            this.BtnCreateInvoice.Text = "Créer";
-            this.BtnCreateInvoice.UseVisualStyleBackColor = true;
-            this.BtnCreateInvoice.Click += new System.EventHandler(this.BtnCreateInvoice_Click);
             // 
             // ColIdInvoice
             // 
@@ -151,6 +130,27 @@
             this.ColBtnUpdate.Name = "ColBtnUpdate";
             this.ColBtnUpdate.Width = 125;
             // 
+            // BtnBack
+            // 
+            this.BtnBack.Location = new System.Drawing.Point(647, 510);
+            this.BtnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnBack.Name = "BtnBack";
+            this.BtnBack.Size = new System.Drawing.Size(104, 28);
+            this.BtnBack.TabIndex = 3;
+            this.BtnBack.Text = "Retour";
+            this.BtnBack.UseVisualStyleBackColor = true;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
+            // 
+            // BtnCreateInvoice
+            // 
+            this.BtnCreateInvoice.Location = new System.Drawing.Point(465, 510);
+            this.BtnCreateInvoice.Name = "BtnCreateInvoice";
+            this.BtnCreateInvoice.Size = new System.Drawing.Size(114, 28);
+            this.BtnCreateInvoice.TabIndex = 4;
+            this.BtnCreateInvoice.Text = "Créer";
+            this.BtnCreateInvoice.UseVisualStyleBackColor = true;
+            this.BtnCreateInvoice.Click += new System.EventHandler(this.BtnCreateInvoice_Click);
+            // 
             // FormInvoiceList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -159,7 +159,7 @@
             this.Controls.Add(this.BtnCreateInvoice);
             this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.DgvIncoice);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormInvoiceList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

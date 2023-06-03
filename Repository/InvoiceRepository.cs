@@ -1,4 +1,5 @@
 ﻿using AutoFact2.Views;
+using AutoFact2.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -8,31 +9,27 @@ using System.Threading.Tasks;
 
 namespace AutoFact2.Repository
 {
-    public class CustomerRepository
+    public class InvoiceRepository
     {
-        public CustomerRepository()
+        public InvoiceRepository()
         {
 
         }
-        public List<Customer> findAll()
+        public List<Invoice> findAll()
         {
             int id;
-            string nom;
-            string prenom;
-            string nomEntreprise;
-            string adresse;
-            int cp;
-            string ville;
-            string mail;
-            string tel;
+            int idCustomer;
+            DateTime DateInvoice;
+            //List<Invoiceline> Invoicelines ;
 
-            List<Customer> lesClients = new List<Customer>();
+
+            List<Invoice> lesFactures = new List<Invoice>();
             string connectionString = "Data Source=../../AutoFact2BDD.db";
             SQLiteConnection connection = new SQLiteConnection(connectionString);
 
             connection.Open();
 
-            string selectSql = "SELECT * FROM Customer";
+            string selectSql = "SELECT * FROM Invoice";
             SQLiteCommand command = new SQLiteCommand(selectSql, connection);
             SQLiteDataReader reader = command.ExecuteReader();
 
@@ -40,76 +37,51 @@ namespace AutoFact2.Repository
             {
                 while (reader.Read())
                 {
-                    id = Convert.ToInt32(reader["id"]);
-                    nom = Convert.ToString(reader["name"]);
-                    prenom = Convert.ToString(reader["lastName"]);
-                    nomEntreprise = Convert.ToString(reader["companyName"]);
-                    adresse = Convert.ToString(reader["adress"]);
-                    cp = Convert.ToInt32(reader["postalCode"]);
-                    ville = Convert.ToString(reader["city"]);
-                    mail = Convert.ToString(reader["mail"]);
-                    tel = Convert.ToString(reader["tel"]);
-
-                    if (string.IsNullOrEmpty(nom) && string.IsNullOrEmpty(prenom))
-                    {
-                        lesClients.Add(new Moral(id, nomEntreprise, adresse, cp, ville, mail, tel));
-                    }
-                    else if (string.IsNullOrEmpty(nomEntreprise))
-                    {
-                        lesClients.Add(new Physical(id, nom, prenom, adresse, cp, ville, mail, tel));
-                    }
+                    id = Convert.ToInt32(reader["Id"]);
+                    idCustomer = Convert.ToInt32(reader["IdCustomer"]);
+                    DateInvoice = Convert.ToDateTime(reader["Date"]);
+                    //Invoicelines = Convert.ToString(reader["companyName"]);
+                    lesFactures.Add(new Invoice(id, idCustomer, DateInvoice));
                 }
             }
             reader.Close();
             connection.Close();
 
-            return lesClients;
+            return lesFactures;
         }
 
-        public void create(string name, string lastName, string companyName, string address, int postalCode, string city, string mail, string tel)
+        public void create(int idCustomer, DateTime DateInvoice)
         {
             string connectionString = "Data Source=../../AutoFact2BDD.db";
             SQLiteConnection connection = new SQLiteConnection(connectionString);
 
             string insertSql = "";
 
-            if (name == "" && lastName == "")
-            {
-                insertSql = "INSERT INTO Customer (name, lastName, companyName, adress, postalCode, city, mail, tel) " +
-                            "VALUES (NULL, NULL, @CompanyName, @Address, @PostalCode, @City, @Mail, @Tel)";
-            }
-            else if (companyName == "")
-            {
-                insertSql = "INSERT INTO Customer (name, lastName, companyName, adress, postalCode, city, mail, tel) " +
-                            "VALUES (@Name, @LastName, NULL, @Address, @PostalCode, @City, @Mail, @Tel)";
-            }
+            insertSql = "INSERT INTO Invoice (idCustomer, Date) " +
+                        "VALUES (@idCustomer, @DateInvoice)";
+
 
             connection.Open();
 
             using (SQLiteCommand command = new SQLiteCommand(insertSql, connection))
             {
-                command.Parameters.AddWithValue("@Name", name);
-                command.Parameters.AddWithValue("@LastName", lastName);
-                command.Parameters.AddWithValue("@CompanyName", companyName);
-                command.Parameters.AddWithValue("@Address", address);
-                command.Parameters.AddWithValue("@PostalCode", postalCode);
-                command.Parameters.AddWithValue("@City", city);
-                command.Parameters.AddWithValue("@Mail", mail);
-                command.Parameters.AddWithValue("@Tel", tel);
+                command.Parameters.AddWithValue("@idCustomer", idCustomer);
+                command.Parameters.AddWithValue("@DateInvoice", DateInvoice);
+
 
                 command.ExecuteNonQuery();
             }
             connection.Close();
         }
 
-        public void delete(int id)
+        /* public void delete(int id)
         {
             string connectionString = "Data Source=../../AutoFact2BDD.db";
             SQLiteConnection connection = new SQLiteConnection(connectionString);
 
             string deleteSql = "";
 
-                deleteSql = "DELETE FROM Customer WHERE id = @id; " +
+                deleteSql = "DELETE FROM Invoice WHERE id = @id; " +
                             "VALUES (@id)";
             
 
@@ -124,43 +96,30 @@ namespace AutoFact2.Repository
             connection.Close();
 
 
-        }
+        } */
 
-        public void update(int id, string name, string lastName, string companyName, string address, int postalCode, string city, string mail, string tel)
+        public void update(int id, int idCustomer, DateTime DateInvoice)
         {
             string connectionString = "Data Source=../../AutoFact2BDD.db";
             SQLiteConnection connection = new SQLiteConnection(connectionString);
 
             string updateSql = "";
 
-            if (name == "" && lastName == "")
-            {
-                updateSql = "UPDATE Customer " +
-                 "SET name = NULL, lastName = NULL, companyName = @CompanyName, adress = @Address, postalCode = @PostalCode, city = @City, mail = @Mail, tel = @Tel " +
+
+                updateSql = "UPDATE Invoice " +
+                 "SET idCustomer = @idCustomer, Date = @DateInvoice" +
                  "WHERE id = @Id";
 
-            }
-            else if (companyName == "")
-            {
-                updateSql = "UPDATE Customer " +
-                 "SET name = @Name, lastName = @LastName, companyName = NULL, adress = @Address, postalCode = @PostalCode, city = @City, mail = @Mail, tel = @Tel " +
-                 "WHERE id = @Id";
 
-            }
 
             connection.Open();
 
             using (SQLiteCommand command = new SQLiteCommand(updateSql, connection))
             {
                 command.Parameters.AddWithValue("@Id", id);
-                command.Parameters.AddWithValue("@Name", name);
-                command.Parameters.AddWithValue("@LastName", lastName);
-                command.Parameters.AddWithValue("@CompanyName", companyName);
-                command.Parameters.AddWithValue("@Address", address);
-                command.Parameters.AddWithValue("@PostalCode", postalCode);
-                command.Parameters.AddWithValue("@City", city);
-                command.Parameters.AddWithValue("@Mail", mail);
-                command.Parameters.AddWithValue("@Tel", tel);
+                command.Parameters.AddWithValue("@idCustomer", idCustomer);
+                command.Parameters.AddWithValue("@DateInvoice", DateInvoice);
+
 
                 command.ExecuteNonQuery();
             }

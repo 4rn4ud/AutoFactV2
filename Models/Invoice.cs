@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace AutoFact2.Models
 {
-    internal class Invoice
+    public class Invoice
     {
        
         private int _id;
-        private string _idCustomer;
+        private int _idCustomer;
         private DateTime _DateInvoice;
         private List<Invoiceline> _Invoiceline;
 
 
-        public Invoice(int id, string idCustomer, DateTime DateInvoice )
+        public Invoice(int id, int idCustomer, DateTime DateInvoice )
         {
             this._id = id;
             this._idCustomer = idCustomer;
@@ -36,12 +36,12 @@ namespace AutoFact2.Models
             this._id = value;
         }
 
-        public string GetidCustomer()
+        public int GetidCustomer()
         {
             return _idCustomer;
         }
 
-        public void SetIdCustomer(string value)
+        public void SetIdCustomer(int value)
         {
             this._idCustomer = value;
         }
