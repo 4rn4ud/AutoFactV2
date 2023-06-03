@@ -17,11 +17,11 @@ namespace AutoFact2
 {
     public partial class FormClientList : Form
     {
-        public CustomerController customerController;
+        public CustomerController cuController;
         public FormClientList()
         {
             InitializeComponent();
-            customerController = new CustomerController();
+            cuController = new CustomerController();
         }
 
         public static int id;
@@ -51,7 +51,7 @@ namespace AutoFact2
                 if (result == DialogResult.Yes)
                 {
                     // Appeler la fonction de suppression avec l'ID récupéré
-                    customerController.delete(id);
+                    cuController.delete(id);
                     LeRefresh();
                 }
 
@@ -92,7 +92,7 @@ namespace AutoFact2
         public void LeRefresh()
         {
             this.DgvClient.Rows.Clear();
-            foreach (var unClient in customerController.findAll())
+            foreach (var unClient in cuController.findAll())
             {
                 string dgvId = unClient.GetId().ToString();
                 string dgvName = unClient.GetName();

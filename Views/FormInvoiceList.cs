@@ -17,11 +17,11 @@ namespace AutoFact2
 {
     public partial class FormInvoiceList : Form
     {
-        public InvoiceController invoiceController;
+        public InvoiceController InController;
         public FormInvoiceList()
         {
             InitializeComponent();
-            invoiceController = new InvoiceController();
+            InController = new InvoiceController();
         }
 
 
@@ -69,7 +69,7 @@ namespace AutoFact2
         public void LeRefresh()
         {
             this.DgvIncoice.Rows.Clear();
-            foreach (var uneFacture in InvoiceController.findAll())
+            foreach (var uneFacture in InController.findAll())
             {
                 string dgvId = uneFacture.GetId().ToString();
                 int dgvIdInvoice = uneFacture.GetidCustomer();

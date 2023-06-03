@@ -12,29 +12,29 @@ namespace AutoFact2.Controllers
 {
     public class CustomerController
     {
-        public CustomerRepository customerRepository;
+        public CustomerRepository cuRepository;
         public CustomerController()
         {
-            customerRepository = new CustomerRepository();
+            cuRepository = new CustomerRepository();
         }
 
         public List<Customer> findAll()
         {
-            return customerRepository.findAll();
+            return cuRepository.findAll();
         }
         public void create(string name, string lastName, string companyName, string address, int postalCode, string city, string mail, string tel)
         {
-            customerRepository.create(name, lastName, companyName, address, postalCode, city, mail, tel);
+            cuRepository.create(name, lastName, companyName, address, postalCode, city, mail, tel);
         }
 
         public void delete(int id)
         {
-            customerRepository.delete(id);
+            cuRepository.delete(id);
         }
 
         public void update(int id, string name, string lastName, string companyName, string address, int postalCode, string city, string mail, string tel)
         {
-            customerRepository.update(id, name, lastName, companyName, address, postalCode, city, mail, tel);
+            cuRepository.update(id, name, lastName, companyName, address, postalCode, city, mail, tel);
         }
 
 

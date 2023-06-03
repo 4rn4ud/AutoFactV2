@@ -13,29 +13,29 @@ namespace AutoFact2.Controllers
 {
     public class InvoiceController
     {
-        public InvoiceRepository InvoiceRepository;
+        public InvoiceRepository InRepository;
         public InvoiceController()
         {
-            InvoiceRepository = new InvoiceRepository();
+            InRepository = new InvoiceRepository();
         }
 
         public List<Invoice> findAll()
         {
-            return InvoiceRepository.findAll();
+            return InRepository.findAll();
         }
         public void create(int idCustomer, DateTime DateInvoice)
         {
-            InvoiceRepository.create(idCustomer, DateInvoice);
+            InRepository.create(idCustomer, DateInvoice);
         }
 
         //public void delete(int id)
         //{
-        //    InvoiceRepository.delete(id);
+        //    InRepository.delete(id);
         //}
 
         public void update(int id, int idCustomer, DateTime DateInvoice)
         {
-            InvoiceRepository.update(id, idCustomer, DateInvoice);
+            InRepository.update(id, idCustomer, DateInvoice);
         }
 
 

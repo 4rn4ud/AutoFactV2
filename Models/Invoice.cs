@@ -1,4 +1,5 @@
-﻿using AutoFact2.Views;
+﻿using AutoFact2.Repository;
+using AutoFact2.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace AutoFact2.Models
         private int _idCustomer;
         private DateTime _DateInvoice;
         private List<Invoiceline> _Invoiceline;
+        private InvoiceRepository myrepofact;
+        private InvoiceLineRepository myrepofactligne;
 
 
         public Invoice(int id, int idCustomer, DateTime DateInvoice )
@@ -22,10 +25,19 @@ namespace AutoFact2.Models
             this._idCustomer = idCustomer;
             this._DateInvoice = DateInvoice;
             this._Invoiceline = new List<Invoiceline>();
-            
-
+            InvoiceRepository myrepofact = new InvoiceRepository();
+            InvoiceLineRepository myrepofactligne = new InvoiceLineRepository();
         }
 
+        
+
+        public Invoice(int id)
+        {
+            this._id = id;
+            this._DateInvoice = myrepofact.GetDate(id);
+            this._idCustomer = myrepofact.GetIdCustomer(id);
+            this._Invoiceline = myrepofactligne.findAll(id);
+        }
         public int GetId()
         {
             return _id;

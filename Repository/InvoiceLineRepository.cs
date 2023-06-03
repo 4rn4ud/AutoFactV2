@@ -9,27 +9,27 @@ using System.Threading.Tasks;
 
 namespace AutoFact2.Repository
 {
-    public class InvoiceRepository
+    public class InvoiceLineRepository
     {
-        public InvoiceRepository()
+        public InvoiceLineRepository()
         {
 
         }
-        public List<Invoice> findAll()
+        public List<Invoiceline> findAll(int id)
         {
-            int id;
-            int idCustomer;
-            DateTime DateInvoice;
-           
+            int idQuote;
+            int idProduct;
+            int quantity;
+            int promotion;
+            int prix;
 
-
-            List<Invoice> lesFactures = new List<Invoice>();
+            List<Invoiceline> lesLignesFactures = new List<Invoiceline>();
             string connectionString = "Data Source=../../AutoFact2BDD.db";
             SQLiteConnection connection = new SQLiteConnection(connectionString);
 
             connection.Open();
 
-            string selectSql = "SELECT * FROM Invoice";
+            string selectSql = "SELECT * FROM Invoiceline where idQuote = @idQuote";
             SQLiteCommand command = new SQLiteCommand(selectSql, connection);
             SQLiteDataReader reader = command.ExecuteReader();
 
@@ -37,17 +37,19 @@ namespace AutoFact2.Repository
             {
                 while (reader.Read())
                 {
-                    id = Convert.ToInt32(reader["Id"]);
-                    idCustomer = Convert.ToInt32(reader["IdCustomer"]);
-                    DateInvoice = Convert.ToDateTime(reader["Date"]);
-                    //Invoicelines = Convert.ToString(reader["companyName"]);
-                    lesFactures.Add(new Invoice(id, idCustomer, DateInvoice));
+                    idQuote = Convert.ToInt32(reader["idQuote"]);
+                    idProduct = Convert.ToInt32(reader["idProduct"]);
+                    quantity = Convert.ToInt32(reader["quantity"]);
+                    promotion = Convert.ToInt32(reader["promotion"]);
+                    prix = Convert.ToInt32(reader["prix"]);
+
+                    lesLignesFactures.Add(new Invoiceline(idQuote, idProduct, quantity, promotion, prix));
                 }
             }
             reader.Close();
             connection.Close();
 
-            return lesFactures;
+            return lesLignesFactures;
         }
 
 
