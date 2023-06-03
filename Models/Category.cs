@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace AutoFact2.Views
 {
-    class Category
+    public class Category
     {
         private int _id;
-        private string _libel;
+        private string _label;
         private List<Product> _listProduct;
 
-        public Category(int id, string libel)
+        public Category(int id, string label)
         {
             this._id = id;
-            this._libel = libel;
+            this._label = label;
             this._listProduct = new List<Product>();
         }
 
@@ -29,14 +29,14 @@ namespace AutoFact2.Views
             return _id;
         }
 
-        public void SetLibel(string libel)
+        public void SetLabel(string label)
         {
-            this._libel = libel;
+            this._label = label;
         }
 
-        public string GetLibel()
+        public string GetLabel()
         {
-            return _libel;
+            return _label;
         }
 
         public List<Product> GetListProduct()

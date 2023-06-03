@@ -9,12 +9,12 @@ namespace AutoFact2.Views
     class Type
     {
         private int _id;
-        private string _libel;
+        private string _label;
 
-        public Type(int id, string libel)
+        public Type(int id, string label)
         {
             this._id = id;
-            this._libel = libel;
+            this._label = label;
         }
 
         public int GetId()
@@ -27,14 +27,14 @@ namespace AutoFact2.Views
             this._id = value;
         }
 
-        public string GetLibel()
+        public string GetLabel()
         {
-            return _libel;
+            return _label;
         }
 
-        public void SetLibel(string value)
+        public void SetLabel(string value)
         {
-            this._libel = value;
+            this._label = value;
         }
     }
 }
