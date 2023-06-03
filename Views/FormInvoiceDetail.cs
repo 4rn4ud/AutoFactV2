@@ -29,11 +29,14 @@ namespace AutoFact2.Views
             TxtIdCustomer.Text = Convert.ToString(lafacture.GetidCustomer());
             TxtId.Text = Convert.ToString(id);
 
-            Customer customer = CustomerRepository.getInfo(Convert.ToInt32(lafacture.GetidCustomer()));
+            CustomerRepository custRepository = new CustomerRepository();
+            Customer customer = custRepository.getInfo(lafacture.GetidCustomer());
+
             TxtName.Text = customer.GetName();
             TxtSurname.Text = customer.GetLastname();
             TxtCompagnyName.Text = customer.GetCompanyName();
-            TxtTotal.Text = GetTotalAmount().ToString();
+
+            TxtTotal.Text = lafacture.GetTotal().ToString();
 
             LeRefresh(id);
         }

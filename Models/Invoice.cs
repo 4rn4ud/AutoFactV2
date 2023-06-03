@@ -10,7 +10,6 @@ namespace AutoFact2.Models
 {
     public class Invoice
     {
-       
         private int _id;
         private int _idCustomer;
         private DateTime _DateInvoice;
@@ -18,8 +17,7 @@ namespace AutoFact2.Models
         private InvoiceRepository myrepofact;
         private InvoiceLineRepository myrepofactligne;
 
-
-        public Invoice(int id, int idCustomer, DateTime DateInvoice )
+        public Invoice(int id, int idCustomer, DateTime DateInvoice)
         {
             this._id = id;
             this._idCustomer = idCustomer;
@@ -29,17 +27,16 @@ namespace AutoFact2.Models
             InvoiceLineRepository myrepofactligne = new InvoiceLineRepository();
         }
 
-        
-
         public Invoice(int id)
         {
+            this._id = id;
             InvoiceRepository myrepofact = new InvoiceRepository();
             InvoiceLineRepository myrepofactligne = new InvoiceLineRepository();
-            this._id = id;
             this._DateInvoice = myrepofact.GetDate(id);
             this._idCustomer = myrepofact.GetIdCustomer(id);
             this._Invoiceline = myrepofactligne.findAll(id);
         }
+
         public int GetId()
         {
             return _id;
@@ -70,16 +67,14 @@ namespace AutoFact2.Models
             this._DateInvoice = value;
         }
 
-
-
         public List<Invoiceline> GetInvoiceline()
         {
             return _Invoiceline;
-        }        
-        
+        }
+
         public decimal GetTotal()
         {
-            Decimal Total = 0;
+            decimal Total = 0;
             foreach (Invoiceline line in _Invoiceline)
             {
                 Total = Total + line.GetAmount();
