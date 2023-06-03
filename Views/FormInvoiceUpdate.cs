@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace AutoFact2.Views
 {
-    public partial class FormInvoiceCreate : Form
+    public partial class FormInvoiceUpdate : Form
     {
-        public FormInvoiceCreate()
+        public FormInvoiceUpdate()
         {
             InitializeComponent();
-        }
-
-        private void BtnBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

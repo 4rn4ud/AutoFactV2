@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutoFact2.Views
 {
-    class Invoiceline
+    public class Invoiceline
     {
         private int _idQuote;
         private int _idProduct;

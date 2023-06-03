@@ -38,8 +38,8 @@
             this.ColQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPrixUnitaire = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnAddProduct = new System.Windows.Forms.Button();
             this.ColDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.BtnAddProduct = new System.Windows.Forms.Button();
             this.LabelDate = new System.Windows.Forms.Label();
             this.LabelCustomer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -62,6 +62,7 @@
             this.BtnBack.TabIndex = 1;
             this.BtnBack.Text = "Retour";
             this.BtnBack.UseVisualStyleBackColor = true;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // dateTimePicker1
             // 
@@ -134,6 +135,13 @@
             this.ColAmount.ReadOnly = true;
             this.ColAmount.Width = 125;
             // 
+            // ColDelete
+            // 
+            this.ColDelete.HeaderText = "Delete";
+            this.ColDelete.MinimumWidth = 6;
+            this.ColDelete.Name = "ColDelete";
+            this.ColDelete.Width = 125;
+            // 
             // BtnAddProduct
             // 
             this.BtnAddProduct.Location = new System.Drawing.Point(1007, 264);
@@ -142,13 +150,6 @@
             this.BtnAddProduct.TabIndex = 5;
             this.BtnAddProduct.Text = "Ajouter Produit";
             this.BtnAddProduct.UseVisualStyleBackColor = true;
-            // 
-            // ColDelete
-            // 
-            this.ColDelete.HeaderText = "Delete";
-            this.ColDelete.MinimumWidth = 6;
-            this.ColDelete.Name = "ColDelete";
-            this.ColDelete.Width = 125;
             // 
             // LabelDate
             // 

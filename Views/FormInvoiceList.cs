@@ -33,29 +33,64 @@ namespace AutoFact2
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (this.DgvInvoice.Columns[e.ColumnIndex].Name == "ColBtnUpdate")
+            if (this.DgvIncoice.Columns[e.ColumnIndex].Name == "ColBtnUpdate")
             {
-                int id = Convert.ToInt32(DgvInvoice.Rows[e.RowIndex].Cells["ColId"].Value);
-                FormInvoiceUpdate InvoiceUpdate = new FormInvoiceUpdate(id);
-                InvoiceUpdate.ShowDialog();
+                int id = Convert.ToInt32(DgvIncoice.Rows[e.RowIndex].Cells["ColId"].Value);
+                //FormInvoiceUpdate InvoiceUpdate = new FormInvoiceUpdate(id);
+                //InvoiceUpdate.ShowDialog();
                 //MessageBox.Show("sortis boite.");
-                DgvInvoice.Refresh();
-                LeRefresh();
+                DgvIncoice.Refresh();
+                //LeRefresh();
 
 
             } //e.RowIndex
 
-            if (this.DgvInvoice.Columns[e.ColumnIndex].Name == "ColBtnPDF")
+            if (this.DgvIncoice.Columns[e.ColumnIndex].Name == "ColBtnPDF")
             {
 
-                
+                return;
 
             }
         }
 
         private void BtnCreateInvoice_Click(object sender, EventArgs e)
         {
+            FormInvoiceCreate InvoiceCreate = new FormInvoiceCreate();
+            InvoiceCreate.ShowDialog();
 
+        }
+
+        private void FormClientList_Load(object sender, EventArgs e)
+        {
+            LeRefresh();
+        }
+
+        //Fonction de rafraichissement du datagriedview.
+        public void LeRefresh()
+        {
+            this.DgvIncoice.Rows.Clear();
+            foreach (var uneFacture in InvoiceController.findAll())
+            {
+                string dgvId = uneFacture.GetId().ToString();
+                int dgvIdInvoice = uneFacture.GetidCustomer();
+                DateTime dgvDateInvoice = uneFacture.GetDateInvoice();
+
+                this.DgvIncoice.Rows.Add(dgvId, dgvIdInvoice, dgvDateInvoice, "Generer PDF", "Supprimer");
+            }
+        }
+        
+        public bool LeCreate()
+        {
+            FormClientCreate ClientCreate = new FormClientCreate();
+            ClientCreate.ShowDialog();
+            LeRefresh();
+            DialogResult result = MessageBox.Show("Voulez vous crée un nouveaux client ?", "Confirmation de l'enregistrement", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

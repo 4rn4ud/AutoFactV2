@@ -78,6 +78,12 @@
     <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\ProfilRepository.cs" />
+    <Compile Include="Views\FormInvoiceUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormInvoiceUpdate.Designer.cs">
+      <DependentUpon>FormInvoiceUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormInvoiceCreate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     <Compile Include="Models\Quote.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Models\Type.cs" />
+    <EmbeddedResource Include="Views\FormInvoiceUpdate.resx">
+      <DependentUpon>FormInvoiceUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FormClientCreate.resx">
       <DependentUpon>FormClientCreate.cs</DependentUpon>
     </EmbeddedResource>
