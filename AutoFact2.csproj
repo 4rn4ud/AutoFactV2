@@ -75,6 +75,7 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Repository\CategoryRepository.cs" />
     <Compile Include="Repository\InvoiceLineRepository.cs" />
     <Compile Include="Repository\InvoiceRepository.cs" />
     <Compile Include="Repository\CustomerRepository.cs" />
