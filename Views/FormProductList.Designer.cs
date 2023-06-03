@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DgvProduit = new System.Windows.Forms.DataGridView();
+            this.DgvProduct = new System.Windows.Forms.DataGridView();
             this.ColId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColLibel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,24 +37,25 @@
             this.ColBtnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.BtnBack = new System.Windows.Forms.Button();
             this.BtnCreate = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvProduit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvProduct)).BeginInit();
             this.SuspendLayout();
             // 
-            // DgvProduit
+            // DgvProduct
             // 
-            this.DgvProduit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvProduit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColId,
             this.ColLibel,
             this.ColPrice,
             this.ColIdCateg,
             this.ColBtnUpdate,
             this.ColBtnDelete});
-            this.DgvProduit.Location = new System.Drawing.Point(28, 108);
-            this.DgvProduit.Name = "DgvProduit";
-            this.DgvProduit.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DgvProduit.Size = new System.Drawing.Size(682, 150);
-            this.DgvProduit.TabIndex = 0;
+            this.DgvProduct.Location = new System.Drawing.Point(28, 108);
+            this.DgvProduct.Name = "DgvProduct";
+            this.DgvProduct.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DgvProduct.Size = new System.Drawing.Size(682, 150);
+            this.DgvProduct.TabIndex = 0;
+            this.DgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProduct_CellContentClick);
             // 
             // ColId
             // 
@@ -115,20 +116,20 @@
             this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.BtnCreate);
             this.Controls.Add(this.BtnBack);
-            this.Controls.Add(this.DgvProduit);
+            this.Controls.Add(this.DgvProduct);
             this.Name = "FormProductList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AutoFact";
             this.Load += new System.EventHandler(this.FormProductList_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvProduit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvProduct)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView DgvProduit;
+        private System.Windows.Forms.DataGridView DgvProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColLibel;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPrice;

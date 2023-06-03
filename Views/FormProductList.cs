@@ -34,13 +34,33 @@ namespace AutoFact2
 
         private void FormProductList_Load(object sender, EventArgs e)
         {
+            GetData();
+        }
+
+        public void GetData()
+        {
+            this.DgvProduct.Rows.Clear();
+
             foreach (var unProduit in productController.findAll())
             {
                 string dgvId = unProduit.GetId().ToString();
                 string dgvLibel = unProduit.GetLibel();
                 string dgvUnitPrice = unProduit.GetUnitPrice().ToString();
                 string dgvIdCategory = unProduit.GetIdCategory().ToString();
-                this.DgvProduit.Rows.Add(dgvId, dgvLibel, dgvUnitPrice, dgvIdCategory, "Modifier", "Supprimer");
+                this.DgvProduct.Rows.Add(dgvId, dgvLibel, dgvUnitPrice, dgvIdCategory, "Modifier", "Supprimer");
+            }
+        }
+
+        private void DgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.DgvProduct.Columns[e.ColumnIndex].Name == "ColBtnUpdate")
+            {
+                int id = Convert.ToInt32(DgvProduct.Rows[e.RowIndex].Cells["ColId"].Value);
+                FormProductUpdate ProductUpdate = new FormProductUpdate(id);
+                ProductUpdate.ShowDialog();
+                //MessageBox.Show("sortis boite.");
+                DgvProduct.Refresh();
+                GetData();
             }
         }
     }
