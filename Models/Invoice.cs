@@ -14,7 +14,7 @@ namespace AutoFact2.Models
         private string _idCustomer;
         private DateTime _DateInvoice;
         private List<Invoiceline> _Invoiceline;
-        private decimal _Total;
+
 
         public Invoice(int id, string idCustomer, DateTime DateInvoice )
         {
