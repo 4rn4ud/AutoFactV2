@@ -37,7 +37,8 @@ namespace AutoFact2.Repository
 
             if (reader.HasRows)
             {
-                
+                MessageBox.Show("Ceci est un message d'information.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 while (reader.Read())
                 {
                     id = Convert.ToInt32(reader["Id"]);
@@ -147,15 +148,24 @@ namespace AutoFact2.Repository
 
             string selectSql = "SELECT Date FROM Invoice WHERE id = @Id";
             SQLiteCommand command = new SQLiteCommand(selectSql, connection);
+
+
+            
+            
+
+            command.Parameters.AddWithValue("@Id", id);
+            //command.Parameters.AddWithValue("@DateInvoice", DateInvoice);
+            command.ExecuteNonQuery();
+
             SQLiteDataReader reader = command.ExecuteReader();
 
             if (reader.HasRows)
             {
-
-                DateInvoice = Convert.ToDateTime( reader["date"]);
-
+                while (reader.Read())
+                {
+                    DateInvoice = Convert.ToDateTime(reader["Date"]);
+                }
             } 
-
             reader.Close();
             connection.Close();
 
@@ -165,7 +175,7 @@ namespace AutoFact2.Repository
         public int GetIdCustomer(int id)
         {
 
-
+            
             int IdCustomer;
             IdCustomer = 0;
 
@@ -175,17 +185,28 @@ namespace AutoFact2.Repository
             connection.Open();
 
             string selectSql = "SELECT IdCustomer FROM Invoice WHERE id = @Id";
-            SQLiteCommand command = new SQLiteCommand(selectSql, connection);
+
+            using (SQLiteCommand command = new SQLiteCommand(selectSql, connection))
+            {
+                //command.Parameters.AddWithValue("@idCustomer", idCustomer);
+                command.Parameters.AddWithValue("@id", id);
+
+
+                command.ExecuteNonQuery();
+ 
             SQLiteDataReader reader = command.ExecuteReader();
 
             if (reader.HasRows)
             {
-
-                IdCustomer = Convert.ToInt32(reader["IdCustomer"]);
-
+                    while (reader.Read())
+                    {
+                        IdCustomer = Convert.ToInt32(reader["IdCustomer"]);
+                    }
             }
 
             reader.Close();
+           // connection.Close();
+           }
             connection.Close();
 
             return IdCustomer;

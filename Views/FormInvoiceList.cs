@@ -60,6 +60,13 @@ namespace AutoFact2
                 return;
 
             }
+
+            if (this.DgvInvoice.Columns[e.ColumnIndex].Name == "ColBtnDetail")
+            {
+                int id = Convert.ToInt32(DgvInvoice.Rows[e.RowIndex].Cells["ColIdInvoice"].Value);
+                FormInvoiceDetail InvoiceDetail = new FormInvoiceDetail(id);
+                InvoiceDetail.ShowDialog();
+            }
         }
 
         private void BtnCreateInvoice_Click(object sender, EventArgs e)

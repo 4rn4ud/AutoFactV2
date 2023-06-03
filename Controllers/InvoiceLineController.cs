@@ -19,10 +19,10 @@ namespace AutoFact2.Controllers
             InRepository = new InvoiceLineRepository();
         }
 
-        //public List<Invoiceline> findAll()
-        //{
-        //    return InRepository.findAll(id);
-        //}
+        public List<Invoiceline> findAll(int id)
+        {
+            return InRepository.findAll(id);
+        }
         public void create(int idCustomer, DateTime DateInvoiceLine)
         {
             InRepository.create(idCustomer, DateInvoiceLine);
