@@ -11,18 +11,16 @@ namespace AutoFact2.Views
         private int _idQuote;
         private int _idProduct;
         private int _quantity;
-        private float _promotion;
-        private List<Quote> _listQuote;
-        private List<Product> _listProduct;
+        private decimal _promotion;
+        private decimal _Price;
 
-        public Invoiceline(int idQuote, int idProduct, int quantity, float promotion)
+        public Invoiceline(int idQuote, int idProduct, int quantity, decimal promotion, decimal Price)
         {
             this._idQuote = idQuote;
             this._idProduct = idProduct;
             this._quantity = quantity;
             this._promotion = promotion;
-            this._listQuote = new List<Quote>();
-            this._listProduct = new List<Product>();
+            this._Price = Price;
         }
 
         public int GetIdQuote()
@@ -55,14 +53,26 @@ namespace AutoFact2.Views
             this._quantity = quantity;
         }
 
-        public float GetPromotion()
+        public decimal GetPromotion()
         {
             return _promotion;
         }
 
-        public void SetPromotion(float promotion)
+        public void SetPromotion(decimal promotion)
         {
             this._promotion = promotion;
         }
+
+        public decimal GetPrice()
+        {
+            return this._Price;
+        }
+
+        public decimal GetAmount()
+        {
+            return this._Price * this._quantity;
+        }
+
+
     }
 }
