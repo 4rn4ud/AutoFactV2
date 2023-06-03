@@ -33,6 +33,8 @@ namespace AutoFact2.Models
 
         public Invoice(int id)
         {
+            InvoiceRepository myrepofact = new InvoiceRepository();
+            InvoiceLineRepository myrepofactligne = new InvoiceLineRepository();
             this._id = id;
             this._DateInvoice = myrepofact.GetDate(id);
             this._idCustomer = myrepofact.GetIdCustomer(id);

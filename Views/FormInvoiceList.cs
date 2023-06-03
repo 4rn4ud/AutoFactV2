@@ -18,14 +18,23 @@ namespace AutoFact2
     public partial class FormInvoiceList : Form
     {
         public InvoiceController InController;
+
+        public static int id;
+
         public FormInvoiceList()
         {
             InitializeComponent();
             InController = new InvoiceController();
+
+           // MessageBox.Show("Ceci est un message d'information.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+        private void FormInvoiceList_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Ceci est un message d'information.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LeRefresh();
         }
 
-
-        public static int id;
         private void BtnBack_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -33,19 +42,19 @@ namespace AutoFact2
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (this.DgvIncoice.Columns[e.ColumnIndex].Name == "ColBtnUpdate")
+            if (this.DgvInvoice.Columns[e.ColumnIndex].Name == "ColBtnUpdate")
             {
-                int id = Convert.ToInt32(DgvIncoice.Rows[e.RowIndex].Cells["ColId"].Value);
+                int id = Convert.ToInt32(DgvInvoice.Rows[e.RowIndex].Cells["ColId"].Value);
                 //FormInvoiceUpdate InvoiceUpdate = new FormInvoiceUpdate(id);
                 //InvoiceUpdate.ShowDialog();
                 //MessageBox.Show("sortis boite.");
-                DgvIncoice.Refresh();
+                DgvInvoice.Refresh();
                 //LeRefresh();
 
 
             } //e.RowIndex
 
-            if (this.DgvIncoice.Columns[e.ColumnIndex].Name == "ColBtnPDF")
+            if (this.DgvInvoice.Columns[e.ColumnIndex].Name == "ColBtnPDF")
             {
 
                 return;
@@ -60,37 +69,40 @@ namespace AutoFact2
 
         }
 
-        private void FormClientList_Load(object sender, EventArgs e)
-        {
-            LeRefresh();
-        }
+
 
         //Fonction de rafraichissement du datagriedview.
         public void LeRefresh()
         {
-            this.DgvIncoice.Rows.Clear();
+            MessageBox.Show("test");
+            this.DgvInvoice.Rows.Clear();
             foreach (var uneFacture in InController.findAll())
             {
                 string dgvId = uneFacture.GetId().ToString();
                 int dgvIdInvoice = uneFacture.GetidCustomer();
                 DateTime dgvDateInvoice = uneFacture.GetDateInvoice();
 
-                this.DgvIncoice.Rows.Add(dgvId, dgvIdInvoice, dgvDateInvoice, "Generer PDF", "Supprimer");
+                this.DgvInvoice.Rows.Add(dgvId, dgvIdInvoice, dgvDateInvoice, "Generer PDF", "Supprimer");
             }
         }
         
         public bool LeCreate()
         {
-            FormClientCreate ClientCreate = new FormClientCreate();
-            ClientCreate.ShowDialog();
+            FormInvoiceCreate InvoiceCreate = new FormInvoiceCreate();
+            InvoiceCreate.ShowDialog();
             LeRefresh();
-            DialogResult result = MessageBox.Show("Voulez vous crée un nouveaux client ?", "Confirmation de l'enregistrement", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Voulez vous crée un nouveaux Invoice ?", "Confirmation de l'enregistrement", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
                 return true;
             }
             return false;
+        }
+
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            LeRefresh();
         }
     }
 }

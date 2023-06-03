@@ -6,6 +6,7 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AutoFact2.Repository
 {
@@ -20,7 +21,8 @@ namespace AutoFact2.Repository
             int id;
             int idCustomer;
             DateTime DateInvoice;
-           
+
+            //MessageBox.Show("Ceci est un message d'information.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
             List<Invoice> lesFactures = new List<Invoice>();
@@ -35,6 +37,7 @@ namespace AutoFact2.Repository
 
             if (reader.HasRows)
             {
+                
                 while (reader.Read())
                 {
                     id = Convert.ToInt32(reader["Id"]);
@@ -42,6 +45,8 @@ namespace AutoFact2.Repository
                     DateInvoice = Convert.ToDateTime(reader["Date"]);
                     //Invoicelines = Convert.ToString(reader["companyName"]);
                     lesFactures.Add(new Invoice(id, idCustomer, DateInvoice));
+                    //MessageBox.Show("Ceci est un message d'information.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
             }
             reader.Close();

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DgvIncoice = new System.Windows.Forms.DataGridView();
+            this.DgvInvoice = new System.Windows.Forms.DataGridView();
             this.ColIdInvoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColIdCustomer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CIdProduit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,13 +40,14 @@
             this.ColBtnUpdate = new System.Windows.Forms.DataGridViewButtonColumn();
             this.BtnBack = new System.Windows.Forms.Button();
             this.BtnCreateInvoice = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvIncoice)).BeginInit();
+            this.refresh = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvInvoice)).BeginInit();
             this.SuspendLayout();
             // 
-            // DgvIncoice
+            // DgvInvoice
             // 
-            this.DgvIncoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvIncoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvInvoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColIdInvoice,
             this.ColIdCustomer,
             this.CIdProduit,
@@ -56,14 +57,14 @@
             this.Coldate,
             this.ColBtnPDF,
             this.ColBtnUpdate});
-            this.DgvIncoice.Location = new System.Drawing.Point(4, 100);
-            this.DgvIncoice.Margin = new System.Windows.Forms.Padding(4);
-            this.DgvIncoice.Name = "DgvIncoice";
-            this.DgvIncoice.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.DgvIncoice.RowHeadersWidth = 51;
-            this.DgvIncoice.Size = new System.Drawing.Size(1227, 185);
-            this.DgvIncoice.TabIndex = 0;
-            this.DgvIncoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.DgvInvoice.Location = new System.Drawing.Point(4, 98);
+            this.DgvInvoice.Margin = new System.Windows.Forms.Padding(4);
+            this.DgvInvoice.Name = "DgvInvoice";
+            this.DgvInvoice.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.DgvInvoice.RowHeadersWidth = 51;
+            this.DgvInvoice.Size = new System.Drawing.Size(1227, 185);
+            this.DgvInvoice.TabIndex = 0;
+            this.DgvInvoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // ColIdInvoice
             // 
@@ -151,27 +152,38 @@
             this.BtnCreateInvoice.UseVisualStyleBackColor = true;
             this.BtnCreateInvoice.Click += new System.EventHandler(this.BtnCreateInvoice_Click);
             // 
+            // refresh
+            // 
+            this.refresh.Location = new System.Drawing.Point(234, 510);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(94, 23);
+            this.refresh.TabIndex = 5;
+            this.refresh.Text = "BtnRefresh";
+            this.refresh.UseVisualStyleBackColor = true;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
+            // 
             // FormInvoiceList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1312, 690);
+            this.Controls.Add(this.refresh);
             this.Controls.Add(this.BtnCreateInvoice);
             this.Controls.Add(this.BtnBack);
-            this.Controls.Add(this.DgvIncoice);
+            this.Controls.Add(this.DgvInvoice);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormInvoiceList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AutoFact";
-            ((System.ComponentModel.ISupportInitialize)(this.DgvIncoice)).EndInit();
+            this.Text = "InvoiceList";
+            ((System.ComponentModel.ISupportInitialize)(this.DgvInvoice)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView DgvIncoice;
+        private System.Windows.Forms.DataGridView DgvInvoice;
         private System.Windows.Forms.Button BtnBack;
         private System.Windows.Forms.Button BtnCreateInvoice;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColIdInvoice;
@@ -183,5 +195,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Coldate;
         private System.Windows.Forms.DataGridViewButtonColumn ColBtnPDF;
         private System.Windows.Forms.DataGridViewButtonColumn ColBtnUpdate;
+        private System.Windows.Forms.Button refresh;
     }
 }
