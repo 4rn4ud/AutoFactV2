@@ -88,7 +88,7 @@ namespace AutoFact2
                 int dgvIdInvoice = uneFacture.GetidCustomer();
                 DateTime dgvDateInvoice = uneFacture.GetDateInvoice();
 
-                this.DgvInvoice.Rows.Add(dgvId, dgvIdInvoice, dgvDateInvoice, "Generer PDF", "Supprimer");
+                this.DgvInvoice.Rows.Add(dgvId, dgvIdInvoice, dgvDateInvoice, "Generer PDF", "Détails");
             }
         }
         

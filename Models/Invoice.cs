@@ -62,7 +62,7 @@ namespace AutoFact2.Models
 
         public DateTime GetDateInvoice()
         {
-            return _DateInvoice;
+            return _DateInvoice.Date;
         }
 
         public void SetDateInvoice(DateTime value)

@@ -42,6 +42,14 @@
             this.LabelIdClient = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TxtDate = new System.Windows.Forms.TextBox();
+            this.TxtName = new System.Windows.Forms.TextBox();
+            this.TxtSurname = new System.Windows.Forms.TextBox();
+            this.TxtTotal = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TxtCompagnyName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvInvoiceline)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,6 +128,7 @@
             // 
             this.TxtId.Location = new System.Drawing.Point(141, 50);
             this.TxtId.Name = "TxtId";
+            this.TxtId.ReadOnly = true;
             this.TxtId.Size = new System.Drawing.Size(100, 22);
             this.TxtId.TabIndex = 3;
             // 
@@ -151,7 +160,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(518, 56);
+            this.label1.Location = new System.Drawing.Point(330, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 16);
             this.label1.TabIndex = 8;
@@ -159,16 +168,88 @@
             // 
             // TxtDate
             // 
-            this.TxtDate.Location = new System.Drawing.Point(584, 53);
+            this.TxtDate.Location = new System.Drawing.Point(397, 53);
             this.TxtDate.Name = "TxtDate";
             this.TxtDate.Size = new System.Drawing.Size(100, 22);
             this.TxtDate.TabIndex = 9;
+            // 
+            // TxtName
+            // 
+            this.TxtName.Location = new System.Drawing.Point(397, 105);
+            this.TxtName.Name = "TxtName";
+            this.TxtName.Size = new System.Drawing.Size(100, 22);
+            this.TxtName.TabIndex = 10;
+            // 
+            // TxtSurname
+            // 
+            this.TxtSurname.Location = new System.Drawing.Point(647, 104);
+            this.TxtSurname.Name = "TxtSurname";
+            this.TxtSurname.Size = new System.Drawing.Size(100, 22);
+            this.TxtSurname.TabIndex = 11;
+            // 
+            // TxtTotal
+            // 
+            this.TxtTotal.Location = new System.Drawing.Point(696, 380);
+            this.TxtTotal.Name = "TxtTotal";
+            this.TxtTotal.Size = new System.Drawing.Size(100, 22);
+            this.TxtTotal.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(324, 104);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 16);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Prenom";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(551, 110);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 16);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Nom";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(601, 385);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 16);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Total";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(554, 58);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 16);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Compagnie";
+            // 
+            // TxtCompagnyName
+            // 
+            this.TxtCompagnyName.Location = new System.Drawing.Point(647, 58);
+            this.TxtCompagnyName.Name = "TxtCompagnyName";
+            this.TxtCompagnyName.Size = new System.Drawing.Size(100, 22);
+            this.TxtCompagnyName.TabIndex = 17;
             // 
             // FormInvoiceDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(991, 544);
+            this.Controls.Add(this.TxtCompagnyName);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.TxtTotal);
+            this.Controls.Add(this.TxtSurname);
+            this.Controls.Add(this.TxtName);
             this.Controls.Add(this.TxtDate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LabelIdClient);
@@ -202,5 +283,13 @@
         private System.Windows.Forms.Label LabelIdClient;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtDate;
+        private System.Windows.Forms.TextBox TxtName;
+        private System.Windows.Forms.TextBox TxtSurname;
+        private System.Windows.Forms.TextBox TxtTotal;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox TxtCompagnyName;
     }
 }

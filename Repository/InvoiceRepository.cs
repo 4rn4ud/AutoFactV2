@@ -37,7 +37,7 @@ namespace AutoFact2.Repository
 
             if (reader.HasRows)
             {
-                MessageBox.Show("Ceci est un message d'information.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Ceci est un message d'information.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 while (reader.Read())
                 {

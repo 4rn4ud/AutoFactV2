@@ -166,5 +166,31 @@ namespace AutoFact2.Repository
             }
             connection.Close();
         }
+
+        public void getInfo(int id)
+        {
+            string connectionString = "Data Source=../../AutoFact2BDD.db";
+            SQLiteConnection connection = new SQLiteConnection(connectionString);
+
+            string updateSql = "";
+
+
+                updateSql = "Select Name, LastName, CompanyName from Customer " +
+                 "SET name = @Name, lastName = @LastName, companyName = @CompanyName" +
+                 "WHERE id = @Id";
+
+
+
+            connection.Open();
+
+            using (SQLiteCommand command = new SQLiteCommand(updateSql, connection))
+            {
+                command.Parameters.AddWithValue("@Id", id);
+
+
+                command.ExecuteNonQuery();
+            }
+            connection.Close();
+        }
     }
 }

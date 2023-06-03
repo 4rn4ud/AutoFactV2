@@ -1,5 +1,6 @@
 ﻿using AutoFact2.Controllers;
 using AutoFact2.Models;
+using AutoFact2.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,9 +25,16 @@ namespace AutoFact2.Views
             InController = new InvoiceController();
             InlineController = new InvoiceLineController();
             lafacture = new Invoice(id);
-            TxtDate.Text = Convert.ToString(lafacture.GetDateInvoice());
+            TxtDate.Text = lafacture.GetDateInvoice().ToShortDateString();
             TxtIdCustomer.Text = Convert.ToString(lafacture.GetidCustomer());
             TxtId.Text = Convert.ToString(id);
+
+            Customer customer = CustomerRepository.getInfo(Convert.ToInt32(lafacture.GetidCustomer()));
+            TxtName.Text = customer.GetName();
+            TxtSurname.Text = customer.GetLastname();
+            TxtCompagnyName.Text = customer.GetCompanyName();
+            TxtTotal.Text = GetTotalAmount().ToString();
+
             LeRefresh(id);
         }
 

@@ -16,6 +16,7 @@ namespace AutoFact2.Views
         private string _tel;
         private List<Quote> _listQuote;
 
+
         public Customer(int id, string adress, int postalCode, string city, string mail, string tel)
         {
             this._id = id;
