@@ -53,7 +53,7 @@
             // LabelCompagny
             // 
             this.LabelCompagny.AutoSize = true;
-            this.LabelCompagny.Location = new System.Drawing.Point(180, 363);
+            this.LabelCompagny.Location = new System.Drawing.Point(180, 219);
             this.LabelCompagny.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelCompagny.Name = "LabelCompagny";
             this.LabelCompagny.Size = new System.Drawing.Size(107, 16);
@@ -63,7 +63,7 @@
             // LabelSurname
             // 
             this.LabelSurname.AutoSize = true;
-            this.LabelSurname.Location = new System.Drawing.Point(180, 287);
+            this.LabelSurname.Location = new System.Drawing.Point(180, 361);
             this.LabelSurname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelSurname.Name = "LabelSurname";
             this.LabelSurname.Size = new System.Drawing.Size(36, 16);
@@ -73,7 +73,7 @@
             // LabelName
             // 
             this.LabelName.AutoSize = true;
-            this.LabelName.Location = new System.Drawing.Point(180, 210);
+            this.LabelName.Location = new System.Drawing.Point(180, 295);
             this.LabelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelName.Name = "LabelName";
             this.LabelName.Size = new System.Drawing.Size(54, 16);
@@ -83,7 +83,7 @@
             // LabelAdresse
             // 
             this.LabelAdresse.AutoSize = true;
-            this.LabelAdresse.Location = new System.Drawing.Point(529, 219);
+            this.LabelAdresse.Location = new System.Drawing.Point(529, 361);
             this.LabelAdresse.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelAdresse.Name = "LabelAdresse";
             this.LabelAdresse.Size = new System.Drawing.Size(58, 16);
@@ -93,7 +93,7 @@
             // LabelPostalcode
             // 
             this.LabelPostalcode.AutoSize = true;
-            this.LabelPostalcode.Location = new System.Drawing.Point(529, 295);
+            this.LabelPostalcode.Location = new System.Drawing.Point(529, 212);
             this.LabelPostalcode.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelPostalcode.Name = "LabelPostalcode";
             this.LabelPostalcode.Size = new System.Drawing.Size(80, 16);
@@ -103,7 +103,7 @@
             // LabelCity
             // 
             this.LabelCity.AutoSize = true;
-            this.LabelCity.Location = new System.Drawing.Point(529, 364);
+            this.LabelCity.Location = new System.Drawing.Point(529, 288);
             this.LabelCity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelCity.Name = "LabelCity";
             this.LabelCity.Size = new System.Drawing.Size(33, 16);
@@ -133,71 +133,71 @@
             // TxtTel
             // 
             this.TxtTel.Location = new System.Drawing.Point(1000, 288);
-            this.TxtTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtTel.Margin = new System.Windows.Forms.Padding(4);
             this.TxtTel.Name = "TxtTel";
             this.TxtTel.Size = new System.Drawing.Size(132, 22);
             this.TxtTel.TabIndex = 29;
             // 
             // TxtMail
             // 
-            this.TxtMail.Location = new System.Drawing.Point(1000, 212);
-            this.TxtMail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtMail.Location = new System.Drawing.Point(1000, 216);
+            this.TxtMail.Margin = new System.Windows.Forms.Padding(4);
             this.TxtMail.Name = "TxtMail";
             this.TxtMail.Size = new System.Drawing.Size(132, 22);
             this.TxtMail.TabIndex = 28;
             // 
             // TxtCity
             // 
-            this.TxtCity.Location = new System.Drawing.Point(656, 364);
-            this.TxtCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtCity.Location = new System.Drawing.Point(656, 288);
+            this.TxtCity.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCity.Name = "TxtCity";
             this.TxtCity.Size = new System.Drawing.Size(132, 22);
             this.TxtCity.TabIndex = 27;
             // 
             // TxtPostalCode
             // 
-            this.TxtPostalCode.Location = new System.Drawing.Point(656, 288);
-            this.TxtPostalCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtPostalCode.Location = new System.Drawing.Point(656, 216);
+            this.TxtPostalCode.Margin = new System.Windows.Forms.Padding(4);
             this.TxtPostalCode.Name = "TxtPostalCode";
             this.TxtPostalCode.Size = new System.Drawing.Size(132, 22);
             this.TxtPostalCode.TabIndex = 26;
             // 
             // TxtAdresse
             // 
-            this.TxtAdresse.Location = new System.Drawing.Point(656, 212);
-            this.TxtAdresse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtAdresse.Location = new System.Drawing.Point(656, 358);
+            this.TxtAdresse.Margin = new System.Windows.Forms.Padding(4);
             this.TxtAdresse.Name = "TxtAdresse";
             this.TxtAdresse.Size = new System.Drawing.Size(132, 22);
             this.TxtAdresse.TabIndex = 25;
             // 
             // TxtCompanyname
             // 
-            this.TxtCompanyname.Location = new System.Drawing.Point(309, 363);
-            this.TxtCompanyname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtCompanyname.Location = new System.Drawing.Point(309, 216);
+            this.TxtCompanyname.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCompanyname.Name = "TxtCompanyname";
             this.TxtCompanyname.Size = new System.Drawing.Size(132, 22);
             this.TxtCompanyname.TabIndex = 24;
             // 
             // TxtSurname
             // 
-            this.TxtSurname.Location = new System.Drawing.Point(309, 288);
-            this.TxtSurname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtSurname.Location = new System.Drawing.Point(309, 358);
+            this.TxtSurname.Margin = new System.Windows.Forms.Padding(4);
             this.TxtSurname.Name = "TxtSurname";
             this.TxtSurname.Size = new System.Drawing.Size(132, 22);
             this.TxtSurname.TabIndex = 23;
             // 
             // TxtName
             // 
-            this.TxtName.Location = new System.Drawing.Point(309, 212);
-            this.TxtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtName.Location = new System.Drawing.Point(309, 292);
+            this.TxtName.Margin = new System.Windows.Forms.Padding(4);
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(132, 22);
             this.TxtName.TabIndex = 22;
             // 
             // BtnUpdate
             // 
-            this.BtnUpdate.Location = new System.Drawing.Point(669, 601);
-            this.BtnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnUpdate.Location = new System.Drawing.Point(397, 484);
+            this.BtnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(100, 28);
             this.BtnUpdate.TabIndex = 21;
@@ -207,8 +207,8 @@
             // 
             // BtnBack
             // 
-            this.BtnBack.Location = new System.Drawing.Point(180, 62);
-            this.BtnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnBack.Location = new System.Drawing.Point(656, 484);
+            this.BtnBack.Margin = new System.Windows.Forms.Padding(4);
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Size = new System.Drawing.Size(100, 28);
             this.BtnBack.TabIndex = 20;
@@ -258,7 +258,7 @@
             this.Controls.Add(this.TxtName);
             this.Controls.Add(this.BtnUpdate);
             this.Controls.Add(this.BtnBack);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormClientUpdate";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
