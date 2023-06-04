@@ -11,6 +11,7 @@ using System.Xml.Linq;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
+using AutoFact2.Controllers;
 
 namespace AutoFact2.Models
 {
@@ -108,7 +109,8 @@ namespace AutoFact2.Models
             Document document = new Document();
 
             // Définir le chemin de sortie du fichier PDF
-            string filePath = "C:/Users/Titouan/Downloads/facture.pdf";
+            string userFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            string filePath = userFolderPath + "/Downloads/facture.pdf";
 
             // Créer un écrivain PDF pour écrire dans le document
             PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
@@ -116,17 +118,71 @@ namespace AutoFact2.Models
             // Ouvrir le document pour écrire
             document.Open();
             string invoiceNumber = Convert.ToString(_id);
-            string customerName = Convert.ToString( _idCustomer );
-            string totalAmount = Convert.ToString( GetTotal()  );
-
+            //string customerName = Convert.ToString( _idCustomer );
+            string totalAmount = GetTotal().ToString("C");
+            CustomerRepository custRepository = new CustomerRepository();
+            Customer customerrepo = custRepository.getInfo(_idCustomer);
+            string customerName = customerrepo.GetName() + " " + customerrepo.GetLastname();
+            //TxtSurname.Text = customerrepo.GetLastname();
+            string companyName = customerrepo.GetCompanyName();
+            
             // Ajouter le contenu de la facture au document
             Paragraph header = new Paragraph("Facture #" + invoiceNumber, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 20, iTextSharp.text.Font.BOLD));
             Paragraph customer = new Paragraph("Client: " + customerName, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12));
+            Paragraph company = new Paragraph("Societe: " + companyName, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12));
+         
             Paragraph amount = new Paragraph("Montant total: " + totalAmount, new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12));
+            Paragraph detail = new Paragraph("Détail de la facture: ", new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 12));
+
+
+
+            ProductController productController = new ProductController();
+            InvoiceLineController InlineController = new InvoiceLineController(); ;
+            detail.Add(Chunk.NEWLINE);
+
+            PdfPTable table = new PdfPTable(3);
+
+            table.AddCell("Produit");
+            table.AddCell("Quantité");
+            table.AddCell("Prix");
+            
+            
+
+            foreach (Invoiceline invoiceLine in InlineController.FindAll(_id))
+            {
+                Product product = productController.Find(invoiceLine.GetIdProduct());
+                //MessageBox.Show("ceci est le test :" + invoiceLine.GetIdProduct());
+                string dgvIdProduct = product.GetLabel();
+                string dgvQuantity = invoiceLine.GetQuantity().ToString();
+                string dgvPromotion = invoiceLine.GetPromotion().ToString();
+                string dgvPrice = invoiceLine.GetPrice().ToString("C");
+                string dgvAmount = invoiceLine.GetAmount().ToString();
+
+                table.AddCell(dgvIdProduct);
+                table.AddCell(dgvQuantity);
+                table.AddCell(dgvPrice);
+
+                detail.Add(dgvIdProduct + "|" + dgvQuantity + "|" + dgvPrice );
+
+                detail.Add(Chunk.WHITESPACE);
+                detail.Add(dgvIdProduct );
+
+                detail.Add(Chunk.NEWLINE);
+                //this.DgvInvoiceline.Rows.Add(dgvIdProduct, dgvQuantity, dgvPromotion, dgvPrice, dgvAmount, "Supprimer", "Modifier");
+            }
+
+
+
+
+
 
             // Ajouter les éléments au document
             document.Add(header);
             document.Add(customer);
+            document.Add(company);
+            //document.Add(detail);
+            document.Add(table);
+
             document.Add(amount);
 
             // Fermer le document
