@@ -168,7 +168,7 @@ namespace AutoFact2.Views
                     lafacture.SetIdCustomer(Convert.ToInt32((CBCustomer.SelectedItem as dynamic).Value));
                     lafacture.SetDateInvoice(lafacture.GetDateInvoice());
                     lafacture.Create();
-                    MessageBox.Show(Convert.ToString(lafacture.GetId()));
+                    //MessageBox.Show(Convert.ToString(lafacture.GetId()));
                     if (lafacture.GetId() != 0) { 
                     FormInvoiceLineCreate CreateInvoiceLine = new FormInvoiceLineCreate(lafacture.GetId());
                     CreateInvoiceLine.ShowDialog();

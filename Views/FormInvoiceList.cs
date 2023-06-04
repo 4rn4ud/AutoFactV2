@@ -1,4 +1,5 @@
 ﻿using AutoFact2.Controllers;
+using AutoFact2.Models;
 using AutoFact2.Views;
 using System;
 using System.Collections.Generic;
@@ -55,7 +56,9 @@ namespace AutoFact2
 
             if (this.DgvInvoice.Columns[e.ColumnIndex].Name == "ColBtnPDF")
             {
-
+                int id = Convert.ToInt32(DgvInvoice.Rows[e.RowIndex].Cells["ColIdInvoice"].Value);
+                Invoice thefacture = new Invoice(id);
+                thefacture.GenerateInvoicePDF();
                 return;
 
             }

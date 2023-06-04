@@ -20,6 +20,16 @@ namespace AutoFact2.Views
             this._price = price;
         }
 
+        public Invoiceline()
+        {
+            //this._idInvoice = idInvoice;
+            //this._idProduct = idProduct;
+            this._quantity = 1;
+            this._promotion = 0;
+            this._price = 0;
+        }
+
+
         public int GetIdInvoice()
         {
             return _idInvoice;

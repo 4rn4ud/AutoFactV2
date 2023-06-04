@@ -22,6 +22,9 @@ namespace AutoFact2.Views
         public FormInvoiceLineCreate(int invoiceId)
         {
             InitializeComponent();
+            TxtPrice.Text = "0";
+            TxtQuantity.Text = "1";
+            TxtPromotion.Text = "0";
             invoiceLineController = new InvoiceLineController();
             productRepository = new ProductRepository();
             this.invoiceId = invoiceId;
@@ -128,5 +131,26 @@ namespace AutoFact2.Views
         {
             this.Close();
         }
+
+        private void CBProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int productid = 0;
+
+            if (CBProduct.SelectedItem != null)
+            {
+          
+            string selectedProduct = CBProduct.SelectedItem.ToString();
+            int separatorIndex = selectedProduct.IndexOf('-');
+            ProductRepository repoproduit = new ProductRepository();
+            if (separatorIndex != -1)
+            {
+                productid = Convert.ToInt32(selectedProduct.Substring(0, separatorIndex).Trim());
+            }
+
+            if (productid != 0)
+            {
+                TxtPrice.Text =Convert.ToString(repoproduit.Find(productid).GetUnitPrice());
+            }
+        }  }
     }
 }

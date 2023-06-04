@@ -124,6 +124,7 @@
             this.CBProduct.Name = "CBProduct";
             this.CBProduct.Size = new System.Drawing.Size(264, 24);
             this.CBProduct.TabIndex = 10;
+            this.CBProduct.SelectedIndexChanged += new System.EventHandler(this.CBProduct_SelectedIndexChanged);
             // 
             // FormInvoiceLineCreate
             // 
