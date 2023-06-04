@@ -37,7 +37,7 @@ namespace AutoFact2
                 LeRefresh();
 
 
-            } //e.RowIndex
+            }
 
             if (this.DgvClient.Columns[e.ColumnIndex].Name == "ColBtnDelete")
             {
