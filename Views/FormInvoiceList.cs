@@ -1,5 +1,6 @@
 ﻿using AutoFact2.Controllers;
 using AutoFact2.Models;
+using AutoFact2.Repository;
 using AutoFact2.Views;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace AutoFact2
     public partial class FormInvoiceList : Form
     {
         public InvoiceController InController;
+        public CustomerRepository custRepository;
 
         public static int id;
 
@@ -26,10 +28,9 @@ namespace AutoFact2
         {
             InitializeComponent();
             InController = new InvoiceController();
-
-           // MessageBox.Show("Ceci est un message d'information.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            custRepository = new CustomerRepository();
         }
+
         private void FormInvoiceList_Load(object sender, EventArgs e)
         {
             LeRefresh();
@@ -45,14 +46,8 @@ namespace AutoFact2
             if (this.DgvInvoice.Columns[e.ColumnIndex].Name == "ColBtnUpdate")
             {
                 int id = Convert.ToInt32(DgvInvoice.Rows[e.RowIndex].Cells["ColId"].Value);
-                //FormInvoiceUpdate InvoiceUpdate = new FormInvoiceUpdate(id);
-                //InvoiceUpdate.ShowDialog();
-                //MessageBox.Show("sortis boite.");
                 DgvInvoice.Refresh();
-                //LeRefresh();
-
-
-            } //e.RowIndex
+            }
 
             if (this.DgvInvoice.Columns[e.ColumnIndex].Name == "ColBtnPDF")
             {
@@ -60,7 +55,6 @@ namespace AutoFact2
                 Invoice thefacture = new Invoice(id);
                 thefacture.GenerateInvoicePDF();
                 return;
-
             }
 
             if (this.DgvInvoice.Columns[e.ColumnIndex].Name == "ColBtnDetail")
@@ -73,18 +67,12 @@ namespace AutoFact2
 
         private void BtnCreateInvoice_Click(object sender, EventArgs e)
         {
-            
             FormInvoiceDetail InvoiceDetail = new FormInvoiceDetail();
             InvoiceDetail.ShowDialog();
-
         }
 
-
-
-        //Fonction de rafraichissement du datagriedview.
         public void LeRefresh()
         {
-            //MessageBox.Show("test");
             this.DgvInvoice.Rows.Clear();
             foreach (var uneFacture in InController.findAll())
             {
@@ -92,23 +80,29 @@ namespace AutoFact2
                 int dgvIdInvoice = uneFacture.GetidCustomer();
                 DateTime dgvDateInvoice = uneFacture.GetDateInvoice();
 
-                this.DgvInvoice.Rows.Add(dgvId, dgvIdInvoice, dgvDateInvoice, "Generer PDF", "Détails");
+                Customer customer = custRepository.getInfo(dgvIdInvoice);
+                string customerName;
+                string customerCompany;
+                string customerSurname;
+
+                if (customer is Physical)
+                {
+                    Physical physicalCustomer = (Physical)customer;
+                    customerName = physicalCustomer.GetName();
+                    customerSurname = physicalCustomer.GetLastname();
+                    customerCompany = string.Empty; // Pas de nom de société pour les clients physiques
+                }
+                else
+                {
+                    Moral moralCustomer = (Moral)customer;
+                    customerName = string.Empty; // Pas de prénom pour les clients moraux
+                    customerSurname = string.Empty; // Pas de nom de famille pour les clients moraux
+                    customerCompany = moralCustomer.GetCompanyName();
+                }
+
+                this.DgvInvoice.Rows.Add(dgvId, customerName, customerSurname, customerCompany, dgvDateInvoice, "Generer PDF", "Détails");
             }
         }
-        
-       /* public bool LeCreate()
-        {
-            FormInvoiceCreate InvoiceCreate = new FormInvoiceCreate();
-            InvoiceCreate.ShowDialog();
-            LeRefresh();
-            DialogResult result = MessageBox.Show("Voulez vous crée un nouveaux Invoice ?", "Confirmation de l'enregistrement", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                return true;
-            }
-            return false;
-        } */
 
         private void refresh_Click(object sender, EventArgs e)
         {

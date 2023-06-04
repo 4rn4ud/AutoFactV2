@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace AutoFact2.Views
 {
@@ -27,18 +28,36 @@ namespace AutoFact2.Views
             InlineController = new InvoiceLineController();
             lafacture = new Invoice(id);
             TxtDate.Text = lafacture.GetDateInvoice().ToShortDateString();
-            //TxtIdCustomer.Text = Convert.ToString(lafacture.GetidCustomer());
             TxtId.Text = Convert.ToString(id);
 
             custRepository = new CustomerRepository();
             Customer customerrepo = custRepository.getInfo(lafacture.GetidCustomer());
-            TxtName.Text = customerrepo.GetName();
-            TxtSurname.Text = customerrepo.GetLastname();
-            TxtCompagnyName.Text = customerrepo.GetCompanyName();
+            string customerName;
+            string customerCompany;
+            string customerSurname;
+
+            if (customerrepo is Physical)
+            {
+                Physical physicalCustomer = (Physical)customerrepo;
+                customerName = physicalCustomer.GetName();
+                customerSurname = physicalCustomer.GetLastname();
+                customerCompany = string.Empty;
+            }
+            else
+            {
+                Moral moralCustomer = (Moral)customerrepo;
+                customerName = string.Empty;
+                customerSurname = string.Empty;
+                customerCompany = moralCustomer.GetCompanyName();
+            }
+
+            //TxtName.Text = customerName;
+            //TxtSurname.Text = customerSurname;
+            TxtCompagnyName.Text = customerCompany;
 
             TxtTotal.Text = lafacture.GetTotal().ToString();
             LoadCustomer(lafacture.GetidCustomer());
-            CBCustomer.Enabled = false; // Désactive la ComboBox, la rendant non cliquable
+            CBCustomer.Enabled = false;
             LeRefresh(id);
         }
 
@@ -50,18 +69,9 @@ namespace AutoFact2.Views
             lafacture = new Invoice();
             custRepository = new CustomerRepository();
             TxtDate.Text = DateTime.Now.ToShortDateString();
-            // TxtId.Text = Convert.ToString(id);
 
-            //custRepository = new CustomerRepository();
-            //Customer customerrepo = custRepository.getInfo(lafacture.GetidCustomer());
-            //TxtName.Text = customerrepo.GetName();
-            //TxtSurname.Text = customerrepo.GetLastname();
-            //TxtCompagnyName.Text = customerrepo.GetCompanyName();
-
-            //TxtTotal.Text = lafacture.GetTotal().ToString();
             LoadCustomer();
-            CBCustomer.Enabled = true; // Désactive la ComboBox, la rendant non cliquable
-            //LeRefresh(id);
+            CBCustomer.Enabled = true;
         }
 
         private void BtnBack_Click(object sender, EventArgs e)
@@ -71,31 +81,23 @@ namespace AutoFact2.Views
 
         private void DgvInvoiceline_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Check if the clicked cell is the "Delete" button
             if (e.ColumnIndex == DgvInvoiceline.Columns["BtnColDelete"].Index && e.RowIndex >= 0)
             {
-                // Get the corresponding invoice line and its ID
                 Invoiceline invoiceLine = InlineController.FindAll(lafacture.GetId())[e.RowIndex];
                 int invoiceLineId = invoiceLine.GetId();
 
-                // Delete the invoice line
                 InlineController.Delete(invoiceLineId);
 
-                // Refresh the DataGridView
                 LeRefresh(lafacture.GetId());
             }
-            // Check if the clicked cell is the "Update" button
             else if (e.ColumnIndex == DgvInvoiceline.Columns["BtnColUpdate"].Index && e.RowIndex >= 0)
             {
-                // Get the corresponding invoice line and its ID
                 Invoiceline invoiceLine = InlineController.FindAll(lafacture.GetId())[e.RowIndex];
                 int invoiceLineId = invoiceLine.GetId();
 
-                // Open the update form with the invoice line ID as a parameter
                 FormInvoiceLineUpdate updateInvoiceLine = new FormInvoiceLineUpdate(invoiceLineId);
                 updateInvoiceLine.ShowDialog();
 
-                // Refresh the DataGridView
                 LeRefresh(lafacture.GetId());
             }
         }
@@ -127,8 +129,6 @@ namespace AutoFact2.Views
             foreach (Customer thesustomer in customers)
             {
                 CBCustomer.Items.Add(new { Text = thesustomer.GetName() + " " + thesustomer.GetLastname(), Value = thesustomer.GetId() });
-
-
             }
         }
 
@@ -140,7 +140,6 @@ namespace AutoFact2.Views
             foreach (Invoiceline invoiceLine in InlineController.FindAll(id))
             {
                 Product product = productController.Find(invoiceLine.GetIdProduct());
-                //MessageBox.Show("ceci est le test :" + invoiceLine.GetIdProduct());
                 string dgvIdProduct = product.GetLabel();
                 string dgvQuantity = invoiceLine.GetQuantity().ToString();
                 string dgvPromotion = invoiceLine.GetPromotion().ToString();
@@ -153,14 +152,12 @@ namespace AutoFact2.Views
 
         private void BtnCreateInvoiceLine_Click(object sender, EventArgs e)
         {
-
-            if ( CBCustomer.SelectedItem != null) {
+            if (CBCustomer.SelectedItem != null)
+            {
                 if (lafacture.GetId() != 0)
                 {
-
                     FormInvoiceLineCreate CreateInvoiceLine = new FormInvoiceLineCreate(lafacture.GetId());
                     CreateInvoiceLine.ShowDialog();
-                    // Refresh the DataGridView
                     LeRefresh(lafacture.GetId());
                 }
                 else
@@ -168,23 +165,33 @@ namespace AutoFact2.Views
                     lafacture.SetIdCustomer(Convert.ToInt32((CBCustomer.SelectedItem as dynamic).Value));
                     lafacture.SetDateInvoice(lafacture.GetDateInvoice());
                     lafacture.Create();
-                    //MessageBox.Show(Convert.ToString(lafacture.GetId()));
-                    if (lafacture.GetId() != 0) { 
-                    FormInvoiceLineCreate CreateInvoiceLine = new FormInvoiceLineCreate(lafacture.GetId());
-                    CreateInvoiceLine.ShowDialog();
-                    // Refresh the DataGridView
-                    LeRefresh(lafacture.GetId());
+
+                    if (lafacture.GetId() != 0)
+                    {
+                        FormInvoiceLineCreate CreateInvoiceLine = new FormInvoiceLineCreate(lafacture.GetId());
+                        CreateInvoiceLine.ShowDialog();
+                        LeRefresh(lafacture.GetId());
                     }
                 }
-
             }
             else
             {
-                MessageBox.Show("Vous devez d'abord selectionner un client.");
+                MessageBox.Show("Vous devez d'abord sélectionner un client.");
             }
+        }
 
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
-
+        private void CBCustomer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CBCustomer.SelectedItem != null)
+            {
+                string companyName = (CBCustomer.SelectedItem as dynamic).Text;
+                TxtCompagnyName.Text = companyName;
+            }
         }
     }
 }

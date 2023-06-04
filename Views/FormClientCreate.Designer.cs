@@ -46,12 +46,13 @@
             this.LabelName = new System.Windows.Forms.Label();
             this.LabelSurname = new System.Windows.Forms.Label();
             this.LabelCompagny = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnBack
             // 
-            this.BtnBack.Location = new System.Drawing.Point(656, 449);
-            this.BtnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnBack.Location = new System.Drawing.Point(419, 448);
+            this.BtnBack.Margin = new System.Windows.Forms.Padding(4);
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Size = new System.Drawing.Size(100, 28);
             this.BtnBack.TabIndex = 0;
@@ -61,8 +62,8 @@
             // 
             // BtnCreate
             // 
-            this.BtnCreate.Location = new System.Drawing.Point(419, 449);
-            this.BtnCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnCreate.Location = new System.Drawing.Point(688, 448);
+            this.BtnCreate.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCreate.Name = "BtnCreate";
             this.BtnCreate.Size = new System.Drawing.Size(100, 28);
             this.BtnCreate.TabIndex = 1;
@@ -73,7 +74,7 @@
             // TxtName
             // 
             this.TxtName.Location = new System.Drawing.Point(185, 251);
-            this.TxtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtName.Margin = new System.Windows.Forms.Padding(4);
             this.TxtName.Name = "TxtName";
             this.TxtName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtName.Size = new System.Drawing.Size(132, 22);
@@ -82,7 +83,7 @@
             // TxtSurname
             // 
             this.TxtSurname.Location = new System.Drawing.Point(185, 310);
-            this.TxtSurname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtSurname.Margin = new System.Windows.Forms.Padding(4);
             this.TxtSurname.Name = "TxtSurname";
             this.TxtSurname.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtSurname.Size = new System.Drawing.Size(132, 22);
@@ -91,7 +92,7 @@
             // TxtCompanyname
             // 
             this.TxtCompanyname.Location = new System.Drawing.Point(184, 174);
-            this.TxtCompanyname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtCompanyname.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCompanyname.Name = "TxtCompanyname";
             this.TxtCompanyname.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtCompanyname.Size = new System.Drawing.Size(132, 22);
@@ -100,7 +101,7 @@
             // TxtAdresse
             // 
             this.TxtAdresse.Location = new System.Drawing.Point(545, 310);
-            this.TxtAdresse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtAdresse.Margin = new System.Windows.Forms.Padding(4);
             this.TxtAdresse.Name = "TxtAdresse";
             this.TxtAdresse.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtAdresse.Size = new System.Drawing.Size(132, 22);
@@ -109,7 +110,7 @@
             // TxtPostalCode
             // 
             this.TxtPostalCode.Location = new System.Drawing.Point(545, 177);
-            this.TxtPostalCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtPostalCode.Margin = new System.Windows.Forms.Padding(4);
             this.TxtPostalCode.Name = "TxtPostalCode";
             this.TxtPostalCode.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtPostalCode.Size = new System.Drawing.Size(132, 22);
@@ -118,7 +119,7 @@
             // TxtCity
             // 
             this.TxtCity.Location = new System.Drawing.Point(545, 249);
-            this.TxtCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtCity.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCity.Name = "TxtCity";
             this.TxtCity.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtCity.Size = new System.Drawing.Size(132, 22);
@@ -127,7 +128,7 @@
             // TxtMail
             // 
             this.TxtMail.Location = new System.Drawing.Point(889, 174);
-            this.TxtMail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtMail.Margin = new System.Windows.Forms.Padding(4);
             this.TxtMail.Name = "TxtMail";
             this.TxtMail.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtMail.Size = new System.Drawing.Size(132, 22);
@@ -136,7 +137,7 @@
             // TxtTel
             // 
             this.TxtTel.Location = new System.Drawing.Point(889, 246);
-            this.TxtTel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TxtTel.Margin = new System.Windows.Forms.Padding(4);
             this.TxtTel.Name = "TxtTel";
             this.TxtTel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtTel.Size = new System.Drawing.Size(132, 22);
@@ -222,11 +223,22 @@
             this.LabelCompagny.TabIndex = 19;
             this.LabelCompagny.Text = "Nom compagnie";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(469, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(181, 25);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Creation de client";
+            // 
             // FormClientCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1312, 690);
+            this.ClientSize = new System.Drawing.Size(1182, 553);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.LabelCompagny);
             this.Controls.Add(this.LabelSurname);
             this.Controls.Add(this.LabelName);
@@ -245,11 +257,11 @@
             this.Controls.Add(this.TxtName);
             this.Controls.Add(this.BtnCreate);
             this.Controls.Add(this.BtnBack);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormClientCreate";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AutoFact";
+            this.Text = "FormClientCreate";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +287,6 @@
         private System.Windows.Forms.Label LabelName;
         private System.Windows.Forms.Label LabelSurname;
         private System.Windows.Forms.Label LabelCompagny;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -38,25 +38,26 @@
             this.BtnUpdate = new System.Windows.Forms.Button();
             this.BtnBack = new System.Windows.Forms.Button();
             this.CBProduct = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TxtQuantity
             // 
-            this.TxtQuantity.Location = new System.Drawing.Point(527, 102);
+            this.TxtQuantity.Location = new System.Drawing.Point(670, 136);
             this.TxtQuantity.Name = "TxtQuantity";
             this.TxtQuantity.Size = new System.Drawing.Size(100, 22);
             this.TxtQuantity.TabIndex = 1;
             // 
             // TxtPromotion
             // 
-            this.TxtPromotion.Location = new System.Drawing.Point(278, 204);
+            this.TxtPromotion.Location = new System.Drawing.Point(421, 238);
             this.TxtPromotion.Name = "TxtPromotion";
             this.TxtPromotion.Size = new System.Drawing.Size(100, 22);
             this.TxtPromotion.TabIndex = 2;
             // 
             // TxtPrice
             // 
-            this.TxtPrice.Location = new System.Drawing.Point(527, 203);
+            this.TxtPrice.Location = new System.Drawing.Point(670, 237);
             this.TxtPrice.Name = "TxtPrice";
             this.TxtPrice.Size = new System.Drawing.Size(100, 22);
             this.TxtPrice.TabIndex = 3;
@@ -64,7 +65,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(176, 105);
+            this.label1.Location = new System.Drawing.Point(319, 139);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 16);
             this.label1.TabIndex = 4;
@@ -73,16 +74,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(459, 104);
+            this.label2.Location = new System.Drawing.Point(602, 138);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 16);
+            this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Quantiter";
+            this.label2.Text = "Quantité";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(176, 209);
+            this.label3.Location = new System.Drawing.Point(319, 243);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 6;
@@ -91,7 +92,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(450, 209);
+            this.label4.Location = new System.Drawing.Point(593, 243);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 16);
             this.label4.TabIndex = 7;
@@ -99,7 +100,7 @@
             // 
             // BtnUpdate
             // 
-            this.BtnUpdate.Location = new System.Drawing.Point(527, 353);
+            this.BtnUpdate.Location = new System.Drawing.Point(683, 347);
             this.BtnUpdate.Name = "BtnUpdate";
             this.BtnUpdate.Size = new System.Drawing.Size(75, 23);
             this.BtnUpdate.TabIndex = 8;
@@ -109,7 +110,7 @@
             // 
             // BtnBack
             // 
-            this.BtnBack.Location = new System.Drawing.Point(325, 353);
+            this.BtnBack.Location = new System.Drawing.Point(433, 347);
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Size = new System.Drawing.Size(75, 23);
             this.BtnBack.TabIndex = 9;
@@ -120,16 +121,27 @@
             // CBProduct
             // 
             this.CBProduct.FormattingEnabled = true;
-            this.CBProduct.Location = new System.Drawing.Point(278, 96);
+            this.CBProduct.Location = new System.Drawing.Point(421, 130);
             this.CBProduct.Name = "CBProduct";
             this.CBProduct.Size = new System.Drawing.Size(121, 24);
             this.CBProduct.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(417, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(341, 25);
+            this.label5.TabIndex = 42;
+            this.label5.Text = "Modification d\'une ligne de facture";
             // 
             // FormInvoiceLineUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1102, 548);
+            this.ClientSize = new System.Drawing.Size(1182, 553);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.CBProduct);
             this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.BtnUpdate);
@@ -159,5 +171,6 @@
         private System.Windows.Forms.Button BtnUpdate;
         private System.Windows.Forms.Button BtnBack;
         private System.Windows.Forms.ComboBox CBProduct;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -204,7 +204,7 @@
             this.Name = "FormClientList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AutoFact";
+            this.Text = "FormClientList";
             this.Load += new System.EventHandler(this.FormClientList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvClient)).EndInit();
             this.ResumeLayout(false);

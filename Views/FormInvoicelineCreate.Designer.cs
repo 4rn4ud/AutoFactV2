@@ -38,6 +38,7 @@
             this.BtnBack = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.CBProduct = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TxtPromotion
@@ -75,9 +76,9 @@
             this.label40.AutoSize = true;
             this.label40.Location = new System.Drawing.Point(606, 140);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(60, 16);
+            this.label40.Size = new System.Drawing.Size(56, 16);
             this.label40.TabIndex = 6;
-            this.label40.Text = "Quantiter";
+            this.label40.Text = "Quantité";
             // 
             // label50
             // 
@@ -90,7 +91,7 @@
             // 
             // BtnAddInvoiceLine
             // 
-            this.BtnAddInvoiceLine.Location = new System.Drawing.Point(609, 447);
+            this.BtnAddInvoiceLine.Location = new System.Drawing.Point(648, 392);
             this.BtnAddInvoiceLine.Name = "BtnAddInvoiceLine";
             this.BtnAddInvoiceLine.Size = new System.Drawing.Size(75, 23);
             this.BtnAddInvoiceLine.TabIndex = 8;
@@ -100,7 +101,7 @@
             // 
             // BtnBack
             // 
-            this.BtnBack.Location = new System.Drawing.Point(380, 447);
+            this.BtnBack.Location = new System.Drawing.Point(436, 392);
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Size = new System.Drawing.Size(75, 23);
             this.BtnBack.TabIndex = 9;
@@ -126,11 +127,22 @@
             this.CBProduct.TabIndex = 10;
             this.CBProduct.SelectedIndexChanged += new System.EventHandler(this.CBProduct_SelectedIndexChanged);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(416, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(307, 25);
+            this.label2.TabIndex = 42;
+            this.label2.Text = "Creation d\'une ligne de facture";
+            // 
             // FormInvoiceLineCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1155, 543);
+            this.ClientSize = new System.Drawing.Size(1182, 553);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.CBProduct);
             this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.BtnAddInvoiceLine);
@@ -160,5 +172,6 @@
         private System.Windows.Forms.Button BtnBack;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CBProduct;
+        private System.Windows.Forms.Label label2;
     }
 }

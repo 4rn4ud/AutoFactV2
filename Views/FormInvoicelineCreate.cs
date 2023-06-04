@@ -139,18 +139,19 @@ namespace AutoFact2.Views
             if (CBProduct.SelectedItem != null)
             {
           
-            string selectedProduct = CBProduct.SelectedItem.ToString();
-            int separatorIndex = selectedProduct.IndexOf('-');
-            ProductRepository repoproduit = new ProductRepository();
-            if (separatorIndex != -1)
-            {
-                productid = Convert.ToInt32(selectedProduct.Substring(0, separatorIndex).Trim());
-            }
+                string selectedProduct = CBProduct.SelectedItem.ToString();
+                int separatorIndex = selectedProduct.IndexOf('-');
+                ProductRepository repoproduit = new ProductRepository();
+                if (separatorIndex != -1)
+                {
+                    productid = Convert.ToInt32(selectedProduct.Substring(0, separatorIndex).Trim());
+                }
 
-            if (productid != 0)
-            {
-                TxtPrice.Text =Convert.ToString(repoproduit.Find(productid).GetUnitPrice());
+                if (productid != 0)
+                {
+                    TxtPrice.Text =Convert.ToString(repoproduit.Find(productid).GetUnitPrice());
+                }
             }
-        }  }
+        }  
     }
 }
