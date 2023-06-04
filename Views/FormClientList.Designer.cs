@@ -42,6 +42,7 @@
             this.ColBtnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.BtnCreateClient = new System.Windows.Forms.Button();
             this.BtnBack = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvClient)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,7 +161,7 @@
             // 
             // BtnCreateClient
             // 
-            this.BtnCreateClient.Location = new System.Drawing.Point(540, 545);
+            this.BtnCreateClient.Location = new System.Drawing.Point(660, 502);
             this.BtnCreateClient.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCreateClient.Name = "BtnCreateClient";
             this.BtnCreateClient.Size = new System.Drawing.Size(100, 28);
@@ -171,7 +172,7 @@
             // 
             // BtnBack
             // 
-            this.BtnBack.Location = new System.Drawing.Point(16, 16);
+            this.BtnBack.Location = new System.Drawing.Point(427, 502);
             this.BtnBack.Margin = new System.Windows.Forms.Padding(4);
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Size = new System.Drawing.Size(100, 28);
@@ -180,11 +181,22 @@
             this.BtnBack.UseVisualStyleBackColor = true;
             this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(515, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(167, 25);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Liste des clients";
+            // 
             // FormClientList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1582, 753);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.BtnCreateClient);
             this.Controls.Add(this.DgvClient);
@@ -196,6 +208,7 @@
             this.Load += new System.EventHandler(this.FormClientList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvClient)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -215,5 +228,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTel;
         private System.Windows.Forms.DataGridViewButtonColumn ColBtnUpdate;
         private System.Windows.Forms.DataGridViewButtonColumn ColBtnDelete;
+        private System.Windows.Forms.Label label1;
     }
 }
