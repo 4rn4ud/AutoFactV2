@@ -43,7 +43,7 @@ namespace AutoFact2
         {
             this.DgvProduct.Rows.Clear();
 
-            foreach (var unProduit in productController.findAll())
+            foreach (var unProduit in productController.FindAll())
             {
                 string dgvId = unProduit.GetId().ToString();
                 string dgvLibel = unProduit.GetLabel();

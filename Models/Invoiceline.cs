@@ -1,36 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AutoFact2.Views
 {
     public class Invoiceline
     {
-        private int _idQuote;
+        private int _idInvoice;
         private int _idProduct;
         private int _quantity;
         private decimal _promotion;
-        private decimal _Price;
+        private decimal _price;
+        private int _id;
 
-        public Invoiceline(int idQuote, int idProduct, int quantity, decimal promotion, decimal Price)
+        public Invoiceline(int idInvoice, int idProduct, int quantity, decimal promotion, decimal price)
         {
-            this._idQuote = idQuote;
+            this._idInvoice = idInvoice;
             this._idProduct = idProduct;
             this._quantity = quantity;
             this._promotion = promotion;
-            this._Price = Price;
+            this._price = price;
+            
         }
 
-        public int GetIdQuote()
+        public int GetIdInvoice()
         {
-            return _idQuote;
+            return _idInvoice;
         }
 
-        public void SetIdQuote(int idQuote)
+        public void SetIdInvoice(int idInvoice)
         {
-            this._idQuote = idQuote;
+            this._idInvoice = idInvoice;
         }
 
         public int GetIdProduct()
@@ -65,14 +63,18 @@ namespace AutoFact2.Views
 
         public decimal GetPrice()
         {
-            return this._Price;
+            return this._price;
         }
 
         public decimal GetAmount()
         {
-            return this._Price * this._quantity;
+            return this._price * this._quantity;
         }
 
+        public int GetId()
+        {
+            return this._id;
+        }
 
     }
 }

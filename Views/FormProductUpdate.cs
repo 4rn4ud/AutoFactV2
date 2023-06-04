@@ -22,7 +22,7 @@ namespace AutoFact2.Views
             InitializeComponent();
             productController = new ProductController();
 
-            foreach (var unProduit in productController.findAll())
+            foreach (var unProduit in productController.FindAll())
             {
                 if (unProduit.GetId() == id)
                 {

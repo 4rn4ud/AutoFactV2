@@ -54,17 +54,23 @@ namespace AutoFact2.Views
         public void LeRefresh(int id)
         {
             this.DgvInvoiceline.Rows.Clear();
-            foreach (Invoiceline Unelignefacture in InlineController.findAll(id))
+            foreach (Invoiceline Unelignefacture in InlineController.FindAll(id))
             {
-                string dgvIdQuote = Unelignefacture.GetIdQuote().ToString();
+                string dgvIdInvoice = Unelignefacture.GetIdInvoice().ToString();
                 string dgvIdProduct = Unelignefacture.GetIdProduct().ToString();
                 string dgvQuantity = Unelignefacture.GetQuantity().ToString();
                 string dgvPromotion = Unelignefacture.GetPromotion().ToString();
                 string dgvPrice = Unelignefacture.GetPrice().ToString();
                 string dgvAmount = Unelignefacture.GetAmount().ToString();
 
-                this.DgvInvoiceline.Rows.Add(dgvIdQuote, dgvIdProduct, dgvQuantity, dgvPromotion, dgvPrice, dgvAmount);
+                this.DgvInvoiceline.Rows.Add(dgvIdInvoice, dgvIdProduct, dgvQuantity, dgvPromotion, dgvPrice, dgvAmount);
             }
+        }
+
+        private void BtnCreateInvoiceLine_Click(object sender, EventArgs e)
+        {
+            FormInvoiceLineCreate CreateInvoiceLine = new FormInvoiceLineCreate(lafacture.GetId());
+            CreateInvoiceLine.ShowDialog();
         }
     }
 }

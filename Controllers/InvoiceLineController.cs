@@ -1,43 +1,47 @@
-﻿using AutoFact2.Repository;
+﻿using AutoFact2.Models;
+using AutoFact2.Repository;
 using AutoFact2.Views;
-using AutoFact2.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace AutoFact2.Controllers
 {
     public class InvoiceLineController
     {
-        public InvoiceLineRepository InRepository;
+        public InvoiceLineRepository inLineRepository;
+
         public InvoiceLineController()
         {
-            InRepository = new InvoiceLineRepository();
+            inLineRepository = new InvoiceLineRepository();
         }
 
-        public List<Invoiceline> findAll(int id)
+        public List<Invoiceline> FindAll(int invoiceId)
         {
-            return InRepository.findAll(id);
+            return inLineRepository.FindAll(invoiceId);
         }
-        public void create(int idCustomer, DateTime DateInvoiceLine)
+
+        public void Create(int invoiceId, int productId, int quantity, decimal price, decimal promotion)
         {
-            InRepository.create(idCustomer, DateInvoiceLine);
+            Invoiceline invoiceLine = new Invoiceline(invoiceId, productId, quantity, promotion, price);
+            inLineRepository.Create(invoiceLine);
         }
 
-        //public void delete(int id)
-        //{
-        //    InRepository.delete(id);
-        //}
-
-        public void update(int id, int idCustomer, DateTime DateInvoiceLine)
+        public void Create(Invoiceline invline)
         {
-            InRepository.update(id, idCustomer, DateInvoiceLine);
+           // Invoiceline invoiceLine = new Invoiceline(invoiceId, productId, quantity, promotion, price);
+            inLineRepository.Create(invline);
         }
 
+        public void Update(int id, int invoiceId, int productId, int quantity, decimal price, decimal promotion)
+        {
+            Invoiceline invoiceLine = new Invoiceline(invoiceId, productId, quantity, promotion, price);
+            invoiceLine.SetIdInvoice(id);
+            inLineRepository.Update(invoiceLine);
+        }
 
+        public void Delete(int invoiceId)
+        {
+            inLineRepository.Delete(invoiceId);
+        }
     }
 }

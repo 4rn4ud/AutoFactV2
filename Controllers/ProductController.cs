@@ -1,5 +1,6 @@
 ﻿using AutoFact2.Repository;
 using AutoFact2.Views;
+using AutoFact2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,30 +11,30 @@ namespace AutoFact2.Controllers
 {
     public class ProductController
     {
-        public ProductRepository productRepository;
+        public ProductRepository proRepository;
         public ProductController()
         {
-            productRepository = new ProductRepository();
+            proRepository = new ProductRepository();
         }
 
-        public List<Product> findAll()
+        public List<Product> FindAll()
         {
-            return productRepository.findAll();
+            return proRepository.FindAll();
         }
 
         public void create(string label, float unitPrice, int idCategory)
         {
-            productRepository.create(label, unitPrice, idCategory);
+            proRepository.Create(label, unitPrice, idCategory);
         }
 
         public void delete(int id)
         {
-            productRepository.delete(id);
+            proRepository.Delete(id);
         }
 
         public void update(int id, string label, float unitPrice, int idCategory)
         {
-            productRepository.update(id, label, unitPrice, idCategory);
+            proRepository.Update(id, label, unitPrice, idCategory);
         }
     }
 }

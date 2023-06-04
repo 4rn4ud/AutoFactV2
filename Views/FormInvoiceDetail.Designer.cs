@@ -50,6 +50,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.TxtCompagnyName = new System.Windows.Forms.TextBox();
+            this.BtnCreateInvoiceLine = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvInvoiceline)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,11 +143,11 @@
             // LabelId
             // 
             this.LabelId.AutoSize = true;
-            this.LabelId.Location = new System.Drawing.Point(105, 53);
+            this.LabelId.Location = new System.Drawing.Point(18, 53);
             this.LabelId.Name = "LabelId";
-            this.LabelId.Size = new System.Drawing.Size(18, 16);
+            this.LabelId.Size = new System.Drawing.Size(117, 16);
             this.LabelId.TabIndex = 5;
-            this.LabelId.Text = "Id";
+            this.LabelId.Text = "Numero de facture";
             // 
             // LabelIdClient
             // 
@@ -168,7 +169,7 @@
             // 
             // TxtDate
             // 
-            this.TxtDate.Location = new System.Drawing.Point(397, 53);
+            this.TxtDate.Location = new System.Drawing.Point(397, 47);
             this.TxtDate.Name = "TxtDate";
             this.TxtDate.Size = new System.Drawing.Size(100, 22);
             this.TxtDate.TabIndex = 9;
@@ -224,7 +225,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(554, 58);
+            this.label5.Location = new System.Drawing.Point(551, 50);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 16);
             this.label5.TabIndex = 16;
@@ -232,16 +233,27 @@
             // 
             // TxtCompagnyName
             // 
-            this.TxtCompagnyName.Location = new System.Drawing.Point(647, 58);
+            this.TxtCompagnyName.Location = new System.Drawing.Point(647, 47);
             this.TxtCompagnyName.Name = "TxtCompagnyName";
             this.TxtCompagnyName.Size = new System.Drawing.Size(100, 22);
             this.TxtCompagnyName.TabIndex = 17;
+            // 
+            // BtnCreateInvoiceLine
+            // 
+            this.BtnCreateInvoiceLine.Location = new System.Drawing.Point(865, 193);
+            this.BtnCreateInvoiceLine.Name = "BtnCreateInvoiceLine";
+            this.BtnCreateInvoiceLine.Size = new System.Drawing.Size(75, 23);
+            this.BtnCreateInvoiceLine.TabIndex = 18;
+            this.BtnCreateInvoiceLine.Text = "Ajouter";
+            this.BtnCreateInvoiceLine.UseVisualStyleBackColor = true;
+            this.BtnCreateInvoiceLine.Click += new System.EventHandler(this.BtnCreateInvoiceLine_Click);
             // 
             // FormInvoiceDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(991, 544);
+            this.Controls.Add(this.BtnCreateInvoiceLine);
             this.Controls.Add(this.TxtCompagnyName);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -291,5 +303,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox TxtCompagnyName;
+        private System.Windows.Forms.Button BtnCreateInvoiceLine;
     }
 }

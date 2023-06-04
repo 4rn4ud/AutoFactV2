@@ -34,7 +34,7 @@ namespace AutoFact2.Models
             InvoiceLineRepository myrepofactligne = new InvoiceLineRepository();
             this._DateInvoice = myrepofact.GetDate(id);
             this._idCustomer = myrepofact.GetIdCustomer(id);
-            this._Invoiceline = myrepofactligne.findAll(id);
+            this._Invoiceline = myrepofactligne.FindAll(id);
         }
 
         public int GetId()

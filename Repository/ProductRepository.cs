@@ -16,7 +16,8 @@ namespace AutoFact2.Repository
         {
 
         }
-        public List<Product> findAll()
+
+        public List<Product> FindAll()
         {
             int id;
             string label;
@@ -51,7 +52,7 @@ namespace AutoFact2.Repository
             return lesProducts;
         }
 
-        public void create(string label, float unitPrice, int idCategory)
+        public void Create(string label, float unitPrice, int idCategory)
         {
             string connectionString = "Data Source=../../AutoFact2BDD.db";
             SQLiteConnection connection = new SQLiteConnection(connectionString);
@@ -72,26 +73,25 @@ namespace AutoFact2.Repository
             connection.Close();
         }
 
-        public void delete(int id)
+        public void Delete(int id)
         {
             string connectionString = "Data Source=../../AutoFact2BDD.db";
             SQLiteConnection connection = new SQLiteConnection(connectionString);
 
-            string deleteSql = "DELETE FROM Product WHERE id = @id; " +
-                        "VALUES (@id)";
+            string deleteSql = "DELETE FROM Product WHERE id = @Id";
 
             connection.Open();
 
             using (SQLiteCommand command = new SQLiteCommand(deleteSql, connection))
             {
-                command.Parameters.AddWithValue("@id", id);
+                command.Parameters.AddWithValue("@Id", id);
 
                 command.ExecuteNonQuery();
             }
             connection.Close();
         }
 
-        public void update(int id, string label, float unitPrice, int idCategory)
+        public void Update(int id, string label, float unitPrice, int idCategory)
         {
             string connectionString = "Data Source=../../AutoFact2BDD.db";
             SQLiteConnection connection = new SQLiteConnection(connectionString);

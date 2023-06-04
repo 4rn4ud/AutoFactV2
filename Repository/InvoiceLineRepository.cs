@@ -1,199 +1,99 @@
-﻿using AutoFact2.Views;
-using AutoFact2.Models;
+﻿using AutoFact2.Models;
+using AutoFact2.Views;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace AutoFact2.Repository
 {
     public class InvoiceLineRepository
     {
-        public InvoiceLineRepository()
+        public List<Invoiceline> FindAll(int invoiceId)
         {
-
-        }
-        public List<Invoiceline> findAll(int id)
-        {
-            int idInvoice;
-            int idProduct;
-            int quantity;
-            int promotion;
-            int prix;
-            
-            List<Invoiceline> lesLignesFactures = new List<Invoiceline>();
+            List<Invoiceline> invoiceLines = new List<Invoiceline>();
             string connectionString = "Data Source=../../AutoFact2BDD.db";
-            SQLiteConnection connection = new SQLiteConnection(connectionString);
-
-            connection.Open();
-            //MessageBox.Show(Convert.ToString( id));
-            string selectSql = "SELECT * FROM Invoiceline where idInvoice = @idInvoice";
-            using (SQLiteCommand command = new SQLiteCommand(selectSql, connection))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
-                //command.Parameters.AddWithValue("@idCustomer", idCustomer);
-                command.Parameters.AddWithValue("@idInvoice", id);
-                command.ExecuteNonQuery();
-
-                SQLiteDataReader reader = command.ExecuteReader();
-
-            if (reader.HasRows)
-            {
-                while (reader.Read())
+                connection.Open();
+                string selectSql = "SELECT * FROM Invoiceline WHERE idInvoice = @invoiceId";
+                using (SQLiteCommand command = new SQLiteCommand(selectSql, connection))
                 {
-                        //MessageBox.Show("laaussisamarche");
-                    idInvoice = Convert.ToInt32(reader["idInvoice"]);
-                    idProduct = Convert.ToInt32(reader["idProduct"]);
-                    quantity = Convert.ToInt32(reader["quantity"]);
-                    promotion = Convert.ToInt32(reader["promotion"]);
-                    prix = Convert.ToInt32(reader["prix"]);
-
-                    lesLignesFactures.Add(new Invoiceline(idInvoice, idProduct, quantity, promotion, prix));
+                    command.Parameters.AddWithValue("@invoiceId", invoiceId);
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int idinvoice = Convert.ToInt32(reader["idInvoice"]);
+                            int productId = Convert.ToInt32(reader["idProduct"]);
+                            int quantity = Convert.ToInt32(reader["quantity"]);
+                            decimal promotion = Convert.ToDecimal(reader["promotion"]);
+                            decimal price = Convert.ToDecimal(reader["Prix"]);
+                            int id = Convert.ToInt32(reader["id"]);
+                            Invoiceline invoiceLine = new Invoiceline(idinvoice, productId, quantity, promotion, price);
+                            invoiceLines.Add(invoiceLine);
+                        }
+                    }
                 }
             }
-            reader.Close();
-            }
-            connection.Close();
-
-            return lesLignesFactures;
+            return invoiceLines;
         }
 
-
-
-        public void create(int idCustomer, DateTime DateInvoice)
+        public void Create(Invoiceline invoiceLine)
         {
             string connectionString = "Data Source=../../AutoFact2BDD.db";
-            SQLiteConnection connection = new SQLiteConnection(connectionString);
-
-            string insertSql = "";
-
-            insertSql = "INSERT INTO Invoice (idCustomer, Date) " +
-                        "VALUES (@idCustomer, @DateInvoice)";
-
-
-            connection.Open();
-
-            using (SQLiteCommand command = new SQLiteCommand(insertSql, connection))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
-                command.Parameters.AddWithValue("@idCustomer", idCustomer);
-                command.Parameters.AddWithValue("@DateInvoice", DateInvoice);
-
-
-                command.ExecuteNonQuery();
+                connection.Open();
+                string insertSql = "INSERT INTO Invoiceline (idInvoice, idProduct, quantity, promotion, Prix, id) " +
+                                   "VALUES (@invoiceId, @productId, @quantity, @promotion, @price, @id)";
+                using (SQLiteCommand command = new SQLiteCommand(insertSql, connection))
+                {
+                    command.Parameters.AddWithValue("@invoiceId", invoiceLine.GetIdInvoice());
+                    command.Parameters.AddWithValue("@productId", invoiceLine.GetIdProduct());
+                    command.Parameters.AddWithValue("@quantity", invoiceLine.GetQuantity());
+                    command.Parameters.AddWithValue("@promotion", invoiceLine.GetPromotion());
+                    command.Parameters.AddWithValue("@price", invoiceLine.GetPrice());
+                    command.Parameters.AddWithValue("@id", invoiceLine.GetId());
+                    command.ExecuteNonQuery();
+                }
             }
-            connection.Close();
         }
 
-        /* public void delete(int id)
+        public void Update(Invoiceline invoiceLine)
         {
             string connectionString = "Data Source=../../AutoFact2BDD.db";
-            SQLiteConnection connection = new SQLiteConnection(connectionString);
-
-            string deleteSql = "";
-
-                deleteSql = "DELETE FROM Invoice WHERE id = @id; " +
-                            "VALUES (@id)";
-            
-
-            connection.Open();
-
-            using (SQLiteCommand command = new SQLiteCommand(deleteSql, connection))
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
-                command.Parameters.AddWithValue("@id", id);
-
-                command.ExecuteNonQuery();
+                connection.Open();
+                string updateSql = "UPDATE Invoiceline " +
+                                   "SET idProduct = @productId, quantity = @quantity, promotion = @promotion, Prix = @price " +
+                                   "WHERE id = @id";
+                using (SQLiteCommand command = new SQLiteCommand(updateSql, connection))
+                {
+                    
+                    command.Parameters.AddWithValue("@productId", invoiceLine.GetIdProduct());
+                    command.Parameters.AddWithValue("@quantity", invoiceLine.GetQuantity());
+                    command.Parameters.AddWithValue("@promotion", invoiceLine.GetPromotion());
+                    command.Parameters.AddWithValue("@price", invoiceLine.GetPrice());
+                    command.Parameters.AddWithValue("@id", invoiceLine.GetId());
+                    command.ExecuteNonQuery();
+                }
             }
-            connection.Close();
-
-
-        } */
-
-        public void update(int id, int idCustomer, DateTime DateInvoice)
-        {
-            string connectionString = "Data Source=../../AutoFact2BDD.db";
-            SQLiteConnection connection = new SQLiteConnection(connectionString);
-
-            string updateSql = "";
-
-
-                updateSql = "UPDATE Invoice " +
-                 "SET idCustomer = @idCustomer, Date = @DateInvoice" +
-                 "WHERE id = @Id";
-
-
-
-            connection.Open();
-
-            using (SQLiteCommand command = new SQLiteCommand(updateSql, connection))
-            {
-                command.Parameters.AddWithValue("@Id", id);
-                command.Parameters.AddWithValue("@idCustomer", idCustomer);
-                command.Parameters.AddWithValue("@DateInvoice", DateInvoice);
-
-
-                command.ExecuteNonQuery();
-            }
-            connection.Close();
         }
 
-        public DateTime GetDate(int id)
+        public void Delete(int invoiceId)
         {
-            
-  
-            DateTime DateInvoice;
-            DateInvoice = DateTime.Now;
-
             string connectionString = "Data Source=../../AutoFact2BDD.db";
-            SQLiteConnection connection = new SQLiteConnection(connectionString);
-
-            connection.Open();
-
-            string selectSql = "SELECT Date FROM Invoice WHERE id = @Id";
-            SQLiteCommand command = new SQLiteCommand(selectSql, connection);
-            SQLiteDataReader reader = command.ExecuteReader();
-
-            if (reader.HasRows)
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
-
-                DateInvoice = Convert.ToDateTime( reader["date"]);
-
-            } 
-
-            reader.Close();
-            connection.Close();
-
-            return DateInvoice;
-        }
-
-        public int GetIdCustomer(int id)
-        {
-
-
-            int IdCustomer;
-            IdCustomer = 0;
-
-            string connectionString = "Data Source=../../AutoFact2BDD.db";
-            SQLiteConnection connection = new SQLiteConnection(connectionString);
-
-            connection.Open();
-
-            string selectSql = "SELECT IdCustomer FROM Invoice WHERE id = @Id";
-            SQLiteCommand command = new SQLiteCommand(selectSql, connection);
-            SQLiteDataReader reader = command.ExecuteReader();
-
-            if (reader.HasRows)
-            {
-
-                IdCustomer = Convert.ToInt32(reader["IdCustomer"]);
-
+                connection.Open();
+                string deleteSql = "DELETE FROM Invoiceline WHERE idInvoice = @invoiceId";
+                using (SQLiteCommand command = new SQLiteCommand(deleteSql, connection))
+                {
+                    command.Parameters.AddWithValue("@invoiceId", invoiceId);
+                    command.ExecuteNonQuery();
+                }
             }
-
-            reader.Close();
-            connection.Close();
-
-            return IdCustomer;
         }
     }
 }
