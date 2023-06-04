@@ -36,6 +36,7 @@
             this.ColBtnDetail = new System.Windows.Forms.DataGridViewButtonColumn();
             this.BtnBack = new System.Windows.Forms.Button();
             this.BtnCreateInvoice = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvInvoice)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             this.ColDate,
             this.ColBtnPDF,
             this.ColBtnDetail});
-            this.DgvInvoice.Location = new System.Drawing.Point(228, 153);
+            this.DgvInvoice.Location = new System.Drawing.Point(233, 156);
             this.DgvInvoice.Margin = new System.Windows.Forms.Padding(4);
             this.DgvInvoice.Name = "DgvInvoice";
             this.DgvInvoice.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -109,17 +110,28 @@
             // 
             this.BtnCreateInvoice.Location = new System.Drawing.Point(378, 466);
             this.BtnCreateInvoice.Name = "BtnCreateInvoice";
-            this.BtnCreateInvoice.Size = new System.Drawing.Size(114, 28);
+            this.BtnCreateInvoice.Size = new System.Drawing.Size(193, 28);
             this.BtnCreateInvoice.TabIndex = 4;
-            this.BtnCreateInvoice.Text = "Créer";
+            this.BtnCreateInvoice.Text = "Créer une nouvelle facture";
             this.BtnCreateInvoice.UseVisualStyleBackColor = true;
             this.BtnCreateInvoice.Click += new System.EventHandler(this.BtnCreateInvoice_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(498, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(164, 25);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Liste des factures";
             // 
             // FormInvoiceList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1312, 690);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnCreateInvoice);
             this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.DgvInvoice);
@@ -131,6 +143,7 @@
             this.Load += new System.EventHandler(this.FormInvoiceList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvInvoice)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -144,5 +157,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColDate;
         private System.Windows.Forms.DataGridViewButtonColumn ColBtnPDF;
         private System.Windows.Forms.DataGridViewButtonColumn ColBtnDetail;
+        private System.Windows.Forms.Label label1;
     }
 }

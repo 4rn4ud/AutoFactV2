@@ -58,7 +58,7 @@ namespace AutoFact2.Repository
 
 
 
-        public void create(int idCustomer, DateTime DateInvoice)
+        public int create(int idCustomer, DateTime DateInvoice)
         {
             string connectionString = "Data Source=../../AutoFact2BDD.db";
             SQLiteConnection connection = new SQLiteConnection(connectionString);
@@ -66,7 +66,8 @@ namespace AutoFact2.Repository
             string insertSql = "";
 
             insertSql = "INSERT INTO Invoice (idCustomer, Date) " +
-                        "VALUES (@idCustomer, @DateInvoice)";
+                        "VALUES (@idCustomer, @DateInvoice);" +
+                                "SELECT last_insert_rowid();"; 
 
 
             connection.Open();
@@ -77,9 +78,14 @@ namespace AutoFact2.Repository
                 command.Parameters.AddWithValue("@DateInvoice", DateInvoice);
 
 
-                command.ExecuteNonQuery();
-            }
+                //command.ExecuteNonQuery();
+            
+            
+            int id = Convert.ToInt32(command.ExecuteScalar());
+            //MessageBox.Show(Convert.ToString(id));
             connection.Close();
+            return id;
+            }
         }
 
         /* public void delete(int id)

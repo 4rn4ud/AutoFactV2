@@ -42,6 +42,8 @@ namespace AutoFact2.Views
             LoadProducts(invoiceLine.GetIdProduct());   
         }
 
+       
+
         private void LoadProducts(int idproductselectionne)
         {
             List<Product> products = proRepository.FindAll();

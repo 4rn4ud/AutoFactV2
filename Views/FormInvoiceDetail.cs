@@ -18,6 +18,7 @@ namespace AutoFact2.Views
         public InvoiceController InController;
         public InvoiceLineController InlineController;
         private Invoice lafacture;
+        private CustomerRepository custRepository;
 
         public FormInvoiceDetail(int id)
         {
@@ -26,18 +27,41 @@ namespace AutoFact2.Views
             InlineController = new InvoiceLineController();
             lafacture = new Invoice(id);
             TxtDate.Text = lafacture.GetDateInvoice().ToShortDateString();
-            TxtIdCustomer.Text = Convert.ToString(lafacture.GetidCustomer());
+            //TxtIdCustomer.Text = Convert.ToString(lafacture.GetidCustomer());
             TxtId.Text = Convert.ToString(id);
 
-            CustomerRepository custRepository = new CustomerRepository();
+            custRepository = new CustomerRepository();
             Customer customerrepo = custRepository.getInfo(lafacture.GetidCustomer());
             TxtName.Text = customerrepo.GetName();
             TxtSurname.Text = customerrepo.GetLastname();
             TxtCompagnyName.Text = customerrepo.GetCompanyName();
 
             TxtTotal.Text = lafacture.GetTotal().ToString();
-
+            LoadCustomer(lafacture.GetidCustomer());
+            CBCustomer.Enabled = false; // Désactive la ComboBox, la rendant non cliquable
             LeRefresh(id);
+        }
+
+        public FormInvoiceDetail()
+        {
+            InitializeComponent();
+            InController = new InvoiceController();
+            InlineController = new InvoiceLineController();
+            lafacture = new Invoice();
+            custRepository = new CustomerRepository();
+            TxtDate.Text = DateTime.Now.ToShortDateString();
+            // TxtId.Text = Convert.ToString(id);
+
+            //custRepository = new CustomerRepository();
+            //Customer customerrepo = custRepository.getInfo(lafacture.GetidCustomer());
+            //TxtName.Text = customerrepo.GetName();
+            //TxtSurname.Text = customerrepo.GetLastname();
+            //TxtCompagnyName.Text = customerrepo.GetCompanyName();
+
+            //TxtTotal.Text = lafacture.GetTotal().ToString();
+            LoadCustomer();
+            CBCustomer.Enabled = true; // Désactive la ComboBox, la rendant non cliquable
+            //LeRefresh(id);
         }
 
         private void BtnBack_Click(object sender, EventArgs e)
@@ -76,6 +100,38 @@ namespace AutoFact2.Views
             }
         }
 
+        private void LoadCustomer(int idcustomerselectionne)
+        {
+            List<Customer> customers = custRepository.findAll();
+            CBCustomer.DisplayMember = "Text";
+            CBCustomer.ValueMember = "Value";
+            int i = 0;
+            foreach (Customer thesustomer in customers)
+            {
+                CBCustomer.Items.Add(new { Text = thesustomer.GetName() + " " + thesustomer.GetLastname(), Value = thesustomer.GetId() });
+
+                if (thesustomer.GetId() == idcustomerselectionne)
+                {
+                    CBCustomer.SelectedIndex = i;
+                }
+                i = i + 1;
+            }
+        }
+
+        private void LoadCustomer()
+        {
+            List<Customer> customers = custRepository.findAll();
+            CBCustomer.DisplayMember = "Text";
+            CBCustomer.ValueMember = "Value";
+            int i = 0;
+            foreach (Customer thesustomer in customers)
+            {
+                CBCustomer.Items.Add(new { Text = thesustomer.GetName() + " " + thesustomer.GetLastname(), Value = thesustomer.GetId() });
+
+
+            }
+        }
+
         public void LeRefresh(int id)
         {
             this.DgvInvoiceline.Rows.Clear();
@@ -97,11 +153,38 @@ namespace AutoFact2.Views
 
         private void BtnCreateInvoiceLine_Click(object sender, EventArgs e)
         {
-            FormInvoiceLineCreate CreateInvoiceLine = new FormInvoiceLineCreate(lafacture.GetId());
-            CreateInvoiceLine.ShowDialog();
 
-            // Refresh the DataGridView
-            LeRefresh(lafacture.GetId());
+            if ( CBCustomer.SelectedItem != null) {
+                if (lafacture.GetId() != 0)
+                {
+
+                    FormInvoiceLineCreate CreateInvoiceLine = new FormInvoiceLineCreate(lafacture.GetId());
+                    CreateInvoiceLine.ShowDialog();
+                    // Refresh the DataGridView
+                    LeRefresh(lafacture.GetId());
+                }
+                else
+                {
+                    lafacture.SetIdCustomer(Convert.ToInt32((CBCustomer.SelectedItem as dynamic).Value));
+                    lafacture.SetDateInvoice(lafacture.GetDateInvoice());
+                    lafacture.Create();
+                    MessageBox.Show(Convert.ToString(lafacture.GetId()));
+                    if (lafacture.GetId() != 0) { 
+                    FormInvoiceLineCreate CreateInvoiceLine = new FormInvoiceLineCreate(lafacture.GetId());
+                    CreateInvoiceLine.ShowDialog();
+                    // Refresh the DataGridView
+                    LeRefresh(lafacture.GetId());
+                    }
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Vous devez d'abord selectionner un client.");
+            }
+
+
+
         }
     }
 }

@@ -70,8 +70,9 @@ namespace AutoFact2
 
         private void BtnCreateInvoice_Click(object sender, EventArgs e)
         {
-            FormInvoiceCreate InvoiceCreate = new FormInvoiceCreate();
-            InvoiceCreate.ShowDialog();
+            
+            FormInvoiceDetail InvoiceDetail = new FormInvoiceDetail();
+            InvoiceDetail.ShowDialog();
 
         }
 
@@ -92,7 +93,7 @@ namespace AutoFact2
             }
         }
         
-        public bool LeCreate()
+       /* public bool LeCreate()
         {
             FormInvoiceCreate InvoiceCreate = new FormInvoiceCreate();
             InvoiceCreate.ShowDialog();
@@ -104,7 +105,7 @@ namespace AutoFact2
                 return true;
             }
             return false;
-        }
+        } */
 
         private void refresh_Click(object sender, EventArgs e)
         {

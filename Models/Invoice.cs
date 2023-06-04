@@ -27,6 +27,20 @@ namespace AutoFact2.Models
             InvoiceLineRepository myrepofactligne = new InvoiceLineRepository();
         }
 
+        public Invoice()
+        {
+
+            InvoiceRepository myrepofact = new InvoiceRepository();
+            InvoiceLineRepository myrepofactligne = new InvoiceLineRepository();
+        }
+
+        public void Create()
+        {
+           InvoiceRepository myrepofact = new InvoiceRepository();
+           int idFacture = myrepofact.create(this._idCustomer, this._DateInvoice);
+           this._id = idFacture;
+
+        }
         public Invoice(int id)
         {
             this._id = id;
