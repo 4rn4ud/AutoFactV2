@@ -30,6 +30,7 @@ namespace AutoFact2.Repository
                             decimal price = Convert.ToDecimal(reader["Prix"]);
                             int id = Convert.ToInt32(reader["id"]);
                             Invoiceline invoiceLine = new Invoiceline(idinvoice, productId, quantity, promotion, price);
+                            invoiceLine.SetId(id);
                             invoiceLines.Add(invoiceLine);
                         }
                     }
@@ -38,14 +39,15 @@ namespace AutoFact2.Repository
             return invoiceLines;
         }
 
-        public void Create(Invoiceline invoiceLine)
+        public int Create(Invoiceline invoiceLine)
         {
             string connectionString = "Data Source=../../AutoFact2BDD.db";
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
-                string insertSql = "INSERT INTO Invoiceline (idInvoice, idProduct, quantity, promotion, Prix, id) " +
-                                   "VALUES (@invoiceId, @productId, @quantity, @promotion, @price, @id)";
+                string insertSql = "INSERT INTO Invoiceline (idInvoice, idProduct, quantity, promotion, Prix) " +
+                                   "VALUES (@invoiceId, @productId, @quantity, @promotion, @price); " +
+                                   "SELECT last_insert_rowid();";
                 using (SQLiteCommand command = new SQLiteCommand(insertSql, connection))
                 {
                     command.Parameters.AddWithValue("@invoiceId", invoiceLine.GetIdInvoice());
@@ -53,8 +55,10 @@ namespace AutoFact2.Repository
                     command.Parameters.AddWithValue("@quantity", invoiceLine.GetQuantity());
                     command.Parameters.AddWithValue("@promotion", invoiceLine.GetPromotion());
                     command.Parameters.AddWithValue("@price", invoiceLine.GetPrice());
-                    command.Parameters.AddWithValue("@id", invoiceLine.GetId());
-                    command.ExecuteNonQuery();
+
+                    int id = Convert.ToInt32(command.ExecuteScalar());
+                    invoiceLine.SetId(id);
+                    return id;
                 }
             }
         }
@@ -70,7 +74,6 @@ namespace AutoFact2.Repository
                                    "WHERE id = @id";
                 using (SQLiteCommand command = new SQLiteCommand(updateSql, connection))
                 {
-                    
                     command.Parameters.AddWithValue("@productId", invoiceLine.GetIdProduct());
                     command.Parameters.AddWithValue("@quantity", invoiceLine.GetQuantity());
                     command.Parameters.AddWithValue("@promotion", invoiceLine.GetPromotion());
@@ -81,16 +84,16 @@ namespace AutoFact2.Repository
             }
         }
 
-        public void Delete(int invoiceId)
+        public void Delete(int invoicelineId)
         {
             string connectionString = "Data Source=../../AutoFact2BDD.db";
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
-                string deleteSql = "DELETE FROM Invoiceline WHERE idInvoice = @invoiceId";
+                string deleteSql = "DELETE FROM Invoiceline WHERE id = @invoicelineId";
                 using (SQLiteCommand command = new SQLiteCommand(deleteSql, connection))
                 {
-                    command.Parameters.AddWithValue("@invoiceId", invoiceId);
+                    command.Parameters.AddWithValue("@invoicelineId", invoicelineId);
                     command.ExecuteNonQuery();
                 }
             }

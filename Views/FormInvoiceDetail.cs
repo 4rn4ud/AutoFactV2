@@ -31,7 +31,6 @@ namespace AutoFact2.Views
 
             CustomerRepository custRepository = new CustomerRepository();
             Customer customerrepo = custRepository.getInfo(lafacture.GetidCustomer());
-            //MessageBox.Show(Convert.ToString(lafacture.GetidCustomer()));
             TxtName.Text = customerrepo.GetName();
             TxtSurname.Text = customerrepo.GetLastname();
             TxtCompagnyName.Text = customerrepo.GetCompanyName();
@@ -48,22 +47,51 @@ namespace AutoFact2.Views
 
         private void DgvInvoiceline_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Check if the clicked cell is the "Delete" button
+            if (e.ColumnIndex == DgvInvoiceline.Columns["BtnColDelete"].Index && e.RowIndex >= 0)
+            {
+                // Get the corresponding invoice line and its ID
+                Invoiceline invoiceLine = InlineController.FindAll(lafacture.GetId())[e.RowIndex];
+                int invoiceLineId = invoiceLine.GetId();
 
+                // Delete the invoice line
+                InlineController.Delete(invoiceLineId);
+
+                // Refresh the DataGridView
+                LeRefresh(lafacture.GetId());
+            }
+            // Check if the clicked cell is the "Update" button
+            else if (e.ColumnIndex == DgvInvoiceline.Columns["BtnColUpdate"].Index && e.RowIndex >= 0)
+            {
+                // Get the corresponding invoice line and its ID
+                Invoiceline invoiceLine = InlineController.FindAll(lafacture.GetId())[e.RowIndex];
+                int invoiceLineId = invoiceLine.GetId();
+
+                // Open the update form with the invoice line ID as a parameter
+                FormInvoiceLineUpdate updateInvoiceLine = new FormInvoiceLineUpdate(invoiceLineId);
+                updateInvoiceLine.ShowDialog();
+
+                // Refresh the DataGridView
+                LeRefresh(lafacture.GetId());
+            }
         }
 
         public void LeRefresh(int id)
         {
             this.DgvInvoiceline.Rows.Clear();
-            foreach (Invoiceline Unelignefacture in InlineController.FindAll(id))
-            {
-                string dgvIdInvoice = Unelignefacture.GetIdInvoice().ToString();
-                string dgvIdProduct = Unelignefacture.GetIdProduct().ToString();
-                string dgvQuantity = Unelignefacture.GetQuantity().ToString();
-                string dgvPromotion = Unelignefacture.GetPromotion().ToString();
-                string dgvPrice = Unelignefacture.GetPrice().ToString();
-                string dgvAmount = Unelignefacture.GetAmount().ToString();
+            ProductController productController = new ProductController();
 
-                this.DgvInvoiceline.Rows.Add(dgvIdInvoice, dgvIdProduct, dgvQuantity, dgvPromotion, dgvPrice, dgvAmount);
+            foreach (Invoiceline invoiceLine in InlineController.FindAll(id))
+            {
+                Product product = productController.Find(invoiceLine.GetIdProduct());
+
+                string dgvIdProduct = product.GetLabel();
+                string dgvQuantity = invoiceLine.GetQuantity().ToString();
+                string dgvPromotion = invoiceLine.GetPromotion().ToString();
+                string dgvPrice = invoiceLine.GetPrice().ToString();
+                string dgvAmount = invoiceLine.GetAmount().ToString();
+
+                this.DgvInvoiceline.Rows.Add(dgvIdProduct, dgvQuantity, dgvPromotion, dgvPrice, dgvAmount, "Supprimer", "Modifier");
             }
         }
 
@@ -71,6 +99,9 @@ namespace AutoFact2.Views
         {
             FormInvoiceLineCreate CreateInvoiceLine = new FormInvoiceLineCreate(lafacture.GetId());
             CreateInvoiceLine.ShowDialog();
+
+            // Refresh the DataGridView
+            LeRefresh(lafacture.GetId());
         }
     }
 }

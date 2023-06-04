@@ -18,7 +18,6 @@ namespace AutoFact2.Views
             this._quantity = quantity;
             this._promotion = promotion;
             this._price = price;
-            
         }
 
         public int GetIdInvoice()
@@ -76,5 +75,9 @@ namespace AutoFact2.Views
             return this._id;
         }
 
+        public void SetId(int id)
+        {
+            this._id = id;
+        }
     }
 }

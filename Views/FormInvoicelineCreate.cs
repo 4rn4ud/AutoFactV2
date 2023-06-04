@@ -72,7 +72,7 @@ namespace AutoFact2.Views
 
                 Invoiceline invoiceLine = new Invoiceline(invoiceId, productId, quantity, promotion, price);
                 invoiceLineController.Create(invoiceLine);
-
+                //MessageBox.Show(Convert.ToString(invoiceLine.GetId()));
                 MessageBox.Show("Invoice line added successfully!");
 
                 ResetForm();

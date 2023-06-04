@@ -31,11 +31,6 @@
             this.BtnBack = new System.Windows.Forms.Button();
             this.BtnUpdate = new System.Windows.Forms.Button();
             this.DgvInvoiceline = new System.Windows.Forms.DataGridView();
-            this.ColIdQuote = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColIdProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPromotion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPrix = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TxtId = new System.Windows.Forms.TextBox();
             this.TxtIdCustomer = new System.Windows.Forms.TextBox();
             this.LabelId = new System.Windows.Forms.Label();
@@ -51,6 +46,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TxtCompagnyName = new System.Windows.Forms.TextBox();
             this.BtnCreateInvoiceLine = new System.Windows.Forms.Button();
+            this.ColIdProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPromotion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPrix = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnColDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.BtnColUpdate = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvInvoiceline)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,53 +79,20 @@
             // 
             this.DgvInvoiceline.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvInvoiceline.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColIdQuote,
             this.ColIdProduct,
             this.ColQuantity,
             this.ColPromotion,
-            this.ColPrix});
-            this.DgvInvoiceline.Location = new System.Drawing.Point(141, 193);
+            this.ColPrix,
+            this.ColAmount,
+            this.BtnColDelete,
+            this.BtnColUpdate});
+            this.DgvInvoiceline.Location = new System.Drawing.Point(21, 193);
             this.DgvInvoiceline.Name = "DgvInvoiceline";
             this.DgvInvoiceline.RowHeadersWidth = 51;
             this.DgvInvoiceline.RowTemplate.Height = 24;
-            this.DgvInvoiceline.Size = new System.Drawing.Size(684, 150);
+            this.DgvInvoiceline.Size = new System.Drawing.Size(882, 171);
             this.DgvInvoiceline.TabIndex = 2;
             this.DgvInvoiceline.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvInvoiceline_CellContentClick);
-            // 
-            // ColIdQuote
-            // 
-            this.ColIdQuote.HeaderText = "idQuote";
-            this.ColIdQuote.MinimumWidth = 6;
-            this.ColIdQuote.Name = "ColIdQuote";
-            this.ColIdQuote.Width = 125;
-            // 
-            // ColIdProduct
-            // 
-            this.ColIdProduct.HeaderText = "IdProduct";
-            this.ColIdProduct.MinimumWidth = 6;
-            this.ColIdProduct.Name = "ColIdProduct";
-            this.ColIdProduct.Width = 125;
-            // 
-            // ColQuantity
-            // 
-            this.ColQuantity.HeaderText = "Quantity";
-            this.ColQuantity.MinimumWidth = 6;
-            this.ColQuantity.Name = "ColQuantity";
-            this.ColQuantity.Width = 125;
-            // 
-            // ColPromotion
-            // 
-            this.ColPromotion.HeaderText = "ColPromotion";
-            this.ColPromotion.MinimumWidth = 6;
-            this.ColPromotion.Name = "ColPromotion";
-            this.ColPromotion.Width = 125;
-            // 
-            // ColPrix
-            // 
-            this.ColPrix.HeaderText = "Prix";
-            this.ColPrix.MinimumWidth = 6;
-            this.ColPrix.Name = "ColPrix";
-            this.ColPrix.Width = 125;
             // 
             // TxtId
             // 
@@ -240,7 +209,7 @@
             // 
             // BtnCreateInvoiceLine
             // 
-            this.BtnCreateInvoiceLine.Location = new System.Drawing.Point(865, 193);
+            this.BtnCreateInvoiceLine.Location = new System.Drawing.Point(909, 193);
             this.BtnCreateInvoiceLine.Name = "BtnCreateInvoiceLine";
             this.BtnCreateInvoiceLine.Size = new System.Drawing.Size(75, 23);
             this.BtnCreateInvoiceLine.TabIndex = 18;
@@ -248,11 +217,58 @@
             this.BtnCreateInvoiceLine.UseVisualStyleBackColor = true;
             this.BtnCreateInvoiceLine.Click += new System.EventHandler(this.BtnCreateInvoiceLine_Click);
             // 
+            // ColIdProduct
+            // 
+            this.ColIdProduct.HeaderText = "IdProduct";
+            this.ColIdProduct.MinimumWidth = 6;
+            this.ColIdProduct.Name = "ColIdProduct";
+            this.ColIdProduct.Width = 75;
+            // 
+            // ColQuantity
+            // 
+            this.ColQuantity.HeaderText = "Quantity";
+            this.ColQuantity.MinimumWidth = 6;
+            this.ColQuantity.Name = "ColQuantity";
+            this.ColQuantity.Width = 75;
+            // 
+            // ColPromotion
+            // 
+            this.ColPromotion.HeaderText = "Promotion";
+            this.ColPromotion.MinimumWidth = 6;
+            this.ColPromotion.Name = "ColPromotion";
+            this.ColPromotion.Width = 75;
+            // 
+            // ColPrix
+            // 
+            this.ColPrix.HeaderText = "Prix";
+            this.ColPrix.MinimumWidth = 6;
+            this.ColPrix.Name = "ColPrix";
+            this.ColPrix.Width = 75;
+            // 
+            // ColAmount
+            // 
+            this.ColAmount.HeaderText = "Montant";
+            this.ColAmount.MinimumWidth = 6;
+            this.ColAmount.Name = "ColAmount";
+            this.ColAmount.Width = 75;
+            // 
+            // BtnColDelete
+            // 
+            this.BtnColDelete.HeaderText = "Supprimer";
+            this.BtnColDelete.MinimumWidth = 6;
+            this.BtnColDelete.Name = "BtnColDelete";
+            // 
+            // BtnColUpdate
+            // 
+            this.BtnColUpdate.HeaderText = "Modifier";
+            this.BtnColUpdate.MinimumWidth = 6;
+            this.BtnColUpdate.Name = "BtnColUpdate";
+            // 
             // FormInvoiceDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 544);
+            this.ClientSize = new System.Drawing.Size(996, 544);
             this.Controls.Add(this.BtnCreateInvoiceLine);
             this.Controls.Add(this.TxtCompagnyName);
             this.Controls.Add(this.label5);
@@ -284,11 +300,6 @@
         private System.Windows.Forms.Button BtnBack;
         private System.Windows.Forms.Button BtnUpdate;
         private System.Windows.Forms.DataGridView DgvInvoiceline;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColIdQuote;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColIdProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColPromotion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColPrix;
         private System.Windows.Forms.TextBox TxtId;
         private System.Windows.Forms.TextBox TxtIdCustomer;
         private System.Windows.Forms.Label LabelId;
@@ -304,5 +315,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox TxtCompagnyName;
         private System.Windows.Forms.Button BtnCreateInvoiceLine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColIdProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColPromotion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColPrix;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColAmount;
+        private System.Windows.Forms.DataGridViewButtonColumn BtnColDelete;
+        private System.Windows.Forms.DataGridViewButtonColumn BtnColUpdate;
     }
 }

@@ -20,22 +20,23 @@ namespace AutoFact2.Controllers
             return inLineRepository.FindAll(invoiceId);
         }
 
-        public void Create(int invoiceId, int productId, int quantity, decimal price, decimal promotion)
+        public int Create(int invoiceId, int productId, int quantity, decimal price, decimal promotion)
         {
             Invoiceline invoiceLine = new Invoiceline(invoiceId, productId, quantity, promotion, price);
-            inLineRepository.Create(invoiceLine);
+            int id = inLineRepository.Create(invoiceLine);
+
+            return id;
         }
 
-        public void Create(Invoiceline invline)
+        public void Create(Invoiceline invoiceLine)
         {
-           // Invoiceline invoiceLine = new Invoiceline(invoiceId, productId, quantity, promotion, price);
-            inLineRepository.Create(invline);
+            int id = inLineRepository.Create(invoiceLine);
+            invoiceLine.SetId(id);
         }
 
         public void Update(int id, int invoiceId, int productId, int quantity, decimal price, decimal promotion)
         {
             Invoiceline invoiceLine = new Invoiceline(invoiceId, productId, quantity, promotion, price);
-            invoiceLine.SetIdInvoice(id);
             inLineRepository.Update(invoiceLine);
         }
 

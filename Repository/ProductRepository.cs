@@ -52,6 +52,39 @@ namespace AutoFact2.Repository
             return lesProducts;
         }
 
+        public Product Find(int id)
+        {
+            int productId;
+            string label;
+            float unitPrice;
+            int idCategory;
+
+            string connectionString = "Data Source=../../AutoFact2BDD.db";
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                string selectSql = "SELECT * FROM Product WHERE id = @id";
+                using (SQLiteCommand command = new SQLiteCommand(selectSql, connection))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            productId = Convert.ToInt32(reader["id"]);
+                            label = Convert.ToString(reader["libel"]);
+                            unitPrice = Convert.ToSingle(reader["unitPrice"]);
+                            idCategory = Convert.ToInt32(reader["idCategory"]);
+
+                            return new Product(productId, label, unitPrice, idCategory);
+                        }
+                    }
+                }
+            }
+
+            return null; // If product is not found
+        }
+
         public void Create(string label, float unitPrice, int idCategory)
         {
             string connectionString = "Data Source=../../AutoFact2BDD.db";

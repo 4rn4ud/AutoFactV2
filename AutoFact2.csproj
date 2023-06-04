@@ -82,6 +82,12 @@
     <Compile Include="Repository\CustomerRepository.cs" />
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\ProfilRepository.cs" />
+    <Compile Include="Views\FormInvoiceLineUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormInvoiceLineUpdate.Designer.cs">
+      <DependentUpon>FormInvoiceLineUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormInvoicelineCreate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormInvoiceDetail.resx">
       <DependentUpon>FormInvoiceDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormInvoiceLineUpdate.resx">
+      <DependentUpon>FormInvoiceLineUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormInvoiceUpdate.resx">
       <DependentUpon>FormInvoiceUpdate.cs</DependentUpon>

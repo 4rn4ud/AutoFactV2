@@ -22,6 +22,11 @@ namespace AutoFact2.Controllers
             return proRepository.FindAll();
         }
 
+        public Product Find(int id)
+        {
+            return proRepository.Find(id);
+        }
+
         public void create(string label, float unitPrice, int idCategory)
         {
             proRepository.Create(label, unitPrice, idCategory);
