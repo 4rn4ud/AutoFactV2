@@ -51,7 +51,7 @@ namespace AutoFact2.Repository
             return lesProducts;
         }
 
-        public void create(string label, float unitPrice, int type)
+        public void create(string label, float unitPrice, int idCategory)
         {
             string connectionString = "Data Source=../../AutoFact2BDD.db";
             SQLiteConnection connection = new SQLiteConnection(connectionString);
@@ -65,7 +65,7 @@ namespace AutoFact2.Repository
             {
                 command.Parameters.AddWithValue("@Label", label);
                 command.Parameters.AddWithValue("@UnitPrice", unitPrice);
-                command.Parameters.AddWithValue("@IdCategory", type);
+                command.Parameters.AddWithValue("@IdCategory", idCategory);
 
                 command.ExecuteNonQuery();
             }
@@ -85,6 +85,29 @@ namespace AutoFact2.Repository
             using (SQLiteCommand command = new SQLiteCommand(deleteSql, connection))
             {
                 command.Parameters.AddWithValue("@id", id);
+
+                command.ExecuteNonQuery();
+            }
+            connection.Close();
+        }
+
+        public void update(int id, string label, float unitPrice, int idCategory)
+        {
+            string connectionString = "Data Source=../../AutoFact2BDD.db";
+            SQLiteConnection connection = new SQLiteConnection(connectionString);
+
+            string updateSql = "UPDATE Product " +
+                 "SET libel = @Label, unitPrice = @UnitPrice, idCategory = @IdCategory " +
+                 "WHERE id = @Id";
+
+            connection.Open();
+
+            using (SQLiteCommand command = new SQLiteCommand(updateSql, connection))
+            {
+                command.Parameters.AddWithValue("@Id", id);
+                command.Parameters.AddWithValue("@Label", label);
+                command.Parameters.AddWithValue("@UnitPrice", unitPrice);
+                command.Parameters.AddWithValue("@IdCategory", idCategory);
 
                 command.ExecuteNonQuery();
             }
