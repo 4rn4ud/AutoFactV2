@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,9 +26,19 @@ namespace AutoFact2.Views
             {
                 if (unProduit.GetId() == id)
                 {
-                    TxtLabel.Text = unProduit.GetId().ToString();
+                    TxtId.Text = unProduit.GetId().ToString();
+                    TxtLabel.Text = unProduit.GetLabel();
                     TxtUnitPrice.Text = unProduit.GetUnitPrice().ToString();
-                    ComboType.Text = unProduit.GetType().ToString();
+
+                    int idCategory = unProduit.GetIdCategory();
+                    if (idCategory == 1)
+                    {
+                        ComboCategory.Text = "1. Service";
+                    }
+                    else if (idCategory == 2)
+                    {
+                        ComboCategory.Text = "2. Produit";
+                    }
                 }
             }
         }
@@ -40,6 +51,29 @@ namespace AutoFact2.Views
         private void FormProductUpdate_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(TxtId.Text);
+            string label = TxtLabel.Text;
+            float unitPrice = Convert.ToSingle(TxtUnitPrice.Text);
+            int idCategory;
+
+            if (ComboCategory.Text == "1. Service")
+            {
+                idCategory = 1;
+                productController.update(id, label, unitPrice, idCategory);
+                MessageBox.Show("Le service a bien été modifié dans la base de données.");
+                this.Close();
+            }
+            else if (ComboCategory.Text == "2. Produit")
+            {
+                idCategory = 2;
+                productController.update(id, label, unitPrice, idCategory);
+                MessageBox.Show("Le produit a bien été modifié dans la base de données.");
+                this.Close();
+            }
         }
     }
 }

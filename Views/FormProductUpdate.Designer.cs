@@ -28,23 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ComboType = new System.Windows.Forms.ComboBox();
+            this.ComboCategory = new System.Windows.Forms.ComboBox();
             this.BtnBack = new System.Windows.Forms.Button();
-            this.BtnCreate = new System.Windows.Forms.Button();
+            this.BtnUpdate = new System.Windows.Forms.Button();
             this.LabelIdType = new System.Windows.Forms.Label();
             this.LabelPrix = new System.Windows.Forms.Label();
             this.LabelLibelle = new System.Windows.Forms.Label();
             this.TxtUnitPrice = new System.Windows.Forms.TextBox();
             this.TxtLabel = new System.Windows.Forms.TextBox();
+            this.TxtId = new System.Windows.Forms.TextBox();
+            this.LabelId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // ComboType
+            // ComboCategory
             // 
-            this.ComboType.FormattingEnabled = true;
-            this.ComboType.Location = new System.Drawing.Point(449, 252);
-            this.ComboType.Name = "ComboType";
-            this.ComboType.Size = new System.Drawing.Size(121, 21);
-            this.ComboType.TabIndex = 16;
+            this.ComboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboCategory.FormattingEnabled = true;
+            this.ComboCategory.Items.AddRange(new object[] {
+            "1. Service",
+            "2. Produit"});
+            this.ComboCategory.Location = new System.Drawing.Point(449, 252);
+            this.ComboCategory.Name = "ComboCategory";
+            this.ComboCategory.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ComboCategory.Size = new System.Drawing.Size(121, 21);
+            this.ComboCategory.TabIndex = 16;
             // 
             // BtnBack
             // 
@@ -56,14 +63,15 @@
             this.BtnBack.UseVisualStyleBackColor = true;
             this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
-            // BtnCreate
+            // BtnUpdate
             // 
-            this.BtnCreate.Location = new System.Drawing.Point(449, 500);
-            this.BtnCreate.Name = "BtnCreate";
-            this.BtnCreate.Size = new System.Drawing.Size(75, 23);
-            this.BtnCreate.TabIndex = 14;
-            this.BtnCreate.Text = "Enregistrer";
-            this.BtnCreate.UseVisualStyleBackColor = true;
+            this.BtnUpdate.Location = new System.Drawing.Point(449, 500);
+            this.BtnUpdate.Name = "BtnUpdate";
+            this.BtnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.BtnUpdate.TabIndex = 14;
+            this.BtnUpdate.Text = "Enregistrer";
+            this.BtnUpdate.UseVisualStyleBackColor = true;
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // LabelIdType
             // 
@@ -96,6 +104,7 @@
             // 
             this.TxtUnitPrice.Location = new System.Drawing.Point(449, 197);
             this.TxtUnitPrice.Name = "TxtUnitPrice";
+            this.TxtUnitPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtUnitPrice.Size = new System.Drawing.Size(100, 20);
             this.TxtUnitPrice.TabIndex = 10;
             // 
@@ -103,17 +112,38 @@
             // 
             this.TxtLabel.Location = new System.Drawing.Point(449, 152);
             this.TxtLabel.Name = "TxtLabel";
+            this.TxtLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtLabel.Size = new System.Drawing.Size(100, 20);
             this.TxtLabel.TabIndex = 9;
+            // 
+            // TxtId
+            // 
+            this.TxtId.Location = new System.Drawing.Point(449, 109);
+            this.TxtId.Name = "TxtId";
+            this.TxtId.ReadOnly = true;
+            this.TxtId.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.TxtId.Size = new System.Drawing.Size(100, 20);
+            this.TxtId.TabIndex = 17;
+            // 
+            // LabelId
+            // 
+            this.LabelId.AutoSize = true;
+            this.LabelId.Location = new System.Drawing.Point(360, 112);
+            this.LabelId.Name = "LabelId";
+            this.LabelId.Size = new System.Drawing.Size(16, 13);
+            this.LabelId.TabIndex = 18;
+            this.LabelId.Text = "Id";
             // 
             // FormProductUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
-            this.Controls.Add(this.ComboType);
+            this.Controls.Add(this.LabelId);
+            this.Controls.Add(this.TxtId);
+            this.Controls.Add(this.ComboCategory);
             this.Controls.Add(this.BtnBack);
-            this.Controls.Add(this.BtnCreate);
+            this.Controls.Add(this.BtnUpdate);
             this.Controls.Add(this.LabelIdType);
             this.Controls.Add(this.LabelPrix);
             this.Controls.Add(this.LabelLibelle);
@@ -131,13 +161,15 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox ComboType;
+        private System.Windows.Forms.ComboBox ComboCategory;
         private System.Windows.Forms.Button BtnBack;
-        private System.Windows.Forms.Button BtnCreate;
+        private System.Windows.Forms.Button BtnUpdate;
         private System.Windows.Forms.Label LabelIdType;
         private System.Windows.Forms.Label LabelPrix;
         private System.Windows.Forms.Label LabelLibelle;
         private System.Windows.Forms.TextBox TxtUnitPrice;
         private System.Windows.Forms.TextBox TxtLabel;
+        private System.Windows.Forms.TextBox TxtId;
+        private System.Windows.Forms.Label LabelId;
     }
 }
