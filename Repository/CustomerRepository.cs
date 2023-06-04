@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -167,30 +168,51 @@ namespace AutoFact2.Repository
             connection.Close();
         }
 
-        public void getInfo(int id)
+        public Customer getInfo(int id)
         {
             string connectionString = "Data Source=../../AutoFact2BDD.db";
             SQLiteConnection connection = new SQLiteConnection(connectionString);
 
-            string updateSql = "";
-
-
-                updateSql = "Select Name, LastName, CompanyName from Customer " +
-                 "SET name = @Name, lastName = @LastName, companyName = @CompanyName" +
-                 "WHERE id = @Id";
-
-
+            string larequete = "SELECT Name, LastName, CompanyName, Adress, PostalCode, City, Mail, Tel FROM Customer WHERE id = @Id";
 
             connection.Open();
 
-            using (SQLiteCommand command = new SQLiteCommand(updateSql, connection))
+            using (SQLiteCommand command = new SQLiteCommand(larequete, connection))
             {
                 command.Parameters.AddWithValue("@Id", id);
 
+                using (SQLiteDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        string name = reader["Name"].ToString();
+                        string lastName = reader["LastName"].ToString();
+                        string companyName = reader["CompanyName"].ToString();
+                        string adress = reader["Adress"].ToString();
+                        int postalCode = Convert.ToInt32(reader["PostalCode"]);
+                        string city = reader["City"].ToString();
+                        string email = reader["Mail"].ToString();
+                        string telephone = reader["Tel"].ToString();
 
-                command.ExecuteNonQuery();
+                        if (string.IsNullOrEmpty(companyName))
+                        {
+                            return new Physical(id, name, lastName, adress, postalCode, city, email, telephone);
+                        }
+                        else
+                        {
+                            return new Moral(id, companyName, adress, postalCode, city, email, telephone);
+                        }
+                    }
+                }
             }
+
             connection.Close();
+
+            return null; // Retourner null si aucune correspondance trouvée ou en cas d'erreur
         }
+        
+
+
+
     }
 }

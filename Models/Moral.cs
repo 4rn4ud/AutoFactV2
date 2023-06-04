@@ -16,6 +16,8 @@ namespace AutoFact2.Views
             this._companyName = companyName;
         }
 
+
+
         public override string GetCompanyName()
         {
             base.GetCompanyName();
