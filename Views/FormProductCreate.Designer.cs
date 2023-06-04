@@ -35,13 +35,14 @@
             this.LabelIdType = new System.Windows.Forms.Label();
             this.BtnCreate = new System.Windows.Forms.Button();
             this.BtnBack = new System.Windows.Forms.Button();
-            this.ComboType = new System.Windows.Forms.ComboBox();
+            this.ComboCategory = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // TxtLabel
             // 
             this.TxtLabel.Location = new System.Drawing.Point(458, 157);
             this.TxtLabel.Name = "TxtLabel";
+            this.TxtLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtLabel.Size = new System.Drawing.Size(100, 20);
             this.TxtLabel.TabIndex = 0;
             // 
@@ -49,6 +50,7 @@
             // 
             this.TxtUnitPrice.Location = new System.Drawing.Point(458, 202);
             this.TxtUnitPrice.Name = "TxtUnitPrice";
+            this.TxtUnitPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.TxtUnitPrice.Size = new System.Drawing.Size(100, 20);
             this.TxtUnitPrice.TabIndex = 1;
             // 
@@ -99,20 +101,25 @@
             this.BtnBack.UseVisualStyleBackColor = true;
             this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
-            // ComboType
+            // ComboCategory
             // 
-            this.ComboType.FormattingEnabled = true;
-            this.ComboType.Location = new System.Drawing.Point(458, 257);
-            this.ComboType.Name = "ComboType";
-            this.ComboType.Size = new System.Drawing.Size(121, 21);
-            this.ComboType.TabIndex = 8;
+            this.ComboCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboCategory.FormattingEnabled = true;
+            this.ComboCategory.Items.AddRange(new object[] {
+            "1. Service",
+            "2. Produit"});
+            this.ComboCategory.Location = new System.Drawing.Point(458, 257);
+            this.ComboCategory.Name = "ComboCategory";
+            this.ComboCategory.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.ComboCategory.Size = new System.Drawing.Size(121, 21);
+            this.ComboCategory.TabIndex = 8;
             // 
             // FormProductCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
-            this.Controls.Add(this.ComboType);
+            this.Controls.Add(this.ComboCategory);
             this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.BtnCreate);
             this.Controls.Add(this.LabelIdType);
@@ -138,6 +145,6 @@
         private System.Windows.Forms.Label LabelIdType;
         private System.Windows.Forms.Button BtnCreate;
         private System.Windows.Forms.Button BtnBack;
-        private System.Windows.Forms.ComboBox ComboType;
+        private System.Windows.Forms.ComboBox ComboCategory;
     }
 }
