@@ -9,14 +9,14 @@ namespace AutoFact2.Views
     public class Product
     {
         private int _id;
-        private string _libel;
+        private string _label;
         private float _unitPrice;
         private int _idCategory;
 
-        public Product(int id, string libel, float unitPrice, int idCategory)
+        public Product(int id, string label, float unitPrice, int idCategory)
         {
             this._id = id;
-            this._libel = libel;
+            this._label = label;
             this._unitPrice = unitPrice;
             this._idCategory = idCategory;
         }
@@ -31,14 +31,14 @@ namespace AutoFact2.Views
             this._id = value;
         }
 
-        public string GetLibel()
+        public string GetLabel()
         {
-            return _libel;
+            return _label;
         }
 
-        public void SetLibel(string value)
+        public void SetLabel(string value)
         {
-            this._libel = value;
+            this._label = value;
         }
 
         public float GetUnitPrice()

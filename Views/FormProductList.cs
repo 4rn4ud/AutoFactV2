@@ -24,7 +24,9 @@ namespace AutoFact2
         private void BtnCreate_Click(object sender, EventArgs e)
         {
             FormProductCreate ProductCreate = new FormProductCreate();
-            ProductCreate.Show();
+            ProductCreate.ShowDialog();
+            DgvProduct.Refresh();
+            GetData();
         }
 
         private void BtnBack_Click(object sender, EventArgs e)
@@ -44,7 +46,7 @@ namespace AutoFact2
             foreach (var unProduit in productController.findAll())
             {
                 string dgvId = unProduit.GetId().ToString();
-                string dgvLibel = unProduit.GetLibel();
+                string dgvLibel = unProduit.GetLabel();
                 string dgvUnitPrice = unProduit.GetUnitPrice().ToString();
                 string dgvIdCategory = unProduit.GetIdCategory().ToString();
                 this.DgvProduct.Rows.Add(dgvId, dgvLibel, dgvUnitPrice, dgvIdCategory, "Modifier", "Supprimer");

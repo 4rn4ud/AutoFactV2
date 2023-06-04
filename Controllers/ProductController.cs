@@ -21,14 +21,19 @@ namespace AutoFact2.Controllers
             return productRepository.findAll();
         }
 
-        public void create(string label, float unitPrice, int type)
+        public void create(string label, float unitPrice, int idCategory)
         {
-            productRepository.create(label, unitPrice, type);
+            productRepository.create(label, unitPrice, idCategory);
         }
 
         public void delete(int id)
         {
             productRepository.delete(id);
+        }
+
+        public void update(int id, string label, float unitPrice, int idCategory)
+        {
+            productRepository.update(id, label, unitPrice, idCategory);
         }
     }
 }
