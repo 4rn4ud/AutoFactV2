@@ -39,6 +39,36 @@ namespace AutoFact2.Repository
             return invoiceLines;
         }
 
+        public Invoiceline Find(int id)
+        {
+            string connectionString = "Data Source=../../AutoFact2BDD.db";
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                string selectSql = "SELECT * FROM Invoiceline WHERE id = @id";
+                using (SQLiteCommand command = new SQLiteCommand(selectSql, connection))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    using (SQLiteDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            int idInvoice = Convert.ToInt32(reader["idInvoice"]);
+                            int idProduct = Convert.ToInt32(reader["idProduct"]);
+                            int quantity = Convert.ToInt32(reader["quantity"]);
+                            decimal promotion = Convert.ToDecimal(reader["promotion"]);
+                            decimal price = Convert.ToDecimal(reader["Prix"]);
+                            int invoiceLineId = Convert.ToInt32(reader["id"]);
+                            Invoiceline invoiceLine = new Invoiceline(idInvoice, idProduct, quantity, promotion, price);
+                            invoiceLine.SetId(invoiceLineId);
+                            return invoiceLine;
+                        }
+                    }
+                }
+            }
+            return null; // Return null if the invoice line with the specified ID was not found
+        }
+
         public int Create(Invoiceline invoiceLine)
         {
             string connectionString = "Data Source=../../AutoFact2BDD.db";

@@ -65,6 +65,11 @@ namespace AutoFact2.Views
             return this._price;
         }
 
+        public void SetPrice(decimal price)
+        {
+            this._price = price;
+        }
+
         public decimal GetAmount()
         {
             return this._price * this._quantity;
@@ -79,5 +84,7 @@ namespace AutoFact2.Views
         {
             this._id = id;
         }
+
+
     }
 }

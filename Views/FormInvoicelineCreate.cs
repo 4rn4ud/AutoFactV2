@@ -83,6 +83,7 @@ namespace AutoFact2.Views
                     formInvoiceDetail.LeRefresh(invoiceId);
                 }
             }
+            this.Close();
         }
 
         private bool ValidateInput()

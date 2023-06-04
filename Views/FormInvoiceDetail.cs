@@ -84,7 +84,7 @@ namespace AutoFact2.Views
             foreach (Invoiceline invoiceLine in InlineController.FindAll(id))
             {
                 Product product = productController.Find(invoiceLine.GetIdProduct());
-
+                //MessageBox.Show("ceci est le test :" + invoiceLine.GetIdProduct());
                 string dgvIdProduct = product.GetLabel();
                 string dgvQuantity = invoiceLine.GetQuantity().ToString();
                 string dgvPromotion = invoiceLine.GetPromotion().ToString();
