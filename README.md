@@ -64,7 +64,8 @@ The following tools were used in this project:
 Avant de commencer :checkered_flag:, vous avez besoin d'avoir [Git](https://git-scm.com/downloads), [Visual Studio 2022](https://visualstudio.microsoft.com/fr/) et [DB Browser for SQLite](https://sqlitebrowser.org/dl/) d'installés.
 
 ## :checkered_flag: Commencer ##
-
+vous pouvez télécharger le projet ici : 
+https://1drv.ms/f/s!At2xGPrbrZNJnCQMKUuXuGy05DC6?e=7SGnk4
 ```bash
 # Cloner le projet
 $ git clone https://github.com/4rn4ud/AutoFactV2
