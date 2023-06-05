@@ -43,12 +43,13 @@
             this.txtTel = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.BtnBack = new System.Windows.Forms.Button();
+            this.BtnUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(358, 128);
+            this.label1.Location = new System.Drawing.Point(326, 132);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label1.Size = new System.Drawing.Size(73, 13);
@@ -58,7 +59,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(358, 168);
+            this.label2.Location = new System.Drawing.Point(326, 172);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label2.Size = new System.Drawing.Size(87, 13);
@@ -68,7 +69,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(358, 203);
+            this.label3.Location = new System.Drawing.Point(326, 207);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label3.Size = new System.Drawing.Size(48, 13);
@@ -78,7 +79,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(358, 235);
+            this.label4.Location = new System.Drawing.Point(326, 239);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label4.Size = new System.Drawing.Size(66, 13);
@@ -88,7 +89,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(358, 264);
+            this.label5.Location = new System.Drawing.Point(326, 268);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label5.Size = new System.Drawing.Size(29, 13);
@@ -98,7 +99,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(358, 296);
+            this.label6.Location = new System.Drawing.Point(326, 300);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label6.Size = new System.Drawing.Size(112, 13);
@@ -108,7 +109,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(358, 335);
+            this.label7.Location = new System.Drawing.Point(326, 339);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label7.Size = new System.Drawing.Size(38, 13);
@@ -118,7 +119,7 @@
             // txtRaisonSocial
             // 
             this.txtRaisonSocial.Enabled = false;
-            this.txtRaisonSocial.Location = new System.Drawing.Point(539, 125);
+            this.txtRaisonSocial.Location = new System.Drawing.Point(507, 129);
             this.txtRaisonSocial.Name = "txtRaisonSocial";
             this.txtRaisonSocial.ReadOnly = true;
             this.txtRaisonSocial.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -128,7 +129,7 @@
             // txtSiren
             // 
             this.txtSiren.Enabled = false;
-            this.txtSiren.Location = new System.Drawing.Point(539, 165);
+            this.txtSiren.Location = new System.Drawing.Point(507, 169);
             this.txtSiren.Name = "txtSiren";
             this.txtSiren.ReadOnly = true;
             this.txtSiren.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -138,7 +139,7 @@
             // txtAdresse
             // 
             this.txtAdresse.Enabled = false;
-            this.txtAdresse.Location = new System.Drawing.Point(539, 200);
+            this.txtAdresse.Location = new System.Drawing.Point(507, 204);
             this.txtAdresse.Name = "txtAdresse";
             this.txtAdresse.ReadOnly = true;
             this.txtAdresse.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -148,7 +149,7 @@
             // txtCP
             // 
             this.txtCP.Enabled = false;
-            this.txtCP.Location = new System.Drawing.Point(539, 232);
+            this.txtCP.Location = new System.Drawing.Point(507, 236);
             this.txtCP.Name = "txtCP";
             this.txtCP.ReadOnly = true;
             this.txtCP.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -158,7 +159,7 @@
             // txtVille
             // 
             this.txtVille.Enabled = false;
-            this.txtVille.Location = new System.Drawing.Point(539, 261);
+            this.txtVille.Location = new System.Drawing.Point(507, 265);
             this.txtVille.Name = "txtVille";
             this.txtVille.ReadOnly = true;
             this.txtVille.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -168,7 +169,7 @@
             // txtTel
             // 
             this.txtTel.Enabled = false;
-            this.txtTel.Location = new System.Drawing.Point(539, 293);
+            this.txtTel.Location = new System.Drawing.Point(507, 297);
             this.txtTel.Name = "txtTel";
             this.txtTel.ReadOnly = true;
             this.txtTel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -178,7 +179,7 @@
             // txtEmail
             // 
             this.txtEmail.Enabled = false;
-            this.txtEmail.Location = new System.Drawing.Point(539, 332);
+            this.txtEmail.Location = new System.Drawing.Point(507, 336);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
             this.txtEmail.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -195,11 +196,22 @@
             this.BtnBack.UseVisualStyleBackColor = true;
             this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
+            // BtnUpdate
+            // 
+            this.BtnUpdate.Location = new System.Drawing.Point(459, 426);
+            this.BtnUpdate.Name = "BtnUpdate";
+            this.BtnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.BtnUpdate.TabIndex = 15;
+            this.BtnUpdate.Text = "Modifier";
+            this.BtnUpdate.UseVisualStyleBackColor = true;
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
+            // 
             // FormProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.BtnUpdate);
             this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtTel);
@@ -242,5 +254,6 @@
         private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button BtnBack;
+        private System.Windows.Forms.Button BtnUpdate;
     }
 }

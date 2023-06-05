@@ -21,5 +21,10 @@ namespace AutoFact2.Controllers
         {
             return profilRepository.findAll();
         }
+
+        public void update(int id, string socialReason, int siren, string adress, int postalCode, string city, string tel, string mail)
+        {
+            profilRepository.update(id, socialReason, siren, adress, postalCode, city, tel, mail);
+        }
     }
 }
