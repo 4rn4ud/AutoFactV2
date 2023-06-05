@@ -91,7 +91,7 @@ namespace AutoFact2.Views
 
         private bool ValidateInput()
         {
-            MessageBox.Show(TxtQuantity.Text);
+            //MessageBox.Show(TxtQuantity.Text);
             if (string.IsNullOrWhiteSpace(TxtQuantity.Text) || !int.TryParse(TxtQuantity.Text, out int quantity))
             {
                 MessageBox.Show("Please enter a valid quantity.");

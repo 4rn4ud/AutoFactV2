@@ -51,12 +51,12 @@
             this.ColIdCateg,
             this.ColBtnUpdate,
             this.ColBtnDelete});
-            this.DgvProduct.Location = new System.Drawing.Point(165, 142);
-            this.DgvProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DgvProduct.Location = new System.Drawing.Point(13, 141);
+            this.DgvProduct.Margin = new System.Windows.Forms.Padding(4);
             this.DgvProduct.Name = "DgvProduct";
             this.DgvProduct.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DgvProduct.RowHeadersWidth = 51;
-            this.DgvProduct.Size = new System.Drawing.Size(909, 185);
+            this.DgvProduct.Size = new System.Drawing.Size(1156, 185);
             this.DgvProduct.TabIndex = 0;
             this.DgvProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProduct_CellContentClick);
             // 
@@ -107,7 +107,7 @@
             // BtnBack
             // 
             this.BtnBack.Location = new System.Drawing.Point(395, 419);
-            this.BtnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnBack.Margin = new System.Windows.Forms.Padding(4);
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Size = new System.Drawing.Size(100, 28);
             this.BtnBack.TabIndex = 1;
@@ -118,7 +118,7 @@
             // BtnCreate
             // 
             this.BtnCreate.Location = new System.Drawing.Point(661, 419);
-            this.BtnCreate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnCreate.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCreate.Name = "BtnCreate";
             this.BtnCreate.Size = new System.Drawing.Size(100, 28);
             this.BtnCreate.TabIndex = 2;
@@ -145,7 +145,7 @@
             this.Controls.Add(this.BtnCreate);
             this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.DgvProduct);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormProductList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

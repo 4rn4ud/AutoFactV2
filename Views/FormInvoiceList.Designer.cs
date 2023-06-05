@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.DgvInvoice = new System.Windows.Forms.DataGridView();
-            this.BtnBack = new System.Windows.Forms.Button();
-            this.BtnCreateInvoice = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.ColIdInvoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColSurname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,6 +36,9 @@
             this.ColDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColBtnPDF = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColBtnDetail = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.BtnBack = new System.Windows.Forms.Button();
+            this.BtnCreateInvoice = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvInvoice)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,14 +53,64 @@
             this.ColDate,
             this.ColBtnPDF,
             this.ColBtnDetail});
-            this.DgvInvoice.Location = new System.Drawing.Point(155, 151);
+            this.DgvInvoice.Location = new System.Drawing.Point(56, 151);
             this.DgvInvoice.Margin = new System.Windows.Forms.Padding(4);
             this.DgvInvoice.Name = "DgvInvoice";
             this.DgvInvoice.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.DgvInvoice.RowHeadersWidth = 51;
-            this.DgvInvoice.Size = new System.Drawing.Size(1057, 185);
+            this.DgvInvoice.Size = new System.Drawing.Size(1288, 291);
             this.DgvInvoice.TabIndex = 0;
             this.DgvInvoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // ColIdInvoice
+            // 
+            this.ColIdInvoice.HeaderText = "Numéro de facture";
+            this.ColIdInvoice.MinimumWidth = 6;
+            this.ColIdInvoice.Name = "ColIdInvoice";
+            this.ColIdInvoice.ReadOnly = true;
+            this.ColIdInvoice.Width = 150;
+            // 
+            // ColName
+            // 
+            this.ColName.HeaderText = "Prenom";
+            this.ColName.MinimumWidth = 6;
+            this.ColName.Name = "ColName";
+            this.ColName.Width = 125;
+            // 
+            // ColSurname
+            // 
+            this.ColSurname.HeaderText = "Nom";
+            this.ColSurname.MinimumWidth = 6;
+            this.ColSurname.Name = "ColSurname";
+            this.ColSurname.Width = 125;
+            // 
+            // ColCompany
+            // 
+            this.ColCompany.HeaderText = "Compagnie";
+            this.ColCompany.MinimumWidth = 6;
+            this.ColCompany.Name = "ColCompany";
+            this.ColCompany.Width = 125;
+            // 
+            // ColDate
+            // 
+            this.ColDate.HeaderText = "Date";
+            this.ColDate.MinimumWidth = 6;
+            this.ColDate.Name = "ColDate";
+            this.ColDate.Width = 75;
+            // 
+            // ColBtnPDF
+            // 
+            this.ColBtnPDF.HeaderText = "Génerer PDF";
+            this.ColBtnPDF.MinimumWidth = 6;
+            this.ColBtnPDF.Name = "ColBtnPDF";
+            this.ColBtnPDF.Width = 125;
+            // 
+            // ColBtnDetail
+            // 
+            this.ColBtnDetail.HeaderText = "Detail";
+            this.ColBtnDetail.MinimumWidth = 6;
+            this.ColBtnDetail.Name = "ColBtnDetail";
+            this.ColBtnDetail.Width = 125;
             // 
             // BtnBack
             // 
@@ -92,51 +142,6 @@
             this.label1.Size = new System.Drawing.Size(164, 25);
             this.label1.TabIndex = 5;
             this.label1.Text = "Liste des factures";
-            // 
-            // ColIdInvoice
-            // 
-            this.ColIdInvoice.HeaderText = "Numéro de facture";
-            this.ColIdInvoice.MinimumWidth = 6;
-            this.ColIdInvoice.Name = "ColIdInvoice";
-            this.ColIdInvoice.ReadOnly = true;
-            this.ColIdInvoice.Width = 150;
-            // 
-            // ColName
-            // 
-            this.ColName.HeaderText = "Prenom";
-            this.ColName.MinimumWidth = 6;
-            this.ColName.Name = "ColName";
-            // 
-            // ColSurname
-            // 
-            this.ColSurname.HeaderText = "Nom";
-            this.ColSurname.MinimumWidth = 6;
-            this.ColSurname.Name = "ColSurname";
-            // 
-            // ColCompany
-            // 
-            this.ColCompany.HeaderText = "Compagnie";
-            this.ColCompany.MinimumWidth = 6;
-            this.ColCompany.Name = "ColCompany";
-            // 
-            // ColDate
-            // 
-            this.ColDate.HeaderText = "Date";
-            this.ColDate.MinimumWidth = 6;
-            this.ColDate.Name = "ColDate";
-            this.ColDate.Width = 75;
-            // 
-            // ColBtnPDF
-            // 
-            this.ColBtnPDF.HeaderText = "Génerer PDF";
-            this.ColBtnPDF.MinimumWidth = 6;
-            this.ColBtnPDF.Name = "ColBtnPDF";
-            // 
-            // ColBtnDetail
-            // 
-            this.ColBtnDetail.HeaderText = "Detail";
-            this.ColBtnDetail.MinimumWidth = 6;
-            this.ColBtnDetail.Name = "ColBtnDetail";
             // 
             // FormInvoiceList
             // 
