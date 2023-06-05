@@ -57,5 +57,32 @@ namespace AutoFact2.Repository
             return lesProfils;
 
         }
+
+        public void update(int id, string socialReason, int siren, string adress, int postalCode, string city, string tel, string mail)
+        {
+            string connectionString = "Data Source=../../AutoFact2BDD.db";
+            SQLiteConnection connection = new SQLiteConnection(connectionString);
+
+            string updateSql = "UPDATE Profil " +
+                 "SET socialReason = @SocialReason, siren = @Siren, adress = @Adress, postalCode = @PostalCode, city = @City, tel = @Tel, mail = @Mail " +
+                 "WHERE id = @Id";
+
+            connection.Open();
+
+            using (SQLiteCommand command = new SQLiteCommand(updateSql, connection))
+            {
+                command.Parameters.AddWithValue("@Id", id);
+                command.Parameters.AddWithValue("@SocialReason", socialReason);
+                command.Parameters.AddWithValue("@Siren", siren);
+                command.Parameters.AddWithValue("@Adress", adress);
+                command.Parameters.AddWithValue("@PostalCode", postalCode);
+                command.Parameters.AddWithValue("@City", city);
+                command.Parameters.AddWithValue("@Tel", tel);
+                command.Parameters.AddWithValue("@Mail", mail);
+
+                command.ExecuteNonQuery();
+            }
+            connection.Close();
+        }
     }
 }
