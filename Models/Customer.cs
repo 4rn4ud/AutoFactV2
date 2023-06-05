@@ -112,5 +112,18 @@ namespace AutoFact2.Views
         {
             return string.Empty;
         }
+
+        /*public void SetName(string value)
+        {
+            this._Name = value;
+        }
+        public void SetSurname(string value)
+        {
+            this._tel = value;
+        }
+        public void SetCompany(string value)
+        {
+            this._tel = value;
+        }*/
     }
 }

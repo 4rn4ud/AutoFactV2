@@ -51,8 +51,8 @@ namespace AutoFact2.Views
                 customerCompany = moralCustomer.GetCompanyName();
             }
 
-            //TxtName.Text = customerName;
-            //TxtSurname.Text = customerSurname;
+            TxtName.Text = customerName;
+            TxtSurname.Text = customerSurname;
             TxtCompagnyName.Text = customerCompany;
 
             TxtTotal.Text = lafacture.GetTotal().ToString();
@@ -187,11 +187,42 @@ namespace AutoFact2.Views
 
         private void CBCustomer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CBCustomer.SelectedItem != null)
+
+            // Customer selectedCustomer = (CBCustomer.SelectedItem as dynamic).Value as Customer;
+            
+            int IDSelectedCustomer = (CBCustomer.SelectedItem as dynamic).Value;
+
+
+
+            List<Customer> TheClientList = custRepository.findAll();
+
+            
+            foreach (Customer TheClient in TheClientList)
             {
-                string companyName = (CBCustomer.SelectedItem as dynamic).Text;
-                TxtCompagnyName.Text = companyName;
+ 
+
+                if (TheClient.GetId() == IDSelectedCustomer)
+                {
+                    TxtName.Text = TheClient.GetName();
+                    TxtSurname.Text = TheClient.GetLastname();
+                    TxtCompagnyName.Text = TheClient.GetCompanyName();
+                }
+
             }
+
+ 
+
+            /*if (selectedCustomer != null) { 
+            MessageBox.Show(selectedCustomer.GetName());       
+            TxtName.Text = selectedCustomer.GetName();
+            TxtSurname.Text = selectedCustomer.GetLastname();
+            TxtCompagnyName.Text = selectedCustomer.GetCompanyName();
+            }
+           */
+
+
+                
+            
         }
     }
 }

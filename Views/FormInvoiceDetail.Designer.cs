@@ -50,6 +50,10 @@
             this.BtnCreateInvoiceLine = new System.Windows.Forms.Button();
             this.CBCustomer = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.TxtName = new System.Windows.Forms.TextBox();
+            this.TxtSurname = new System.Windows.Forms.TextBox();
+            this.Prenom = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvInvoiceline)).BeginInit();
             this.SuspendLayout();
             // 
@@ -212,6 +216,7 @@
             // 
             this.TxtCompagnyName.Location = new System.Drawing.Point(575, 138);
             this.TxtCompagnyName.Name = "TxtCompagnyName";
+            this.TxtCompagnyName.ReadOnly = true;
             this.TxtCompagnyName.Size = new System.Drawing.Size(100, 22);
             this.TxtCompagnyName.TabIndex = 17;
             // 
@@ -219,7 +224,7 @@
             // 
             this.BtnCreateInvoiceLine.Location = new System.Drawing.Point(996, 218);
             this.BtnCreateInvoiceLine.Name = "BtnCreateInvoiceLine";
-            this.BtnCreateInvoiceLine.Size = new System.Drawing.Size(160, 41);
+            this.BtnCreateInvoiceLine.Size = new System.Drawing.Size(160, 65);
             this.BtnCreateInvoiceLine.TabIndex = 18;
             this.BtnCreateInvoiceLine.Text = "Ajouter Ligne de Facture";
             this.BtnCreateInvoiceLine.UseVisualStyleBackColor = true;
@@ -244,11 +249,49 @@
             this.label2.TabIndex = 41;
             this.label2.Text = "Détail Facture";
             // 
+            // TxtName
+            // 
+            this.TxtName.Location = new System.Drawing.Point(796, 138);
+            this.TxtName.Name = "TxtName";
+            this.TxtName.ReadOnly = true;
+            this.TxtName.Size = new System.Drawing.Size(100, 22);
+            this.TxtName.TabIndex = 42;
+            // 
+            // TxtSurname
+            // 
+            this.TxtSurname.Location = new System.Drawing.Point(996, 137);
+            this.TxtSurname.Name = "TxtSurname";
+            this.TxtSurname.ReadOnly = true;
+            this.TxtSurname.Size = new System.Drawing.Size(100, 22);
+            this.TxtSurname.TabIndex = 43;
+            // 
+            // Prenom
+            // 
+            this.Prenom.AutoSize = true;
+            this.Prenom.Location = new System.Drawing.Point(732, 140);
+            this.Prenom.Name = "Prenom";
+            this.Prenom.Size = new System.Drawing.Size(54, 16);
+            this.Prenom.TabIndex = 44;
+            this.Prenom.Text = "Prenom";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(936, 140);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 16);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "Nom";
+            // 
             // FormInvoiceDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 553);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Prenom);
+            this.Controls.Add(this.TxtSurname);
+            this.Controls.Add(this.TxtName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.CBCustomer);
             this.Controls.Add(this.BtnCreateInvoiceLine);
@@ -297,5 +340,9 @@
         private System.Windows.Forms.DataGridViewButtonColumn BtnColUpdate;
         private System.Windows.Forms.ComboBox CBCustomer;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TxtName;
+        private System.Windows.Forms.TextBox TxtSurname;
+        private System.Windows.Forms.Label Prenom;
+        private System.Windows.Forms.Label label3;
     }
 }

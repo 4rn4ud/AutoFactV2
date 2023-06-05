@@ -67,6 +67,7 @@ namespace AutoFact2.Repository
             return lesClients;
         }
 
+        
         public void create(string name, string lastName, string companyName, string address, int postalCode, string city, string mail, string tel)
         {
             string connectionString = "Data Source=../../AutoFact2BDD.db";
