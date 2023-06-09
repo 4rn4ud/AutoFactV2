@@ -42,5 +42,11 @@ namespace AutoFact2
             FormProfil Profil = new FormProfil();
             Profil.Show();
         }
+
+        private void btnStats_Click(object sender, EventArgs e)
+        {
+            FormStats Stats = new FormStats();
+            Stats.Show();
+        }
     }
 }
